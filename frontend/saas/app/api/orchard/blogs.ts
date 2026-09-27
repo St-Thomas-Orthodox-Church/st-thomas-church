@@ -23,21 +23,9 @@ const GET_ALL_BLOGS_QUERY = `
   }
 `;
 
-interface OrchardDataPayload  {
-    contentItemId: string;
-    createdUtc: string;
-    modifiedUtc:string;
-    displayText: string;
-    blogType:string;
-    image: {
-        files: Array<{
-            url:string
-            fileName:string;
-        }>;
-}
-markdownBody: {
-    html: string;       // Used for the Body
-    }
+
+export interface OrchardDataPayload {
+    blogPost: ContentItem[];
 }
 
 
@@ -59,7 +47,7 @@ export type ContentItem = {
 };
 
 async function fetcBlogsRaw():Promise<OrchardDataPayload> {
-    const response = await orchardFetch<OrchardDataPayload>({
+    const response : OrchardDataPayload  = await orchardFetch<OrchardDataPayload>({
         query: GET_ALL_BLOGS_QUERY,
     });
   
@@ -68,24 +56,32 @@ async function fetcBlogsRaw():Promise<OrchardDataPayload> {
 
 export async function getBlogs(): Promise<BlogItem[] | null> {
     try {
-        const response = await fetcBlogsRaw();
+        const response: OrchardDataPayload = await fetcBlogsRaw();
 
         if (!response) {
             console.error('No response from getBlogs() found');
             return null;
         }
-
+        console.log({'response from getBlogs()' : response});
         // 2. Extract the JSON body array from the response
-        const rawItems: ContentItem = await response.blogPost; //delete YAC 
-        
+     //   const rawData: OrchardDataPayload[] = await response;
 
-        const blogs: BlogItem[] = rawItems.map((raw) => ({
+        const blogList: ContentItem[] = response?.blogPost;
+        
+        const blogs: BlogItem[] = blogList?.map((raw: ContentItem) => ({
             id: raw.contentItemId,
-            created: raw.reatedUtc,
+            created: raw.createdUtc,
             lastModifiedUtc: raw.modifiedUtc,
             displayText: raw.displayText,
-            image: raw.image?.files || [],
-            markdownBody: getSanitizedHtml(raw.markdownBody.html),
+            image: {
+                // Map over the files array to inject the missing 'id' property
+                files: raw.image.files.map((file) => ({
+                    id: file.fileName, // Using fileName as the required id fallback
+                    url: file.url,
+                    fileName: file.fileName,
+                })),
+            },
+            markdownBody: {html:getSanitizedHtml(raw.markdownBody.html)} ,
             blogType: raw.blogType,
         }));
       //  console.log({'blogs from getBlogs()': blogs}); //dele YAC
@@ -101,7 +97,7 @@ export async function getBlogByID(blogID: string) {
     const allBlogs = await getBlogs();
     console.log({'allBlogs from getBlogByid': allBlogs});  //delete YAC 
     // Assuming allBlogs is an array, use .find() to get a single item by ID
-    const blog = allBlogs.find(b => b.id === blogID.trim());
+    const blog = allBlogs?.find(b => b.id === blogID.trim());
     console.log('blog', blog);
     return blog;
 }

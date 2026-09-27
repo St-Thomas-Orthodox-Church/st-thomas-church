@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import  {getLogo} from  '@/app/api/orchard/mediaAssets';
+import {MediaItem} from "@/app/types/media";
 
-export default  function Logo({ className }: LogoProps) {
+export default  function Logo({ className }: {className:string} ) {
 
     // 1. Set state to hold the logo data
-    const [logo, setLogo] = useState<{ image: Array<{ url: string }> } | null>(null);
+    const [logo, setLogo] = useState< MediaItem | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -15,9 +16,11 @@ export default  function Logo({ className }: LogoProps) {
         async function fetchLogoData() {
             try {
                 const logoData = await getLogo();
-                if (logoData) {
-                    setLogo(logoData);
+                if(!logoData){
+                    return null;
                 }
+                setLogo(logoData);
+                
             } catch (error) {
                 console.error('Failed to fetch logo:', error);
             } finally {
@@ -34,7 +37,7 @@ export default  function Logo({ className }: LogoProps) {
     let logoUrl = logo?.url;
 
     if (!logoUrl) {
-        logoUrl='/churchLogo.svg'; // Fallback text if logo is missing
+        logoUrl='/logo.png'; // Fallback text if logo is missing
     }
     //to keep transparancy of the logo, we must replace jpg format with png
     const transparentUrl=logoUrl.replace('jpg','png');

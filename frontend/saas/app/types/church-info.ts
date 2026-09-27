@@ -12,7 +12,10 @@ export interface Address {
 export interface AboutUsData {
     headerMain:string;
     subtitle:string;
-    mainInformation:string;
+    additionalinformation:string;
+    mainInformation:{
+        info:string
+    };
     pageBanner:ImageFile[];
     relatedBlogIDs:string[];
 }

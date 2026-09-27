@@ -1,12 +1,15 @@
 import '@/components/ui/footer.css';
 import {getChurchContactInfo, getChurchAdderss} from "@/app/api/orchard/church-info";
+import {Address} from '@/app/types/church-info';
 
 
 export default async function Footer() {
 
     const contactInfoHtml =  await getChurchContactInfo();
     
-    const {city, country, postalZIPcode,stateRegion, streetAddress}=await getChurchAdderss();;
+    const churchAddress= await getChurchAdderss(); 
+   
+   
     return (
         <footer>
             <section className={'content'}>
@@ -17,11 +20,17 @@ export default async function Footer() {
                 </section>
                 <section className={'section-middle'}>
                     <h4>Contact Us</h4>
-                    <p dangerouslySetInnerHTML={{__html: contactInfoHtml}}/>
+                    <p dangerouslySetInnerHTML={{__html: contactInfoHtml || ''}}/>
                 </section>
                 <section className={'section-right'}>
-                    <h4>Address</h4>
-                    {streetAddress},{city} {postalZIPcode},<br/>{stateRegion}, {country}
+                {churchAddress && (
+                    <>
+                        <h4>Address</h4>
+                        {churchAddress?.streetAddress ?? ''},{churchAddress?.city}
+                        {churchAddress?.postalZIPCode},<br/>
+                        {churchAddress?.stateRegion}, {churchAddress?.country}
+                    </>
+                )}
                 </section>
             </section>
         </footer>

@@ -16,20 +16,6 @@ export const viewport: Viewport = {
 
 const manrope = Manrope({ subsets: ['latin'] });
 
-// 1. A mock component that reads the cached data using useSWR
-function Profile() {
-    const { data: user } = useSWR('/api/user');
-    const { data: team } = useSWR('/api/team');
-
-    return (
-        <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-            <h2>Test Profile Information</h2>
-            <p><strong>User:</strong> {user}</p>
-            <p><strong>Team:</strong> {team}</p>
-        </div>
-    );
-}
-
 export default function RootLayout({
   children
 }: {

@@ -1,7 +1,9 @@
 "use client"
 import { useState } from 'react';
 import './blogPost.css';
-export const BlogPost=({blog} )=>{
+import  {BlogItem} from "@/app/types/blog";
+
+export const BlogPost=({blog} : {blog:BlogItem} )=>{
     // 🚀 State to track if the post is expanded or collapsed
     const [isExpanded, setIsExpanded] = useState(false);
     if (!blog) return <p>Loading post...</p>;
@@ -15,11 +17,11 @@ export const BlogPost=({blog} )=>{
             </h2>
         </header>
 
-        {blog.image?.[0] &&
+        {blog.image?.files[0] &&
             <section>
                 <img
-                    src={blog.image[0]?.url}
-                    alt={blog.image[0]?.fileName || "Blog image"}
+                    src={blog.image?.files[0]?.url}
+                    alt={blog.image?.files[0]?.fileName || "Blog image"}
                 />
             </section>
         }
@@ -35,7 +37,7 @@ export const BlogPost=({blog} )=>{
              }}>
             {blog.markdownBody ? (
                 /* Using dangerouslySetInnerHTML because Orchard Core HTML fields return raw HTML strings */
-                <div dangerouslySetInnerHTML={{__html: blog.markdownBody}}/>
+                <div dangerouslySetInnerHTML={{ __html: blog.markdownBody.html || ''}}/>
             ) : (
                 <p>No content available for this post.</p>
             )}
@@ -50,7 +52,6 @@ export const BlogPost=({blog} )=>{
                     color: 'var(--highlight-solid, #b7906e)',
                     padding: '0',
                     marginTop: '0.5rem',
-                    fontClassName: 'inherit',
                     fontWeight: '700',
                     cursor: 'pointer',
                     fontSize: '0.95rem',

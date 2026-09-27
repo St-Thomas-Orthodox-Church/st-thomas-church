@@ -1,4 +1,4 @@
-import {AboutUsData} from '@app/types/church-info';
+import {AboutUsData} from '@/app/types/church-info';
 import {ImageFile} from "@/app/types/media";
 import {getSanitizedHtml} from "@/app/utils/sanitize";
 
@@ -91,10 +91,14 @@ export default async function getAboutUs(): Promise<AboutUsData> {
         const aboutUsData: AboutUsData = {
             headerMain: rawItem?.headerMain?.header || "",
             subtitle: rawItem?.subtitle?.html || "",
-            mainInformation: rawItem?.mainInformation?.info || "",
+            mainInformation: {info: rawItem?.mainInformation?.info || ""},
 
             // Safely drill down to the files array, default to empty array if missing
-            pageBanner: rawItem?.pageBanner?.image?.files || [],
+            pageBanner: (rawItem?.pageBanner?.image?.files || []).map((file: any) => ({
+                url: file?.url || "",
+                id: file?.id || "",          // Fallback if id is missing in raw data
+                fileName: file?.fileName || "" // Fallback if fileName is missing in raw data
+            })),
 
             // Maps contentItemIds array to your target property
             relatedBlogIDs: rawItem?.relatedBlog?.contentItemIds || [],

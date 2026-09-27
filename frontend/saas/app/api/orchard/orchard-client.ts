@@ -27,8 +27,8 @@ export async function orchardFetch<T>({
         if (!res.ok) {
             // Read the server's JSON error response
             const errorJson = await res.json();
-            
-            throw new Error(`Orchard HTTP Error: ${res.status} ${res.statusText}`);
+            const errorBody= `Orchard HTTP Error: ${res.status} ${res.statusText}`;
+            throw new Error(errorBody);
             console.error("🚨 Orchard 400 Details:", errorBody);
         }
 

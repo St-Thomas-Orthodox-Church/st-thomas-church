@@ -1,0 +1,1366 @@
+{
+  "name": "Migration",
+  "displayName": "St Thomas Church Migration",
+  "description": "Imports all content from the SQLite migration.",
+  "author": "admin",
+  "website": "",
+  "version": "",
+  "issetuprecipe": true,
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "Content",
+      "data": [
+        {
+          "ContentItemId": "48zjh5c30ks7kvcqxg4edmrb48",
+          "ContentItemVersionId": "43at4vveg4wv6ryz8cqj6cq4dz",
+          "ContentType": "Menu",
+          "DisplayText": "Home",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-14T21:05:55.7534718Z",
+          "PublishedUtc": "2026-09-14T21:05:55.7548031Z",
+          "CreatedUtc": "2026-09-14T20:58:58.5938345Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Home"
+          },
+          "AliasPart": {
+            "Alias": "home"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4ht14y8dxq4tbrrdq0vn78apwd",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Home",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "4x5xmhva2xr07540qcm4da3n47",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "About Us",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/about-us",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "4z484hng88zkvs50ytrtb81sc8",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Contact",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/contact",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "4e8j1950n8x8kzw8s60aqqe7x9",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Clergy",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/clergy",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "40jn0f8x4n1xeymn6f5g9t2vm6",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Literature",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/literature",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4q0fpmds76gaq593fker03src1",
+          "ContentItemVersionId": "4hbqttc6at7xv2y405s5w6ab5t",
+          "ContentType": "Contactinfo",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-16T18:04:26.0495556Z",
+          "PublishedUtc": "2026-09-16T18:04:26.0903766Z",
+          "CreatedUtc": "2026-09-16T18:04:26.0495556Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "Contactinfo": {},
+          "MarkdownBodyPart": {
+            "Markdown": "Rev. Fr. Kevin Kirwan\r\nPh. 712-898-2662\r\nemail fr.kevin@holyorthodoxy.org"
+          }
+        },
+        {
+          "ContentItemId": "40jtxspq8h7he69pcf1c02nh59",
+          "ContentItemVersionId": "41yhn12z3axqtvyq781pce1f43",
+          "ContentType": "ChurchAddress",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-16T18:09:53.2203243Z",
+          "PublishedUtc": "2026-09-16T18:09:53.2223382Z",
+          "CreatedUtc": "2026-09-16T18:09:53.2203243Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "ChurchAddress": {},
+          "Address": {
+            "StreetAddress": {
+              "Text": "1100 Jones St"
+            },
+            "City": {
+              "Text": "Sioux City"
+            },
+            "StateRegion": {
+              "Text": "IA"
+            },
+            "PostalZIPCode": {
+              "Text": "51105"
+            },
+            "Country": {
+              "Text": "United States"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4w6ner9v9www516ag03gh2nx46",
+          "ContentItemVersionId": "4dr3j4kkfjww8179eza9hx57cf",
+          "ContentType": "Gallery",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-17T17:09:45.2768908Z",
+          "PublishedUtc": "2026-09-17T17:09:45.2775991Z",
+          "CreatedUtc": "2026-09-17T16:58:11.1035462Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "Gallery": {
+            "image": {
+              "Paths": [
+                "church life/181653836_3926901297397107_6657125456451054123_n.jpg",
+                "church life/511289354_10056024937818015_5990070440859745363_n.jpg",
+                "church life/59423110_2188854654535122_5192736282589003776_n.jpg",
+                "church life/72560752_2483936835026901_2590853706081632256_n.jpg"
+              ],
+              "MediaTexts": [
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          },
+          "Image": {
+            "Image": {
+              "Paths": [
+                "church life/181653836_3926901297397107_6657125456451054123_n.jpg",
+                "church life/511289354_10056024937818015_5990070440859745363_n.jpg",
+                "church life/59423110_2188854654535122_5192736282589003776_n.jpg"
+              ],
+              "MediaTexts": [
+                "",
+                "",
+                ""
+              ]
+            },
+            "Imagedescription": {
+              "Text": null
+            }
+          }
+        },
+        {
+          "ContentItemId": "48d8w26cjcn1qzbmt8yyb8wtmh",
+          "ContentItemVersionId": "4cvdp33psz2n85pqj890e86yc6",
+          "ContentType": "SmallLogo",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-17T17:09:48.1795792Z",
+          "PublishedUtc": "2026-09-17T17:09:48.1807102Z",
+          "CreatedUtc": "2026-09-17T16:30:48.1710311Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "SmallLogo": {
+            "image": {
+              "Paths": [
+                "logo/logo.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            }
+          },
+          "Image": {
+            "Image": {
+              "Paths": [
+                "logo/logo.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "Imagedescription": {
+              "Text": "church logo"
+            }
+          }
+        },
+        {
+          "ContentItemId": "48zrvg9hxn0ravae7qq9y8b8nc",
+          "ContentItemVersionId": "425g51ntk5qebx8scf1ayrjmde",
+          "ContentType": "BlogPost",
+          "DisplayText": "Martyr Mamas",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T14:54:48.3401356Z",
+          "PublishedUtc": "2026-09-23T14:54:48.3422349Z",
+          "CreatedUtc": "2026-09-22T23:36:55.1039301Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "icons/Martyr Mamas.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "other"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "The Martyr Mamas lived an ascetic life in the wilderness, where wild beasts would come to him. He tended goats and does, milked them, and distributed the cheese made from their milk to the poor. The governor of Caesarea seized the saint for confessing Christ and threw him to the wild beasts to be torn apart. But they did not touch him. Then a crowd of pagans stoned the martyr. \r\nDuring the time of Basil the Great, the martyr was venerated in Caesarea of Cappadocia, and the holy hierarch dedicated one of his homilies to his memory. In it, mentioning the martyr\u0027s life as a shepherd, Saint Basil discussed the loftiness of the pastoral ministry, using the words of the Psalms to indicate the closeness of a shepherd to a king: \u0022The Lord, uniting both in Himself, is both Shepherd and King. What is the dignity of a shepherd? \u0027The Lord is my shepherd\u0027 (Ps. 22:1). In what way is the pastoral office a sister to the royal one? \u0027Who is this King of glory?\u0027 (Ps. 23:8). He who is a shepherd here, is a king there."
+          },
+          "TitlePart": {
+            "Title": "Martyr Mamas"
+          },
+          "AliasPart": {
+            "Alias": "martyr-mamas"
+          },
+          "PreviewPart": {}
+        },
+        {
+          "ContentItemId": "4cd8mnw79fr8k7avgyby6tgq57",
+          "ContentItemVersionId": "4939rebxvcwp63cc40yz3h0jwj",
+          "ContentType": "BlogPost",
+          "DisplayText": "The Holy Eucharist",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T15:08:08.6944466Z",
+          "PublishedUtc": "2026-09-23T15:08:08.6951177Z",
+          "CreatedUtc": "2026-09-22T23:48:10.4655785Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "icons/HolyEucharist-Icon.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "***\u0022Oh taste and see that the Lord is good\u0022 (Ps. 34:8)***\r\n\r\n### WHAT DOES THE WORD \u0022EUCHARIST\u0022 MEAN?\r\nThe word Eucharist comes from the Greek and means Thanksgiving. The Lord\u0027s Supper is called the Holy Eucharist because when Christ instituted it He gave thanks, \u0022For I received from the Lord that which I also delivered to you: that the Lord Jesus on the same night in which He was betrayed took bread; and when He had given thanks, He broke it and said, \u0027Take, eat; this is My body which is broken for you; do this in remembrance of Me.\u0027 In the same manner He also took the cup after supper, saying, this cup is the new covenant in My blood. This do, as often as you drink it, in remembrance of Me\u0022 (1 Cor. 11:23-25).\r\n\r\n### THE PLACE OF THE HOLY EUCHARIST IN CHRISTIAN WORSHIP\r\nThe Holy Eucharist is the principal act of Christian worship as it is the one Service instituted by Christ Himself. Other religions have prayer, readings, hymns and sermons, but only Christians celebrate the Eucharist. Following the example of the Apostles and early Christians, the Church has assembled on the Lord\u0027s Day (Sunday) week by week for nearly 2,000 years to celebrate the Holy Eucharist. \u0022And they continued steadfastly in the apostles\u0027 doctrine and\r\nfellowship, in the breaking of bread [the Eucharist], and in prayers\u0022 (Acts 2:42).\r\n\r\n### THE SACRAMENT OF HOLY COMMUNION \r\n\r\nIn the Sacrament of Holy Communion, the Body and Blood of Christ are received. At the Last Supper the Lord Jesus Christ said, \u0022This is my body\u0022 and \u0022This is my blood.\u0022 He did not say, \u0022This represents my body\u0022 or \u0022This is a symbol of my blood.\u0022 Jesus said, \u0022\u0027I am the bread of life. Your fathers ate the manna in the wilderness, and are dead. This is the bread which comes down from heaven, that one may eat of it and not die. I am the living bread which came down from heaven. If anyone eats of this bread, he will live forever; and the bread that I shall give is My flesh, which I shall give for the life of the world.\u0027 The Jews therefore quarreled among themselves, saying, \u0027How can this Man give us His flesh to eat?\u0027 Then Jesus said to them, \u0027Most assuredly, I say to you, unless you eat the flesh of the Son of Man and drink His blood, you have no life in you. Whoever eats My flesh and drinks My blood has eternal life, and I will raise him up at the last day. For My flesh is food indeed, and My blood is drink indeed. He who eats My flesh and drinks My blood abides in Me, and I in him. As the living Father sent Me, and I live because of the Father, so he who feeds on Me will live because of Me. This is the bread which came down from heaven - not as your fathers ate the manna, and are dead. He who eats this bread will live forever\u0022 (John 6:48-58).\r\n\r\nJust like today, many of the disciples who heard these words would not accept them. \u0022Therefore, many of His disciples, when they heard this, said, \u0027This is a hard saying; who can understand it?\u0022 (John 6:60). Yet Jesus did not take His words back, or explain that they were only meant to be taken \u0022symbolically.\u0022 And just like today, from that time many of His disciples went back and walked with Him no more.\u0022 (John 6:66). The Apostles and early Christians understood that Christ meant his words to be taken literally. The Sacrament of Holy Communion does not merely represent the Body and Blood of Christ, but actually presents the Body and Blood of Christ. The\r\ntrue Body and Blood of Christ is received in the Sacrament of Holy Communion.\r\n\r\nThe Apostle Paul wrote, \u0022The cup of blessing which we bless, is it not the communion of the blood of Christ? The bread which we break, is it not the communion of the body of Christ?\u0022 (I Cor. 10:16). Because Christ is really present in the Sacrament of Holy Communion, St. Paul goes on to warn, \u0022Therefore whoever eats this bread or drinks this cup of the Lord in an unworthy manner will be guilty of the body and blood of the Lord. But let a man examine himself, and so let him eat of the bread and drink of the cup. For he who eats and drinks in an unworthy manner eats and drinks judgment to himself, not discerning the Lord\u0027s body.\u0022 (I Cor. 11:27-29).\r\n\r\nThe early Church believed in the Real Presence of Christ in the Sacrament of Holy Communion, and so did all Christians everywhere for some 1,500 years until the Protestant Reformation in Western Europe in the 16th century.\r\nSt. Ignatius, an early Church Father, lived from AD 30 to 107. He was Bishop of Antioch, and was martyred for his faith. He was a disciple of the Apostle John. While awaiting martyrdom he wrote a number of epistles (letters) to various churches. To the Church in Ephesus he wrote, \u0022obey the bishop and presbytery with an undivided mind, breaking one and the same bread, which is the medicine of immortality, and the antidote to prevent us from dying, but that we should live forever in Jesus Christ\u0022 (Epistle to the Ephesians, c. AD 105).\r\n\r\nIn his Epistle to the Romans, (c. AD 105), St. Ignatius of Antioch wrote, \u0022I desire the bread of God, the heavenly bread, the bread of life, which is the flesh of Jesus Christ, the Son of God, who became afterwards the seed of David and Abraham; and I desire the drink of God, namely His blood, which is incorruptible love and eternal life.\u0022 St. Justin Martyr (AD 100-165) wrote, \u201CAnd this food is called among us the Eucharist... For not as common bread and\r\ncommon drink do we receive these; but in like manner as Jesus Christ our Saviour, having been made flesh by the Word of God, had both flesh and blood for our salvation, so likewise have we been taught that the food which is blessed by the prayer of His word, and from which our blood and flesh by transmutation are nourished, is the flesh and blood of that Jesus who was made flesh\u0022 (First Apology).\r\n\r\nSt. Cyril was an early Bishop of Jerusalem, the Mother Church of Christendom. Around the year AD 350 he delivered introductory lectures to his classes of catechumens. Regarding the Eucharist he said, \u0022The bread and wine of the Eucharist, before the invocation of the holy and adorable Trinity, were simple bread and wine; but, after the invocation, the bread becomes the body of Christ and the wine becomes the blood of Christ\u0022 (Mystagogical Lecture 1.7).\r\nSt. Augustine of Hippo (AD 354-430) said, \u0022I am mindful of my promise. For I promised you, who have now been baptized, a sermon in which I would explain the Sacrament of the Lord\u0027s Table, which you now look upon and of which you last night were made participants. You ought to know what you have received, what you are going to receive, and what you ought to receive daily. That bread which you see on the altar, having been sanctified by the word of God, is the Body of Christ. That chalice, or rather, what is in that chalice, having been sanctified by the word God, is the Blood of Christ. Through that bread and wine, the Lord Christ willed to commend his Body and Blood, which He poured out for us unto the forgiveness of sins\u0022\r\n\r\n*(Sermons).*\r\n#### WHO CAN CELEBRATE THE HOLY EUCHARIST?\r\nIn his Epistle to the Smyrnaeans (c. AD 105), St. Ignatius of Antioch, a disciple of the Apostle John, wrote, \u0022See that ye follow the bishop, even as Jesus Christ does the Father, and the presbytery [the priests] as ye would the apostles; and\r\nreverence the deacons, as being the institution of God. Let no man do anything connected with the Church without the bishop. Let that be deemed a proper Eucharist, which is [celebrated] either by the bishop, or by one to whom he entrusted it [a priest].\u0022\r\n\r\nThe Orthodox Church is the historic Church which Christ Himself established. We have a verifiable and unbroken history going back nearly 2,000 years. We still believe in the Real Presence of Christ in the Sacrament of Holy Communion and our bishops and priests still celebrate the Holy Eucharist every Lord\u0027s Day."
+          },
+          "TitlePart": {
+            "Title": "The Holy Eucharist"
+          },
+          "AliasPart": {
+            "Alias": "the-holy-eucharist"
+          },
+          "PreviewPart": {}
+        },
+        {
+          "ContentItemId": "4g2nr3m2a2fkwv8qcxt56ceb49",
+          "ContentItemVersionId": "4jx6mfzn69g1qy2pwmkgc247mr",
+          "ContentType": "BlogPost",
+          "DisplayText": "The Filioque",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T15:08:31.176668Z",
+          "PublishedUtc": "2026-09-23T15:08:31.1786893Z",
+          "CreatedUtc": "2026-09-22T23:42:12.3164201Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "## Why it is heterodox\r\n\r\n If you were to attend a Roman Catholic Mass, an Anglican or Lutheran service and listened to Clergy  the recitation of Literature  the Nicene Creed you would hear a strange three-word addition in their altered profession of Faith.\r\nThe seeming but not so innocent phrase [and the Son] was placed after these words in the Church\u0027s Symbol of Faith \u201CAnd in the Holy Spirit who proceeds from the Father [and the Son\u201D] This three-word appendage is nowhere to be found in the original confession coming out of the ancient ecumenical councils.\r\n\r\nA little over a thousand years ago (1014 A.D.) the Roman Catholic Church succumbed to a temptation that had been\r\nunsettling her for several hundred years previous and officially inserted the innovative Filioque clause in their recitation of the\r\nof the Creed for the first time in a papal Mass.\r\n\r\nThis event marked what many consider the hard beginning of Rome\u2019s schism which would reach fruition in 1054 A.D. Rome had now officially allowed a new understanding regarding the relationship within the Godhead to be inserted into the Creed in violation of the doctrinal formulations of the Great Ecumenical Councils. It also tacitly asserted the authority of the Roman Pontiff to override the Church\u2019s firmly established understanding and ecumenical consensus. Consequently, Rome estranged herself from the other four great Patriarchal Catholic Sees and departed Orthodox Catholic consensus.\r\n he genesis of this innovation can be traced back to two isolated local Council of Bishops in Toledo Spain 633 \u0026 653 A.D. A regional group of western bishops unilaterally authorized the novel addition which wrongly states the Holy Spirit\u2019s eternal procession is not uniquely from the Father but this procession is also from the Son thereby contradicting the Catholic Church\u2019s witness and teaching expressed by the Ecumenical Nicene and Constantinopolitan Councils of 325 and 381 A.D. which teaches the eternal procession of the Holy Spirit as emanating from the Father.\r\n\r\nThe Holy Spirit\u2019s procession from the Father, who is the fountainhead of the Godhead is the source and cause of The Holy Spirit\u0027s eternal procession. Likewise, the Son\u0027s being eternally begotten of the Father. Should we also add another Filioque stating the Son is eternally begotten of the Father \u0022and the Holy Spirit\u0022? To do either hopelessly confuses the proper distinction of persons in the Godhead within what is ultimately an unfathomable mystery. We have no more business saying the Son is eternally begotten of both the Father and Holy Spirit as we would confessing a dual procession of the Holy Spirit being from both the Father and Son.\r\n\r\nBeside the problems this presents theologically the Church\u2019s third Ecumenical Council held in Ephesus in 431 A.D. to deal with the Nestorian heresy made an emphatic point to uphold the two previous councils and forcefully condemned any tampering with the wording of the Creed with solemn anathemas.\r\n\r\nThe Bishop of Rome Sixtus III concurred and accepted the absolute authority of the Church\u2019s third ecumenical council and for many years thereafter so did his successors.\r\nStatements and practice over the subsequent centuries would illustrate Rome\u2019s troubling inconsistency in the matter.\r\nSometimes agreeing with the ancient Catholic Tradition and ecumenical consensus, other times wrongly defending the indefensible corrupt addition. Eminent Latin Churchmen like Alcuin, foreseeing the problems with such an interpolation said  the following, \u201CBeloved brethren look well to the sects of the Spanish error; follow in the steps of the holy Fathers; insert nothing new into the Creed of the Catholic Faith, and in religious functions be not pleased with traditions unknown in ancient times\u201D He wrote this in 804 A.D.\r\n\r\nPope Leo III, five years later agreeing with and echoing Alcuin\u2019s sentiments commissioned an engraving of the Creed upon two tablets of silver in both Greek and Latin hanging them in St. Peter\u2019s Church minus the novel filioque and inscribed beneath the tablets, \u201CI Leo have put up these tablets for the love and preservation of the Orthodox Faith. The Holy Gospel of St. John definitively affirms the ancient Apostolic witness of the unalterable dogma which the Holy\r\nOrthodox Catholic Church steadfastly upholds and which no local synod or single bishop has the authority to amend. \u201CBut when the Counselor comes, whom I shall send even the Spirit of truth, who proceeds from the Father, he will bear witness of me\u201D John 15:26\r\n\r\nWhile arguments from Roman Catholic theologians have often tried to justify the insertion of the \u201CFilioque\u201D clause as an attempt to further clarify an understanding or even resist heresy it is clearly shown to be neither useful let alone helpful. Instead it became the primary catalyst for Rome\u2019s ongoing estrangement from Catholic Tradition and her ongoing departure from The Faith once for all delivered to the saints Jude 1:3 Abbe Guette\u2019 in his excellent book, [The Papacy: It\u2019s Historic Origen and Primitive Relations With the Eastern Churches] speaking the mind of Catholic Tradition says, \u201CThe dogmatic truths of Christianity relating to the very essence of God\u2014that is, of the Infinite\u2014are necessarily mysterious; hence no one should presume to teach them of his own authority. Even the Church herself only preserves them as she has received them. Revelation is a deposit confided by God to His Church and not a philosophical synthesis which may be modified."
+          },
+          "TitlePart": {
+            "Title": "The Filioque"
+          },
+          "AliasPart": {
+            "Alias": "the-filioque"
+          },
+          "PreviewPart": {}
+        },
+        {
+          "ContentItemId": "45sjywhdapr8jvs3axvmjyrhda",
+          "ContentItemVersionId": "46z30erm65q96197c34jysf5w8",
+          "ContentType": "BlogPost",
+          "DisplayText": "Introducing the New Testament Church",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T15:08:42.0447659Z",
+          "PublishedUtc": "2026-09-23T15:08:42.0453341Z",
+          "CreatedUtc": "2026-09-16T18:13:37.1885497Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "icons/Pantocrater.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Serious Christians want to belong to the New Testament Church. But with so many competing denominations how does a serious Christian find the original New Testament Church - the Church founded by our Lord Jesus Christ Himself? Common sense tells us that the New Testament Church must have an unbroken history dating back almost 2,000 years to New Testament times. If a denomination does not have a verifiable history going back to New Testament times it simply cannot be the New Testament Church.\r\n\r\nFaced with this fact of history, some denominations seek to justify their existence with the claim that the original Church founded by Jesus Christ quickly fell into apostasy after the death of the last apostle or during the \u0022dark ages,\u0022 and that a new Church had to be started by some Reformer or Prophet; but such claims contradict the very words of Christ Himself. Jesus not only said, \u0022I will build my Church\u0022 (Matt. 16:18), but he also promised \u0022and the gates of hell shall not prevail against it\u0022 (Matt. 16:18).\r\n\r\nSo how can we find the original New Testament Church that was founded by Jesus Christ Himself and that received the promise of Christ that \u0022the gates of hell shall not prevail against it\u0022 (Matt. 16:18)? The answer to this question is simple: You will find the New Testament Church in the pages of the New Testament. Open your Bible and look at the churches in the New Testament. What Church are the churches found in the New Testament part of today? Baptist? Pentecostal? Methodist? Lutheran? Episcopal? Presbyterian? Roman Catholic? Something else?\r\n\r\nThe indigenous Christians in Jerusalem and the Holy Land, the Mother Church of all Christians, are members of the Orthodox Church. The indigenous Christians in Antioch \u0022where the disciples were first called Christians\u0022 (Acts 11:26) are Orthodox. The Christians of Cyprus and Crete where the Apostle Paul took early missionary journeys are Orthodox. The Christians of Asia Minor where the seven churches of the Book of Revelation are found are Orthodox. The Christians of Corinth, Athens and other Greek cities where the Apostle Paul planted churches and to whom he preached or wrote epistles are all Orthodox. All of these New Testament churches are, and always have been, part of the Orthodox Church. They all have a verifiable and unbroken history dating back to New Testament times, and there never was a moment in history when they were not Orthodox churches. The only church spoken of in the entire New Testament that is not an Orthodox church today is Rome, and Rome was fully Orthodox for a thousand years before falling away into schism in AD 1054. Rome was Orthodox for longer than she has been separated from the Orthodox Church. The Church of Rome was an Orthodox Church for longer than she has been known as the Roman Catholic Church.\r\n\r\nFor the first thousand years of Christianity there was one Church - the Orthodox Church. This is an indisputable fact of history. Then, having unilaterally changed the Nicene Creed, the Church of Rome fell away into schism in AD 1054, eventually becoming known as the Roman Catholic Church. Having separated from the Orthodox Church, Rome continued to change the Faith, introducing novel doctrines such as purgatory and indulgences, leading to the Protestant Reformation in AD 1517. But the Protestant Reformation was really a revolution rather than a reformation because rather than reforming the Roman Church they created new denominations. The Protestant Reformers eliminated one pope, but through their novel doctrines of sola scripture and private interpretation of the Scriptures they essentially abolished all authority and made every individual protestant his or her own pope, causing ecclesiastical chaos. Beginning with the Protestant Reformation in 1517, Christianity in the West began to splinter until today there are literally thousands of separate and competing denominations, with five new denominations being organized every week. In addition, there are uncountable numbers of independent churches. The Lord Jesus Christ established one Church, promised that the gates of hell would never prevail against it, and commanded His disciples to \u0022hear the church\u0022 (Matt. 18:17). All of the others are man-made denominations that arose many centuries after Christ. A human foundation means a human organization, and a human organization means a human and therefore a changing Faith.\r\n\r\nBeside this chaos in Western Christendom, there remains the 300 million-member Orthodox Church. The word Orthodox means both \u0022correct doctrine\u0022 and \u0022correct worship,\u0022 and both the New Testament and history demonstrate that the Orthodox Church, with its unbroken history dating back to New Testament times, is the New Testament Church founded by Jesus Christ Himself. Our Lord Jesus Christ promised that the gates of hell would not prevail against His Church and that promise has been kept. Many Western Christians sadly know little about the Orthodox Church, but what they do know is that it is an \u0022Eastern\u0022 Church and that it refuses to change with the times. Eastern? Of course, it is Eastern. Christianity originated in the Holy Land and the Middle East. Christianity has its roots firmly planted in the East, not in Western Europe or the United States. The Orthodox Church is an Eastern Church because Christianity is Eastern, and it does not change with the times because it has an unchanging message for an ever-changing world. Rather than conforming itself to the world, the Orthodox Church seeks to transform the world by the Light of Christ.\r\n\r\nAlthough the Orthodox Church has its roots firmly planted in the East, it is also the \u0022One Holy, Catholic and Apostolic Church\u0022 founded by Jesus Christ. The word Catholic means both \u0022Universal\u0022 and \u0022Whole and Complete,\u0022 and the Orthodox Church is the One Church for all people of all races and nations, proclaiming an unchanging Faith for all time. Within the Orthodox Church there are believers from every race on earth. The Orthodox Church is made up of people of many nations and cultures who worship God in many languages and according to various liturgical rites. Although the Eastern Rite predominates, especially since the Great Schism (the falling away of Rome) in 1054, there are also many Orthodox Christians in the West who worship according to the Western Rite in a completely Western cultural setting - an ancient Eastern Faith lived and shared in a Western cultural context. There are Western Rite churches and monasteries in the United States, Canada, the United Kingdom, on the continent of Europe, and in Australia and New Zealand, and their numbers are growing. All Orthodox Christians of whatever nation, culture or rite, share the same unchanging and unchangeable \u0022faith which was once delivered unto the saints\u0022 (Jude 3)."
+          },
+          "TitlePart": {
+            "Title": "Introducing the New Testament Church"
+          },
+          "AliasPart": {
+            "Alias": "introducing-the-new-testament-church"
+          },
+          "PreviewPart": {},
+          "Image": {
+            "Image": {
+              "Paths": [
+                "icons/Pantocrater.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "Imagedescription": {
+              "Text": "Pantocrater"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4y75g8d1xv53msw3g75z0056mg",
+          "ContentItemVersionId": "4d6qf4pd5rkmb2sehjsgnc9rcf",
+          "ContentType": "AboutUs",
+          "DisplayText": "About Us Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-24T17:27:04.1183547Z",
+          "PublishedUtc": "2026-09-24T17:27:04.1500792Z",
+          "CreatedUtc": "2026-09-16T14:42:35.3539812Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "AboutUs": {
+            "RelatedBlog": {
+              "ContentItemIds": [
+                "45sjywhdapr8jvs3axvmjyrhda"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "\u003Cp\u003E\u0026lt;h1\u0026gt;St. Thomas Orthodox Church\u0026lt;/h1\u0026gt;\u003Cbr\u003EDiocese of Chicago and Mid-America ROCOR\u003Cbr\u003ESIOUX CITY, IOWA\u003C/p\u003E"
+          },
+          "Media": {
+            "image": {
+              "Paths": [
+                "church photos/131307111_3544633292290578_8592795815772865271_n.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "imagedescription": {
+              "Text": "Church pews"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "## Introducing the New Testament Church\r\n [image]icons/Pantocrater.jpg[/image]\r\n\r\nSerious Christians want to belong to the New Testament Church. But with so many competing\r\ndenominations how does a serious Christian find the original New Testament Church - the Church founded by\r\nour Lord Jesus Christ Himself? Common sense tells us that the New Testament Church must have an unbroken\r\nhistory dating back almost 2,000 years to New Testament times. If a denomination does not have a verifiable\r\nhistory going back to New Testament times it simply cannot be the New Testament Church.\r\n\r\nFaced with this fact of history, some denominations seek to justify their existence with the claim that the\r\noriginal Church founded by Jesus Christ quickly fell into apostasy after the death of the last apostle or during\r\nthe \u0022dark ages,\u0022 and that a new Church had to be started by some Reformer or Prophet; but such claims\r\ncontradict the very words of Christ Himself. Jesus not only said, \u0022I will build my Church\u0022 (Matt. 16:18), but he also\r\npromised \u0022and the gates of hell shall not prevail against it\u0022 (Matt. 16:18).\r\n\r\nSo how can we find the original New Testament Church that was founded by Jesus Christ Himself and that\r\nreceived the promise of Christ that \u0022the gates of hell shall not prevail against it\u0022 (Matt. 16:18)? The answer to this\r\nquestion is simple: You will find the New Testament Church in the pages of the New Testament.\r\nOpen your Bible and look at the churches in the New Testament. What Church are the churches found in\r\nthe New Testament part of today? Baptist? Pentecostal? Methodist? Lutheran? Episcopal? Presbyterian? Roman\r\nCatholic? Something else?\r\n\r\nThe indigenous Christians in Jerusalem and the Holy Land, the Mother Church of all Christians, are\r\nmembers of the Orthodox Church. The indigenous Christians in Antioch \u0022where the disciples were first called\r\nChristians\u0022 (Acts 11:26) are Orthodox. The Christians of Cyprus and Crete where the Apostle Paul took early\r\nmissionary journeys are Orthodox. The Christians of Asia Minor where the seven churches of the Book of\r\nRevelation are found are Orthodox. The Christians of Corinth, Athens and other Greek cities where the Apostle\r\nPaul planted churches and to whom he preached or wrote epistles are all Orthodox.\r\nAll of these New Testament churches are, and always have been, part of the Orthodox Church. They all have\r\na verifiable and unbroken history dating back to New Testament times, and there never was a moment in\r\nhistory when they were not Orthodox churches. The only church spoken of in the entire New Testament that is\r\nnot an Orthodox church today is Rome, and Rome was fully Orthodox for a thousand years before falling away\r\ninto schism in AD 1054. Rome was Orthodox for longer than she has been separated from the Orthodox\r\nChurch. The Church of Rome was an Orthodox Church for longer than she has been known as the Roman\r\nCatholic Church.\r\n\r\nFor the first thousand years of Christianity there was one Church - the Orthodox Church. This is an\r\nindisputable fact of history. Then, having unilaterally changed the Nicene Creed, the Church of Rome fell away\r\ninto schism in AD 1054, eventually becoming known as the Roman Catholic Church. Having separated from the\r\nOrthodox Church, Rome continued to change the Faith, introducing novel doctrines such as purgatory and\r\nindulgences, leading to the Protestant Reformation in AD 1517. But the Protestant Reformation was really a\r\nrevolution rather than a reformation because rather than reforming the Roman Church they created new\r\ndenominations. The Protestant Reformers eliminated one pope, but through their novel doctrines of sola\r\nscripture and private interpretation of the Scriptures they essentially abolished all authority and made every\r\nindividual protestant his or her own pope, causing ecclesiastical chaos.\r\nBeginning with the Protestant Reformation in 1517, Christianity in the West began to splinter until today\r\nthere are literally thousands of separate and competing denominations, with five new denominations being\r\norganized every week. In addition, there are uncountable numbers of independent churches. The Lord Jesus\r\nChrist established one Church, promised that the gates of hell would never prevail against it, and commanded\r\nHis disciples to \u0022hear the church\u0022 (Matt. 18:17). All of the others are man-made denominations that arose many\r\ncenturies after Christ. A human foundation means a human organization, and a human organization means a\r\nhuman and therefore a changing Faith.\r\n\r\nBeside this chaos in Western Christendom, there remains the 300 million-member Orthodox Church. The\r\nword Orthodox means both \u0022correct doctrine\u0022 and \u0022correct worship,\u0022 and both the New Testament and history\r\ndemonstrate that the Orthodox Church, with its unbroken history dating back to New Testament times, is the\r\nNew Testament Church founded by Jesus Christ Himself. Our Lord Jesus Christ promised that the gates of hell\r\nwould not prevail against His Church and that promise has been kept.\r\nMany Western Christians sadly know little about the Orthodox Church, but what they do know is that it is an\r\n\u0022Eastern\u0022 Church and that it refuses to change with the times. Eastern? Of course, it is Eastern. Christianity\r\noriginated in the Holy Land and the Middle East. Christianity has its roots firmly planted in the East, not in\r\nWestern Europe or the United States. The Orthodox Church is an Eastern Church because Christianity is Eastern,\r\nand it does not change with the times because it has an unchanging message for an ever-changing world.\r\nRather than conforming itself to the world, the Orthodox Church seeks to transform the world by the Light of\r\nChrist.\r\n\r\nAlthough the Orthodox Church has its roots firmly planted in the East, it is also the \u0022One Holy, Catholic and\r\nApostolic Church\u0022 founded by Jesus Christ. The word Catholic means both \u0022Universal\u0022 and \u0022Whole and\r\nComplete,\u0022 and the Orthodox Church is the One Church for all people of all races and nations, proclaiming an\r\nunchanging Faith for all time. Within the Orthodox Church there are believers from every race on earth. The\r\nOrthodox Church is made up of people of many nations and cultures who worship God in many languages and\r\naccording to various liturgical rites. Although the Eastern Rite predominates, especially since the Great Schism\r\n(the falling away of Rome) in 1054, there are also many Orthodox Christians in the West who worship according\r\nto the Western Rite in a completely Western cultural setting - an ancient Eastern Faith lived and shared in a\r\nWestern cultural context. There are Western Rite churches and monasteries in the United States, Canada, the\r\nUnited Kingdom, on the continent of Europe, and in Australia and New Zealand, and their numbers are growing.\r\nAll Orthodox Christians of whatever nation, culture or rite, share the same unchanging and unchangeable \u0022faith\r\nwhich was once delivered unto the saints\u0022 (Jude 3).\r\n"
+          },
+          "TitlePart": {
+            "Title": "About Us Page"
+          },
+          "Subtitle": {
+            "Subtitle": {
+              "Text": "Diocese of Chicago and Mid-America ROCOR SIOUX CITY, IOWA",
+              "Markdown": "Diocese of Chicago and Mid-America ROCOR\r\nSIOUX CITY, IOWA"
+            },
+            "Markdown": "Diocese of Chicago and Mid-America ROCOR\r\nSIOUX CITY, IOWA"
+          },
+          "Image": {
+            "Image": {
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "Imagedescription": {
+              "Text": null
+            }
+          },
+          "PageBanner": {
+            "Image": {
+              "Paths": [
+                "church photos/churchInside_cut.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "ImageDescription": {
+              "Text": "churc pews"
+            }
+          },
+          "Address": {
+            "StreetAddress": {
+              "Text": "1100 Jones St"
+            },
+            "City": {
+              "Text": "Sioux City"
+            },
+            "StateRegion": {
+              "Text": "IA"
+            },
+            "PostalZIPCode": {
+              "Text": "51105"
+            },
+            "Country": {
+              "Text": "United States"
+            }
+          },
+          "Contactinfo": {
+            "Info": {
+              "Text": "Rev. Fr. Kevin Kirwan Ph. 712-898-2662 email fr.kevin@holyorthodoxy.org"
+            },
+            "Markdown": "Rev. Fr. Kevin Kirwan\r\nPh. 712-898-2662\r\nemail fr.kevin@holyorthodoxy.org"
+          },
+          "MainInformation": {
+            "Info": {
+              "Text": "St. Thomas is a ROCOR parish under the omophorion of Archbishop Peter of The  Chicago and Mid-America Diocese"
+            }
+          },
+          "Additionalinformation": {
+            "Markdown": "## Our History\r\nFounded in 1916, it is the oldest Orthodox parish in Sioux City. It originally served Syrian and Lebanese immigrants under the Greek Orthodox Patriarchate of Antioch before later becoming part of ROCOR\u0027s Diocese of Chicago and Mid-America.Community: It serves as a pan-Orthodox community drawing members from across the entire Siouxland region.\r\n\r\nSt Thomas Orthodox Church is the  **New Testament Church** "
+          },
+          "HeaderMain": {
+            "Header": {
+              "Text": "St. Thomas Orthodox Church"
+            }
+          },
+          "Subtitle1": {
+            "Markdown": "Diocese of Chicago and Mid-America ROCOR\r\nSIOUX CITY, IOWA"
+          }
+        },
+        {
+          "ContentItemId": "468r6cb1t9g8503q4w52ec5cct",
+          "ContentItemVersionId": "4vxrahqg5mpmpyjq9dwxy5krct",
+          "ContentType": "BlogPost",
+          "DisplayText": "TEst TEst ",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-24T17:30:23.199825Z",
+          "PublishedUtc": "2026-09-24T17:30:23.2139771Z",
+          "CreatedUtc": "2026-09-24T17:30:23.199825Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "church life/72560752_2483936835026901_2590853706081632256_n.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "TEst TEst  odskgpeorjgpok perklhg[jktrhmikmnblktp[;l\u0027"
+          },
+          "TitlePart": {
+            "Title": "TEst TEst "
+          },
+          "AliasPart": {
+            "Alias": "test-test"
+          },
+          "PreviewPart": {}
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "Users": [
+        {
+          "Id": 6,
+          "UserId": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "UserName": "admin",
+          "Email": "stthomasorthodoxtech@yahoo.com",
+          "PasswordHash": "AQAAAAIAAYagAAAAEHAbpmXK8i0Yn9AQ07DiTB8Gpj/QxQm1v3N1cAhmfjNwnpLE\u002BjAQJxN2R/UxyVot5g==",
+          "EmailConfirmed": true,
+          "IsEnabled": true,
+          "NormalizedEmail": "STTHOMASORTHODOXTECH@YAHOO.COM",
+          "NormalizedUserName": "ADMIN",
+          "SecurityStamp": "UBGQVD26OVYJTZYTQGBTIO7MPGWE3SGS",
+          "PhoneNumberConfirmed": false,
+          "TwoFactorEnabled": false,
+          "IsLockoutEnabled": true,
+          "AccessFailedCount": 0,
+          "RoleNames": [
+            "Administrator"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "custom-settings"
+    },
+    {
+      "name": "MediaProfiles",
+      "MediaProfiles": {}
+    },
+    {
+      "name": "Feature",
+      "enable": [
+        "Application.Default",
+        "backend_Orchard",
+        "OrchardCore.Settings",
+        "OrchardCore.Admin",
+        "OrchardCore.Liquid.Core",
+        "OrchardCore.Liquid",
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Shortcodes",
+        "OrchardCore.Html",
+        "OrchardCore.Recipes.Core",
+        "OrchardCore.Title",
+        "OrchardCore.Templates",
+        "OrchardCore.Alias",
+        "OrchardCore.Apis.GraphQL",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Autoroute",
+        "OrchardCore.Scripting",
+        "OrchardCore.Recipes",
+        "OrchardCore.Indexing",
+        "OrchardCore.ContentFields",
+        "OrchardCore.Roles.Core",
+        "OrchardCore.Users",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Deployment",
+        "OrchardCore.Cors",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Queries.Core",
+        "OrchardCore.Widgets",
+        "OrchardCore.Resources",
+        "OrchardCore.Features",
+        "OrchardCore.Flows",
+        "OrchardCore.Rules",
+        "OrchardCore.Layers",
+        "OrchardCore.Lists",
+        "OrchardCore.Markdown",
+        "OrchardCore.Media",
+        "OrchardCore.Menu",
+        "OrchardCore.Navigation",
+        "OrchardCore.Queries",
+        "OrchardCore.Roles",
+        "OrchardCore.Security",
+        "OrchardCore.Shortcodes.Templates",
+        "OrchardCore.Themes",
+        "TheAdmin"
+      ],
+      "disable": [
+        "OrchardCore.AdminDashboard",
+        "OrchardCore.AdminMenu",
+        "OrchardCore.AdminTemplates",
+        "OrchardCore.ArchiveLater",
+        "OrchardCore.AuditTrail",
+        "OrchardCore.Setup",
+        "OrchardCore.AutoSetup",
+        "OrchardCore.AzureAI",
+        "OrchardCore.BackgroundTasks",
+        "OrchardCore.ContentFields.Indexing.SQL",
+        "OrchardCore.ContentFields.Indexing.SQL.UserPicker",
+        "OrchardCore.Localization",
+        "OrchardCore.Users.Localization",
+        "OrchardCore.ContentLocalization",
+        "OrchardCore.ContentLocalization.ContentCulturePicker",
+        "OrchardCore.Sitemaps",
+        "OrchardCore.ContentLocalization.Sitemaps",
+        "OrchardCore.Contents.Deployment.AddToDeploymentPlan",
+        "OrchardCore.Contents.Deployment.Download",
+        "OrchardCore.Contents.Deployment.ExportContentToDeploymentTarget",
+        "OrchardCore.Contents.FileContentDefinition",
+        "OrchardCore.Contents.VersionPruning",
+        "OrchardCore.DataLocalization",
+        "OrchardCore.DataProtection.Azure",
+        "OrchardCore.Elasticsearch",
+        "OrchardCore.Email",
+        "OrchardCore.Email.Azure",
+        "OrchardCore.Email.Smtp",
+        "OrchardCore.Facebook",
+        "OrchardCore.Users.ExternalAuthentication",
+        "OrchardCore.Facebook.Login",
+        "OrchardCore.Facebook.Pixel",
+        "OrchardCore.Facebook.Widgets",
+        "OrchardCore.Feeds",
+        "OrchardCore.Forms",
+        "OrchardCore.GitHub.Authentication",
+        "OrchardCore.Google.Analytics",
+        "OrchardCore.Google.GoogleAuthentication",
+        "OrchardCore.Google.TagManager",
+        "OrchardCore.HealthChecks",
+        "OrchardCore.Https",
+        "OrchardCore.Indexing.Worker",
+        "OrchardCore.Localization.AdminCulturePicker",
+        "OrchardCore.Localization.ContentLanguageHeader",
+        "OrchardCore.Lucene",
+        "OrchardCore.Media.Cache",
+        "OrchardCore.Media.AmazonS3",
+        "OrchardCore.Media.AmazonS3.ImageSharpImageCache",
+        "OrchardCore.Media.Azure.ImageSharpImageCache",
+        "OrchardCore.Media.Azure.Storage",
+        "OrchardCore.Media.Indexing",
+        "OrchardCore.Media.Indexing.OpenXML",
+        "OrchardCore.Media.Indexing.Pdf",
+        "OrchardCore.Media.Indexing.Text",
+        "OrchardCore.Media.Security",
+        "OrchardCore.Media.Slugify",
+        "OrchardCore.Microsoft.Authentication.AzureAD",
+        "OrchardCore.Microsoft.Authentication.MicrosoftAccount",
+        "OrchardCore.MiniProfiler",
+        "OrchardCore.Notifications",
+        "OrchardCore.Notifications.Email",
+        "OrchardCore.Sms",
+        "OrchardCore.Notifications.Sms",
+        "OrchardCore.OpenId",
+        "OrchardCore.OpenId.Client",
+        "OrchardCore.OpenId.Management",
+        "OrchardCore.OpenId.Server",
+        "OrchardCore.OpenId.Validation",
+        "OrchardCore.Placements",
+        "OrchardCore.Placements.FileStorage",
+        "OrchardCore.PublishLater",
+        "OrchardCore.Queries.Sql",
+        "OrchardCore.ReCaptcha",
+        "OrchardCore.ReCaptcha.Users",
+        "OrchardCore.Redis",
+        "OrchardCore.Redis.Bus",
+        "OrchardCore.Redis.Cache",
+        "OrchardCore.Redis.DataProtection",
+        "OrchardCore.Redis.Lock",
+        "OrchardCore.XmlRpc",
+        "OrchardCore.RemotePublishing",
+        "OrchardCore.ResponseCompression",
+        "OrchardCore.ReverseProxy",
+        "OrchardCore.Search",
+        "OrchardCore.Search.AzureAI",
+        "OrchardCore.Search.Elasticsearch",
+        "OrchardCore.Search.Elasticsearch.ContentPicker",
+        "OrchardCore.Search.Elasticsearch.Worker",
+        "OrchardCore.Search.Lucene",
+        "OrchardCore.Search.Lucene.ContentPicker",
+        "OrchardCore.Search.Lucene.Worker",
+        "OrchardCore.Seo",
+        "OrchardCore.Sitemaps.Cleanup",
+        "OrchardCore.Sitemaps.RazorPages",
+        "OrchardCore.Sms.Azure",
+        "OrchardCore.Spatial",
+        "OrchardCore.Taxonomies",
+        "OrchardCore.Taxonomies.ContentsAdminList",
+        "OrchardCore.Tenants",
+        "OrchardCore.Tenants.Distributed",
+        "OrchardCore.Tenants.FeatureProfiles",
+        "OrchardCore.Tenants.FileProvider",
+        "OrchardCore.Twitter",
+        "OrchardCore.Twitter.Signin",
+        "OrchardCore.UrlRewriting",
+        "OrchardCore.Users.2FA",
+        "OrchardCore.Users.2FA.AuthenticatorApp",
+        "OrchardCore.Users.2FA.Email",
+        "OrchardCore.Users.2FA.Sms",
+        "OrchardCore.Users.AuditTrail",
+        "OrchardCore.Users.Authentication.CacheTicketStore",
+        "OrchardCore.Users.ChangeEmail",
+        "OrchardCore.Users.CustomUserSettings",
+        "OrchardCore.Users.Registration",
+        "OrchardCore.Users.ResetPassword",
+        "OrchardCore.Users.TimeZone",
+        "OrchardCore.Workflows",
+        "OrchardCore.Workflows.Http",
+        "OrchardCore.Workflows.Session",
+        "OrchardCore.Workflows.Timers"
+      ]
+    },
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "48zjh5c30ks7kvcqxg4edmrb48",
+          "ContentItemVersionId": "43at4vveg4wv6ryz8cqj6cq4dz",
+          "ContentType": "Menu",
+          "DisplayText": "Home",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-14T21:05:55.7534718Z",
+          "PublishedUtc": "2026-09-14T21:05:55.7548031Z",
+          "CreatedUtc": "2026-09-14T20:58:58.5938345Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Home"
+          },
+          "AliasPart": {
+            "Alias": "home"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4ht14y8dxq4tbrrdq0vn78apwd",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Home",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "4x5xmhva2xr07540qcm4da3n47",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "About Us",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/about-us",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "4z484hng88zkvs50ytrtb81sc8",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Contact",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/contact",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "4e8j1950n8x8kzw8s60aqqe7x9",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Clergy",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/clergy",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              },
+              {
+                "ContentItemId": "40jn0f8x4n1xeymn6f5g9t2vm6",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Literature",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": null,
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "/literature",
+                  "Target": null
+                },
+                "LinkMenuItem": {},
+                "MenuItemPermissionPart": {
+                  "PermissionNames": []
+                }
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4q0fpmds76gaq593fker03src1",
+          "ContentItemVersionId": "4hbqttc6at7xv2y405s5w6ab5t",
+          "ContentType": "Contactinfo",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-16T18:04:26.0495556Z",
+          "PublishedUtc": "2026-09-16T18:04:26.0903766Z",
+          "CreatedUtc": "2026-09-16T18:04:26.0495556Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "Contactinfo": {},
+          "MarkdownBodyPart": {
+            "Markdown": "Rev. Fr. Kevin Kirwan\r\nPh. 712-898-2662\r\nemail fr.kevin@holyorthodoxy.org"
+          }
+        },
+        {
+          "ContentItemId": "40jtxspq8h7he69pcf1c02nh59",
+          "ContentItemVersionId": "41yhn12z3axqtvyq781pce1f43",
+          "ContentType": "ChurchAddress",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-16T18:09:53.2203243Z",
+          "PublishedUtc": "2026-09-16T18:09:53.2223382Z",
+          "CreatedUtc": "2026-09-16T18:09:53.2203243Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "ChurchAddress": {},
+          "Address": {
+            "StreetAddress": {
+              "Text": "1100 Jones St"
+            },
+            "City": {
+              "Text": "Sioux City"
+            },
+            "StateRegion": {
+              "Text": "IA"
+            },
+            "PostalZIPCode": {
+              "Text": "51105"
+            },
+            "Country": {
+              "Text": "United States"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4w6ner9v9www516ag03gh2nx46",
+          "ContentItemVersionId": "4dr3j4kkfjww8179eza9hx57cf",
+          "ContentType": "Gallery",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-17T17:09:45.2768908Z",
+          "PublishedUtc": "2026-09-17T17:09:45.2775991Z",
+          "CreatedUtc": "2026-09-17T16:58:11.1035462Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "Gallery": {
+            "image": {
+              "Paths": [
+                "church life/181653836_3926901297397107_6657125456451054123_n.jpg",
+                "church life/511289354_10056024937818015_5990070440859745363_n.jpg",
+                "church life/59423110_2188854654535122_5192736282589003776_n.jpg",
+                "church life/72560752_2483936835026901_2590853706081632256_n.jpg"
+              ],
+              "MediaTexts": [
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          },
+          "Image": {
+            "Image": {
+              "Paths": [
+                "church life/181653836_3926901297397107_6657125456451054123_n.jpg",
+                "church life/511289354_10056024937818015_5990070440859745363_n.jpg",
+                "church life/59423110_2188854654535122_5192736282589003776_n.jpg"
+              ],
+              "MediaTexts": [
+                "",
+                "",
+                ""
+              ]
+            },
+            "Imagedescription": {
+              "Text": null
+            }
+          }
+        },
+        {
+          "ContentItemId": "48d8w26cjcn1qzbmt8yyb8wtmh",
+          "ContentItemVersionId": "4cvdp33psz2n85pqj890e86yc6",
+          "ContentType": "SmallLogo",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-17T17:09:48.1795792Z",
+          "PublishedUtc": "2026-09-17T17:09:48.1807102Z",
+          "CreatedUtc": "2026-09-17T16:30:48.1710311Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "SmallLogo": {
+            "image": {
+              "Paths": [
+                "logo/logo.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            }
+          },
+          "Image": {
+            "Image": {
+              "Paths": [
+                "logo/logo.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "Imagedescription": {
+              "Text": "church logo"
+            }
+          }
+        },
+        {
+          "ContentItemId": "48zrvg9hxn0ravae7qq9y8b8nc",
+          "ContentItemVersionId": "425g51ntk5qebx8scf1ayrjmde",
+          "ContentType": "BlogPost",
+          "DisplayText": "Martyr Mamas",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T14:54:48.3401356Z",
+          "PublishedUtc": "2026-09-23T14:54:48.3422349Z",
+          "CreatedUtc": "2026-09-22T23:36:55.1039301Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "icons/Martyr Mamas.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "other"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "The Martyr Mamas lived an ascetic life in the wilderness, where wild beasts would come to him. He tended goats and does, milked them, and distributed the cheese made from their milk to the poor. The governor of Caesarea seized the saint for confessing Christ and threw him to the wild beasts to be torn apart. But they did not touch him. Then a crowd of pagans stoned the martyr. \r\nDuring the time of Basil the Great, the martyr was venerated in Caesarea of Cappadocia, and the holy hierarch dedicated one of his homilies to his memory. In it, mentioning the martyr\u0027s life as a shepherd, Saint Basil discussed the loftiness of the pastoral ministry, using the words of the Psalms to indicate the closeness of a shepherd to a king: \u0022The Lord, uniting both in Himself, is both Shepherd and King. What is the dignity of a shepherd? \u0027The Lord is my shepherd\u0027 (Ps. 22:1). In what way is the pastoral office a sister to the royal one? \u0027Who is this King of glory?\u0027 (Ps. 23:8). He who is a shepherd here, is a king there."
+          },
+          "TitlePart": {
+            "Title": "Martyr Mamas"
+          },
+          "AliasPart": {
+            "Alias": "martyr-mamas"
+          },
+          "PreviewPart": {}
+        },
+        {
+          "ContentItemId": "4cd8mnw79fr8k7avgyby6tgq57",
+          "ContentItemVersionId": "4939rebxvcwp63cc40yz3h0jwj",
+          "ContentType": "BlogPost",
+          "DisplayText": "The Holy Eucharist",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T15:08:08.6944466Z",
+          "PublishedUtc": "2026-09-23T15:08:08.6951177Z",
+          "CreatedUtc": "2026-09-22T23:48:10.4655785Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "icons/HolyEucharist-Icon.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "***\u0022Oh taste and see that the Lord is good\u0022 (Ps. 34:8)***\r\n\r\n### WHAT DOES THE WORD \u0022EUCHARIST\u0022 MEAN?\r\nThe word Eucharist comes from the Greek and means Thanksgiving. The Lord\u0027s Supper is called the Holy Eucharist because when Christ instituted it He gave thanks, \u0022For I received from the Lord that which I also delivered to you: that the Lord Jesus on the same night in which He was betrayed took bread; and when He had given thanks, He broke it and said, \u0027Take, eat; this is My body which is broken for you; do this in remembrance of Me.\u0027 In the same manner He also took the cup after supper, saying, this cup is the new covenant in My blood. This do, as often as you drink it, in remembrance of Me\u0022 (1 Cor. 11:23-25).\r\n\r\n### THE PLACE OF THE HOLY EUCHARIST IN CHRISTIAN WORSHIP\r\nThe Holy Eucharist is the principal act of Christian worship as it is the one Service instituted by Christ Himself. Other religions have prayer, readings, hymns and sermons, but only Christians celebrate the Eucharist. Following the example of the Apostles and early Christians, the Church has assembled on the Lord\u0027s Day (Sunday) week by week for nearly 2,000 years to celebrate the Holy Eucharist. \u0022And they continued steadfastly in the apostles\u0027 doctrine and\r\nfellowship, in the breaking of bread [the Eucharist], and in prayers\u0022 (Acts 2:42).\r\n\r\n### THE SACRAMENT OF HOLY COMMUNION \r\n\r\nIn the Sacrament of Holy Communion, the Body and Blood of Christ are received. At the Last Supper the Lord Jesus Christ said, \u0022This is my body\u0022 and \u0022This is my blood.\u0022 He did not say, \u0022This represents my body\u0022 or \u0022This is a symbol of my blood.\u0022 Jesus said, \u0022\u0027I am the bread of life. Your fathers ate the manna in the wilderness, and are dead. This is the bread which comes down from heaven, that one may eat of it and not die. I am the living bread which came down from heaven. If anyone eats of this bread, he will live forever; and the bread that I shall give is My flesh, which I shall give for the life of the world.\u0027 The Jews therefore quarreled among themselves, saying, \u0027How can this Man give us His flesh to eat?\u0027 Then Jesus said to them, \u0027Most assuredly, I say to you, unless you eat the flesh of the Son of Man and drink His blood, you have no life in you. Whoever eats My flesh and drinks My blood has eternal life, and I will raise him up at the last day. For My flesh is food indeed, and My blood is drink indeed. He who eats My flesh and drinks My blood abides in Me, and I in him. As the living Father sent Me, and I live because of the Father, so he who feeds on Me will live because of Me. This is the bread which came down from heaven - not as your fathers ate the manna, and are dead. He who eats this bread will live forever\u0022 (John 6:48-58).\r\n\r\nJust like today, many of the disciples who heard these words would not accept them. \u0022Therefore, many of His disciples, when they heard this, said, \u0027This is a hard saying; who can understand it?\u0022 (John 6:60). Yet Jesus did not take His words back, or explain that they were only meant to be taken \u0022symbolically.\u0022 And just like today, from that time many of His disciples went back and walked with Him no more.\u0022 (John 6:66). The Apostles and early Christians understood that Christ meant his words to be taken literally. The Sacrament of Holy Communion does not merely represent the Body and Blood of Christ, but actually presents the Body and Blood of Christ. The\r\ntrue Body and Blood of Christ is received in the Sacrament of Holy Communion.\r\n\r\nThe Apostle Paul wrote, \u0022The cup of blessing which we bless, is it not the communion of the blood of Christ? The bread which we break, is it not the communion of the body of Christ?\u0022 (I Cor. 10:16). Because Christ is really present in the Sacrament of Holy Communion, St. Paul goes on to warn, \u0022Therefore whoever eats this bread or drinks this cup of the Lord in an unworthy manner will be guilty of the body and blood of the Lord. But let a man examine himself, and so let him eat of the bread and drink of the cup. For he who eats and drinks in an unworthy manner eats and drinks judgment to himself, not discerning the Lord\u0027s body.\u0022 (I Cor. 11:27-29).\r\n\r\nThe early Church believed in the Real Presence of Christ in the Sacrament of Holy Communion, and so did all Christians everywhere for some 1,500 years until the Protestant Reformation in Western Europe in the 16th century.\r\nSt. Ignatius, an early Church Father, lived from AD 30 to 107. He was Bishop of Antioch, and was martyred for his faith. He was a disciple of the Apostle John. While awaiting martyrdom he wrote a number of epistles (letters) to various churches. To the Church in Ephesus he wrote, \u0022obey the bishop and presbytery with an undivided mind, breaking one and the same bread, which is the medicine of immortality, and the antidote to prevent us from dying, but that we should live forever in Jesus Christ\u0022 (Epistle to the Ephesians, c. AD 105).\r\n\r\nIn his Epistle to the Romans, (c. AD 105), St. Ignatius of Antioch wrote, \u0022I desire the bread of God, the heavenly bread, the bread of life, which is the flesh of Jesus Christ, the Son of God, who became afterwards the seed of David and Abraham; and I desire the drink of God, namely His blood, which is incorruptible love and eternal life.\u0022 St. Justin Martyr (AD 100-165) wrote, \u201CAnd this food is called among us the Eucharist... For not as common bread and\r\ncommon drink do we receive these; but in like manner as Jesus Christ our Saviour, having been made flesh by the Word of God, had both flesh and blood for our salvation, so likewise have we been taught that the food which is blessed by the prayer of His word, and from which our blood and flesh by transmutation are nourished, is the flesh and blood of that Jesus who was made flesh\u0022 (First Apology).\r\n\r\nSt. Cyril was an early Bishop of Jerusalem, the Mother Church of Christendom. Around the year AD 350 he delivered introductory lectures to his classes of catechumens. Regarding the Eucharist he said, \u0022The bread and wine of the Eucharist, before the invocation of the holy and adorable Trinity, were simple bread and wine; but, after the invocation, the bread becomes the body of Christ and the wine becomes the blood of Christ\u0022 (Mystagogical Lecture 1.7).\r\nSt. Augustine of Hippo (AD 354-430) said, \u0022I am mindful of my promise. For I promised you, who have now been baptized, a sermon in which I would explain the Sacrament of the Lord\u0027s Table, which you now look upon and of which you last night were made participants. You ought to know what you have received, what you are going to receive, and what you ought to receive daily. That bread which you see on the altar, having been sanctified by the word of God, is the Body of Christ. That chalice, or rather, what is in that chalice, having been sanctified by the word God, is the Blood of Christ. Through that bread and wine, the Lord Christ willed to commend his Body and Blood, which He poured out for us unto the forgiveness of sins\u0022\r\n\r\n*(Sermons).*\r\n#### WHO CAN CELEBRATE THE HOLY EUCHARIST?\r\nIn his Epistle to the Smyrnaeans (c. AD 105), St. Ignatius of Antioch, a disciple of the Apostle John, wrote, \u0022See that ye follow the bishop, even as Jesus Christ does the Father, and the presbytery [the priests] as ye would the apostles; and\r\nreverence the deacons, as being the institution of God. Let no man do anything connected with the Church without the bishop. Let that be deemed a proper Eucharist, which is [celebrated] either by the bishop, or by one to whom he entrusted it [a priest].\u0022\r\n\r\nThe Orthodox Church is the historic Church which Christ Himself established. We have a verifiable and unbroken history going back nearly 2,000 years. We still believe in the Real Presence of Christ in the Sacrament of Holy Communion and our bishops and priests still celebrate the Holy Eucharist every Lord\u0027s Day."
+          },
+          "TitlePart": {
+            "Title": "The Holy Eucharist"
+          },
+          "AliasPart": {
+            "Alias": "the-holy-eucharist"
+          },
+          "PreviewPart": {}
+        },
+        {
+          "ContentItemId": "4g2nr3m2a2fkwv8qcxt56ceb49",
+          "ContentItemVersionId": "4jx6mfzn69g1qy2pwmkgc247mr",
+          "ContentType": "BlogPost",
+          "DisplayText": "The Filioque",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T15:08:31.176668Z",
+          "PublishedUtc": "2026-09-23T15:08:31.1786893Z",
+          "CreatedUtc": "2026-09-22T23:42:12.3164201Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "## Why it is heterodox\r\n\r\n If you were to attend a Roman Catholic Mass, an Anglican or Lutheran service and listened to Clergy  the recitation of Literature  the Nicene Creed you would hear a strange three-word addition in their altered profession of Faith.\r\nThe seeming but not so innocent phrase [and the Son] was placed after these words in the Church\u0027s Symbol of Faith \u201CAnd in the Holy Spirit who proceeds from the Father [and the Son\u201D] This three-word appendage is nowhere to be found in the original confession coming out of the ancient ecumenical councils.\r\n\r\nA little over a thousand years ago (1014 A.D.) the Roman Catholic Church succumbed to a temptation that had been\r\nunsettling her for several hundred years previous and officially inserted the innovative Filioque clause in their recitation of the\r\nof the Creed for the first time in a papal Mass.\r\n\r\nThis event marked what many consider the hard beginning of Rome\u2019s schism which would reach fruition in 1054 A.D. Rome had now officially allowed a new understanding regarding the relationship within the Godhead to be inserted into the Creed in violation of the doctrinal formulations of the Great Ecumenical Councils. It also tacitly asserted the authority of the Roman Pontiff to override the Church\u2019s firmly established understanding and ecumenical consensus. Consequently, Rome estranged herself from the other four great Patriarchal Catholic Sees and departed Orthodox Catholic consensus.\r\n he genesis of this innovation can be traced back to two isolated local Council of Bishops in Toledo Spain 633 \u0026 653 A.D. A regional group of western bishops unilaterally authorized the novel addition which wrongly states the Holy Spirit\u2019s eternal procession is not uniquely from the Father but this procession is also from the Son thereby contradicting the Catholic Church\u2019s witness and teaching expressed by the Ecumenical Nicene and Constantinopolitan Councils of 325 and 381 A.D. which teaches the eternal procession of the Holy Spirit as emanating from the Father.\r\n\r\nThe Holy Spirit\u2019s procession from the Father, who is the fountainhead of the Godhead is the source and cause of The Holy Spirit\u0027s eternal procession. Likewise, the Son\u0027s being eternally begotten of the Father. Should we also add another Filioque stating the Son is eternally begotten of the Father \u0022and the Holy Spirit\u0022? To do either hopelessly confuses the proper distinction of persons in the Godhead within what is ultimately an unfathomable mystery. We have no more business saying the Son is eternally begotten of both the Father and Holy Spirit as we would confessing a dual procession of the Holy Spirit being from both the Father and Son.\r\n\r\nBeside the problems this presents theologically the Church\u2019s third Ecumenical Council held in Ephesus in 431 A.D. to deal with the Nestorian heresy made an emphatic point to uphold the two previous councils and forcefully condemned any tampering with the wording of the Creed with solemn anathemas.\r\n\r\nThe Bishop of Rome Sixtus III concurred and accepted the absolute authority of the Church\u2019s third ecumenical council and for many years thereafter so did his successors.\r\nStatements and practice over the subsequent centuries would illustrate Rome\u2019s troubling inconsistency in the matter.\r\nSometimes agreeing with the ancient Catholic Tradition and ecumenical consensus, other times wrongly defending the indefensible corrupt addition. Eminent Latin Churchmen like Alcuin, foreseeing the problems with such an interpolation said  the following, \u201CBeloved brethren look well to the sects of the Spanish error; follow in the steps of the holy Fathers; insert nothing new into the Creed of the Catholic Faith, and in religious functions be not pleased with traditions unknown in ancient times\u201D He wrote this in 804 A.D.\r\n\r\nPope Leo III, five years later agreeing with and echoing Alcuin\u2019s sentiments commissioned an engraving of the Creed upon two tablets of silver in both Greek and Latin hanging them in St. Peter\u2019s Church minus the novel filioque and inscribed beneath the tablets, \u201CI Leo have put up these tablets for the love and preservation of the Orthodox Faith. The Holy Gospel of St. John definitively affirms the ancient Apostolic witness of the unalterable dogma which the Holy\r\nOrthodox Catholic Church steadfastly upholds and which no local synod or single bishop has the authority to amend. \u201CBut when the Counselor comes, whom I shall send even the Spirit of truth, who proceeds from the Father, he will bear witness of me\u201D John 15:26\r\n\r\nWhile arguments from Roman Catholic theologians have often tried to justify the insertion of the \u201CFilioque\u201D clause as an attempt to further clarify an understanding or even resist heresy it is clearly shown to be neither useful let alone helpful. Instead it became the primary catalyst for Rome\u2019s ongoing estrangement from Catholic Tradition and her ongoing departure from The Faith once for all delivered to the saints Jude 1:3 Abbe Guette\u2019 in his excellent book, [The Papacy: It\u2019s Historic Origen and Primitive Relations With the Eastern Churches] speaking the mind of Catholic Tradition says, \u201CThe dogmatic truths of Christianity relating to the very essence of God\u2014that is, of the Infinite\u2014are necessarily mysterious; hence no one should presume to teach them of his own authority. Even the Church herself only preserves them as she has received them. Revelation is a deposit confided by God to His Church and not a philosophical synthesis which may be modified."
+          },
+          "TitlePart": {
+            "Title": "The Filioque"
+          },
+          "AliasPart": {
+            "Alias": "the-filioque"
+          },
+          "PreviewPart": {}
+        },
+        {
+          "ContentItemId": "45sjywhdapr8jvs3axvmjyrhda",
+          "ContentItemVersionId": "46z30erm65q96197c34jysf5w8",
+          "ContentType": "BlogPost",
+          "DisplayText": "Introducing the New Testament Church",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-23T15:08:42.0447659Z",
+          "PublishedUtc": "2026-09-23T15:08:42.0453341Z",
+          "CreatedUtc": "2026-09-16T18:13:37.1885497Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "icons/Pantocrater.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Serious Christians want to belong to the New Testament Church. But with so many competing denominations how does a serious Christian find the original New Testament Church - the Church founded by our Lord Jesus Christ Himself? Common sense tells us that the New Testament Church must have an unbroken history dating back almost 2,000 years to New Testament times. If a denomination does not have a verifiable history going back to New Testament times it simply cannot be the New Testament Church.\r\n\r\nFaced with this fact of history, some denominations seek to justify their existence with the claim that the original Church founded by Jesus Christ quickly fell into apostasy after the death of the last apostle or during the \u0022dark ages,\u0022 and that a new Church had to be started by some Reformer or Prophet; but such claims contradict the very words of Christ Himself. Jesus not only said, \u0022I will build my Church\u0022 (Matt. 16:18), but he also promised \u0022and the gates of hell shall not prevail against it\u0022 (Matt. 16:18).\r\n\r\nSo how can we find the original New Testament Church that was founded by Jesus Christ Himself and that received the promise of Christ that \u0022the gates of hell shall not prevail against it\u0022 (Matt. 16:18)? The answer to this question is simple: You will find the New Testament Church in the pages of the New Testament. Open your Bible and look at the churches in the New Testament. What Church are the churches found in the New Testament part of today? Baptist? Pentecostal? Methodist? Lutheran? Episcopal? Presbyterian? Roman Catholic? Something else?\r\n\r\nThe indigenous Christians in Jerusalem and the Holy Land, the Mother Church of all Christians, are members of the Orthodox Church. The indigenous Christians in Antioch \u0022where the disciples were first called Christians\u0022 (Acts 11:26) are Orthodox. The Christians of Cyprus and Crete where the Apostle Paul took early missionary journeys are Orthodox. The Christians of Asia Minor where the seven churches of the Book of Revelation are found are Orthodox. The Christians of Corinth, Athens and other Greek cities where the Apostle Paul planted churches and to whom he preached or wrote epistles are all Orthodox. All of these New Testament churches are, and always have been, part of the Orthodox Church. They all have a verifiable and unbroken history dating back to New Testament times, and there never was a moment in history when they were not Orthodox churches. The only church spoken of in the entire New Testament that is not an Orthodox church today is Rome, and Rome was fully Orthodox for a thousand years before falling away into schism in AD 1054. Rome was Orthodox for longer than she has been separated from the Orthodox Church. The Church of Rome was an Orthodox Church for longer than she has been known as the Roman Catholic Church.\r\n\r\nFor the first thousand years of Christianity there was one Church - the Orthodox Church. This is an indisputable fact of history. Then, having unilaterally changed the Nicene Creed, the Church of Rome fell away into schism in AD 1054, eventually becoming known as the Roman Catholic Church. Having separated from the Orthodox Church, Rome continued to change the Faith, introducing novel doctrines such as purgatory and indulgences, leading to the Protestant Reformation in AD 1517. But the Protestant Reformation was really a revolution rather than a reformation because rather than reforming the Roman Church they created new denominations. The Protestant Reformers eliminated one pope, but through their novel doctrines of sola scripture and private interpretation of the Scriptures they essentially abolished all authority and made every individual protestant his or her own pope, causing ecclesiastical chaos. Beginning with the Protestant Reformation in 1517, Christianity in the West began to splinter until today there are literally thousands of separate and competing denominations, with five new denominations being organized every week. In addition, there are uncountable numbers of independent churches. The Lord Jesus Christ established one Church, promised that the gates of hell would never prevail against it, and commanded His disciples to \u0022hear the church\u0022 (Matt. 18:17). All of the others are man-made denominations that arose many centuries after Christ. A human foundation means a human organization, and a human organization means a human and therefore a changing Faith.\r\n\r\nBeside this chaos in Western Christendom, there remains the 300 million-member Orthodox Church. The word Orthodox means both \u0022correct doctrine\u0022 and \u0022correct worship,\u0022 and both the New Testament and history demonstrate that the Orthodox Church, with its unbroken history dating back to New Testament times, is the New Testament Church founded by Jesus Christ Himself. Our Lord Jesus Christ promised that the gates of hell would not prevail against His Church and that promise has been kept. Many Western Christians sadly know little about the Orthodox Church, but what they do know is that it is an \u0022Eastern\u0022 Church and that it refuses to change with the times. Eastern? Of course, it is Eastern. Christianity originated in the Holy Land and the Middle East. Christianity has its roots firmly planted in the East, not in Western Europe or the United States. The Orthodox Church is an Eastern Church because Christianity is Eastern, and it does not change with the times because it has an unchanging message for an ever-changing world. Rather than conforming itself to the world, the Orthodox Church seeks to transform the world by the Light of Christ.\r\n\r\nAlthough the Orthodox Church has its roots firmly planted in the East, it is also the \u0022One Holy, Catholic and Apostolic Church\u0022 founded by Jesus Christ. The word Catholic means both \u0022Universal\u0022 and \u0022Whole and Complete,\u0022 and the Orthodox Church is the One Church for all people of all races and nations, proclaiming an unchanging Faith for all time. Within the Orthodox Church there are believers from every race on earth. The Orthodox Church is made up of people of many nations and cultures who worship God in many languages and according to various liturgical rites. Although the Eastern Rite predominates, especially since the Great Schism (the falling away of Rome) in 1054, there are also many Orthodox Christians in the West who worship according to the Western Rite in a completely Western cultural setting - an ancient Eastern Faith lived and shared in a Western cultural context. There are Western Rite churches and monasteries in the United States, Canada, the United Kingdom, on the continent of Europe, and in Australia and New Zealand, and their numbers are growing. All Orthodox Christians of whatever nation, culture or rite, share the same unchanging and unchangeable \u0022faith which was once delivered unto the saints\u0022 (Jude 3)."
+          },
+          "TitlePart": {
+            "Title": "Introducing the New Testament Church"
+          },
+          "AliasPart": {
+            "Alias": "introducing-the-new-testament-church"
+          },
+          "PreviewPart": {},
+          "Image": {
+            "Image": {
+              "Paths": [
+                "icons/Pantocrater.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "Imagedescription": {
+              "Text": "Pantocrater"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4y75g8d1xv53msw3g75z0056mg",
+          "ContentItemVersionId": "4d6qf4pd5rkmb2sehjsgnc9rcf",
+          "ContentType": "AboutUs",
+          "DisplayText": "About Us Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-24T17:27:04.1183547Z",
+          "PublishedUtc": "2026-09-24T17:27:04.1500792Z",
+          "CreatedUtc": "2026-09-16T14:42:35.3539812Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "AboutUs": {
+            "RelatedBlog": {
+              "ContentItemIds": [
+                "45sjywhdapr8jvs3axvmjyrhda"
+              ]
+            }
+          },
+          "HtmlBodyPart": {
+            "Html": "\u003Cp\u003E\u0026lt;h1\u0026gt;St. Thomas Orthodox Church\u0026lt;/h1\u0026gt;\u003Cbr\u003EDiocese of Chicago and Mid-America ROCOR\u003Cbr\u003ESIOUX CITY, IOWA\u003C/p\u003E"
+          },
+          "Media": {
+            "image": {
+              "Paths": [
+                "church photos/131307111_3544633292290578_8592795815772865271_n.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "imagedescription": {
+              "Text": "Church pews"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "## Introducing the New Testament Church\r\n [image]icons/Pantocrater.jpg[/image]\r\n\r\nSerious Christians want to belong to the New Testament Church. But with so many competing\r\ndenominations how does a serious Christian find the original New Testament Church - the Church founded by\r\nour Lord Jesus Christ Himself? Common sense tells us that the New Testament Church must have an unbroken\r\nhistory dating back almost 2,000 years to New Testament times. If a denomination does not have a verifiable\r\nhistory going back to New Testament times it simply cannot be the New Testament Church.\r\n\r\nFaced with this fact of history, some denominations seek to justify their existence with the claim that the\r\noriginal Church founded by Jesus Christ quickly fell into apostasy after the death of the last apostle or during\r\nthe \u0022dark ages,\u0022 and that a new Church had to be started by some Reformer or Prophet; but such claims\r\ncontradict the very words of Christ Himself. Jesus not only said, \u0022I will build my Church\u0022 (Matt. 16:18), but he also\r\npromised \u0022and the gates of hell shall not prevail against it\u0022 (Matt. 16:18).\r\n\r\nSo how can we find the original New Testament Church that was founded by Jesus Christ Himself and that\r\nreceived the promise of Christ that \u0022the gates of hell shall not prevail against it\u0022 (Matt. 16:18)? The answer to this\r\nquestion is simple: You will find the New Testament Church in the pages of the New Testament.\r\nOpen your Bible and look at the churches in the New Testament. What Church are the churches found in\r\nthe New Testament part of today? Baptist? Pentecostal? Methodist? Lutheran? Episcopal? Presbyterian? Roman\r\nCatholic? Something else?\r\n\r\nThe indigenous Christians in Jerusalem and the Holy Land, the Mother Church of all Christians, are\r\nmembers of the Orthodox Church. The indigenous Christians in Antioch \u0022where the disciples were first called\r\nChristians\u0022 (Acts 11:26) are Orthodox. The Christians of Cyprus and Crete where the Apostle Paul took early\r\nmissionary journeys are Orthodox. The Christians of Asia Minor where the seven churches of the Book of\r\nRevelation are found are Orthodox. The Christians of Corinth, Athens and other Greek cities where the Apostle\r\nPaul planted churches and to whom he preached or wrote epistles are all Orthodox.\r\nAll of these New Testament churches are, and always have been, part of the Orthodox Church. They all have\r\na verifiable and unbroken history dating back to New Testament times, and there never was a moment in\r\nhistory when they were not Orthodox churches. The only church spoken of in the entire New Testament that is\r\nnot an Orthodox church today is Rome, and Rome was fully Orthodox for a thousand years before falling away\r\ninto schism in AD 1054. Rome was Orthodox for longer than she has been separated from the Orthodox\r\nChurch. The Church of Rome was an Orthodox Church for longer than she has been known as the Roman\r\nCatholic Church.\r\n\r\nFor the first thousand years of Christianity there was one Church - the Orthodox Church. This is an\r\nindisputable fact of history. Then, having unilaterally changed the Nicene Creed, the Church of Rome fell away\r\ninto schism in AD 1054, eventually becoming known as the Roman Catholic Church. Having separated from the\r\nOrthodox Church, Rome continued to change the Faith, introducing novel doctrines such as purgatory and\r\nindulgences, leading to the Protestant Reformation in AD 1517. But the Protestant Reformation was really a\r\nrevolution rather than a reformation because rather than reforming the Roman Church they created new\r\ndenominations. The Protestant Reformers eliminated one pope, but through their novel doctrines of sola\r\nscripture and private interpretation of the Scriptures they essentially abolished all authority and made every\r\nindividual protestant his or her own pope, causing ecclesiastical chaos.\r\nBeginning with the Protestant Reformation in 1517, Christianity in the West began to splinter until today\r\nthere are literally thousands of separate and competing denominations, with five new denominations being\r\norganized every week. In addition, there are uncountable numbers of independent churches. The Lord Jesus\r\nChrist established one Church, promised that the gates of hell would never prevail against it, and commanded\r\nHis disciples to \u0022hear the church\u0022 (Matt. 18:17). All of the others are man-made denominations that arose many\r\ncenturies after Christ. A human foundation means a human organization, and a human organization means a\r\nhuman and therefore a changing Faith.\r\n\r\nBeside this chaos in Western Christendom, there remains the 300 million-member Orthodox Church. The\r\nword Orthodox means both \u0022correct doctrine\u0022 and \u0022correct worship,\u0022 and both the New Testament and history\r\ndemonstrate that the Orthodox Church, with its unbroken history dating back to New Testament times, is the\r\nNew Testament Church founded by Jesus Christ Himself. Our Lord Jesus Christ promised that the gates of hell\r\nwould not prevail against His Church and that promise has been kept.\r\nMany Western Christians sadly know little about the Orthodox Church, but what they do know is that it is an\r\n\u0022Eastern\u0022 Church and that it refuses to change with the times. Eastern? Of course, it is Eastern. Christianity\r\noriginated in the Holy Land and the Middle East. Christianity has its roots firmly planted in the East, not in\r\nWestern Europe or the United States. The Orthodox Church is an Eastern Church because Christianity is Eastern,\r\nand it does not change with the times because it has an unchanging message for an ever-changing world.\r\nRather than conforming itself to the world, the Orthodox Church seeks to transform the world by the Light of\r\nChrist.\r\n\r\nAlthough the Orthodox Church has its roots firmly planted in the East, it is also the \u0022One Holy, Catholic and\r\nApostolic Church\u0022 founded by Jesus Christ. The word Catholic means both \u0022Universal\u0022 and \u0022Whole and\r\nComplete,\u0022 and the Orthodox Church is the One Church for all people of all races and nations, proclaiming an\r\nunchanging Faith for all time. Within the Orthodox Church there are believers from every race on earth. The\r\nOrthodox Church is made up of people of many nations and cultures who worship God in many languages and\r\naccording to various liturgical rites. Although the Eastern Rite predominates, especially since the Great Schism\r\n(the falling away of Rome) in 1054, there are also many Orthodox Christians in the West who worship according\r\nto the Western Rite in a completely Western cultural setting - an ancient Eastern Faith lived and shared in a\r\nWestern cultural context. There are Western Rite churches and monasteries in the United States, Canada, the\r\nUnited Kingdom, on the continent of Europe, and in Australia and New Zealand, and their numbers are growing.\r\nAll Orthodox Christians of whatever nation, culture or rite, share the same unchanging and unchangeable \u0022faith\r\nwhich was once delivered unto the saints\u0022 (Jude 3).\r\n"
+          },
+          "TitlePart": {
+            "Title": "About Us Page"
+          },
+          "Subtitle": {
+            "Subtitle": {
+              "Text": "Diocese of Chicago and Mid-America ROCOR SIOUX CITY, IOWA",
+              "Markdown": "Diocese of Chicago and Mid-America ROCOR\r\nSIOUX CITY, IOWA"
+            },
+            "Markdown": "Diocese of Chicago and Mid-America ROCOR\r\nSIOUX CITY, IOWA"
+          },
+          "Image": {
+            "Image": {
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "Imagedescription": {
+              "Text": null
+            }
+          },
+          "PageBanner": {
+            "Image": {
+              "Paths": [
+                "church photos/churchInside_cut.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "ImageDescription": {
+              "Text": "churc pews"
+            }
+          },
+          "Address": {
+            "StreetAddress": {
+              "Text": "1100 Jones St"
+            },
+            "City": {
+              "Text": "Sioux City"
+            },
+            "StateRegion": {
+              "Text": "IA"
+            },
+            "PostalZIPCode": {
+              "Text": "51105"
+            },
+            "Country": {
+              "Text": "United States"
+            }
+          },
+          "Contactinfo": {
+            "Info": {
+              "Text": "Rev. Fr. Kevin Kirwan Ph. 712-898-2662 email fr.kevin@holyorthodoxy.org"
+            },
+            "Markdown": "Rev. Fr. Kevin Kirwan\r\nPh. 712-898-2662\r\nemail fr.kevin@holyorthodoxy.org"
+          },
+          "MainInformation": {
+            "Info": {
+              "Text": "St. Thomas is a ROCOR parish under the omophorion of Archbishop Peter of The  Chicago and Mid-America Diocese"
+            }
+          },
+          "Additionalinformation": {
+            "Markdown": "## Our History\r\nFounded in 1916, it is the oldest Orthodox parish in Sioux City. It originally served Syrian and Lebanese immigrants under the Greek Orthodox Patriarchate of Antioch before later becoming part of ROCOR\u0027s Diocese of Chicago and Mid-America.Community: It serves as a pan-Orthodox community drawing members from across the entire Siouxland region.\r\n\r\nSt Thomas Orthodox Church is the  **New Testament Church** "
+          },
+          "HeaderMain": {
+            "Header": {
+              "Text": "St. Thomas Orthodox Church"
+            }
+          },
+          "Subtitle1": {
+            "Markdown": "Diocese of Chicago and Mid-America ROCOR\r\nSIOUX CITY, IOWA"
+          }
+        },
+        {
+          "ContentItemId": "468r6cb1t9g8503q4w52ec5cct",
+          "ContentItemVersionId": "4vxrahqg5mpmpyjq9dwxy5krct",
+          "ContentType": "BlogPost",
+          "DisplayText": "TEst TEst ",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2026-09-24T17:30:23.199825Z",
+          "PublishedUtc": "2026-09-24T17:30:23.2139771Z",
+          "CreatedUtc": "2026-09-24T17:30:23.199825Z",
+          "Owner": "49wt6whfsfmfp0b3zc12xbmv5p",
+          "Author": "admin",
+          "BlogPost": {
+            "image": {
+              "Paths": [
+                "church life/72560752_2483936835026901_2590853706081632256_n.jpg"
+              ],
+              "MediaTexts": [
+                ""
+              ]
+            },
+            "BlogType": {
+              "Text": "aboutFaith"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "TEst TEst  odskgpeorjgpok perklhg[jktrhmikmnblktp[;l\u0027"
+          },
+          "TitlePart": {
+            "Title": "TEst TEst "
+          },
+          "AliasPart": {
+            "Alias": "test-test"
+          },
+          "PreviewPart": {}
+        }
+      ]
+    },
+    {
+      "name": "Themes",
+      "Site": null,
+      "Admin": "TheAdmin"
+    }
+  ]
+}

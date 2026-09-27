@@ -35,11 +35,20 @@ query {
       }
   }
 `;
-
+interface File{
+    
+        mediaText: string;
+        fileName: string;
+        url: string;
+    
+};
+interface  Image {
+    files: File[]
+};
 
 interface OrchardDataPayload {
     smallLogo?: {
-        image: Array<{ url: string }>;
+        image: Image;
         contentType: string;
         contentItemId: string;
     };
@@ -66,16 +75,16 @@ export async function getLogo() {
     try {
         const response = await fetchMediaRaw();
         
-       if (!response || response.OK ==false){
+       if (!response){
            return null;
        }
         
         // Directly access smallLogo from response
         const smallLogo: MediaItem= ({
-            id: response?.smallLogo[0]?.image?.contentItemId ?? '',
-            lastModifiedUtc: null,
+            id: response?.smallLogo?.contentItemId ?? '',
+            lastModifiedUtc: new Date(),
             name: 'Church Logo',
-            url: response?.smallLogo[0]?.image?.files[0]?.url ?? ''
+            url: response?.smallLogo?.image?.files[0]?.url ?? ''
         });
        
        

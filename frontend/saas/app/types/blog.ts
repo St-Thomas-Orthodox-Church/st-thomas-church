@@ -1,7 +1,7 @@
-inport {type ImageFile} from '@/app/types/media';
+import {type ImageFile} from '@/app/types/media';
 
 export interface ImageSection {
-    files: FileItem[];
+    files: ImageFile[];
 }
 
 export interface MarkdownBodySection {
@@ -15,5 +15,6 @@ export interface BlogItem {
     image:ImageSection;
     displayText: string;
     markdownBody: MarkdownBodySection;
+    blogType: string;
 }
 

@@ -5,9 +5,9 @@ import {BlogPost} from '@/components/ui/blogPost';
 
 export default async function BlogsPage() {
 
-        const blogs: BlogItem[] = await getBlogs();
+        const blogs: BlogItem[] | null= await getBlogs();
        
-        if (blogs.length === 0) {
+        if (blogs && blogs.length === 0) {
             return (
                 <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
                     <h1>Blogs</h1>
@@ -18,10 +18,11 @@ export default async function BlogsPage() {
 
     // 1. Sort the blog posts by date: latest (newest) first
 
+    if(blogs===null) {return ;}
     const sortedAndFilteredBlogs = [...blogs]
         .filter(b => b.blogType === 'aboutFaith')
         .sort((a, b) =>
-            new Date(a.createdUtc).getTime() - new Date(b.createdUtc).getTime()
+            new Date(a.created).getTime() - new Date(b.created).getTime()
         );
 
     if (sortedAndFilteredBlogs.length === 0) {
@@ -37,8 +38,8 @@ export default async function BlogsPage() {
     return (
         <div>
             <div style={{display: 'flex', flexDirection: 'column', gap: '2rem', marginTop: '2rem'}}>
-                {sortedAndFilteredBlogs.map((blog) => (
-                    <BlogPost key={blog.contentItemId} blog={blog}/>))}
+                {sortedAndFilteredBlogs.map((blog, id) => (
+                    <BlogPost key={id} blog={blog}/>))}
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import PageBanner from '@/components/images/PageBanner';
 import {BlogPost} from '@/components/ui/blogPost';
 import {getSanitizedHtml} from '@/app/utils/sanitize';
-import {AboutUsData} from '@app/types/church-info';
+import {AboutUsData} from '@/app/types/church-info';
 import './about-us.css';
 import {getBlogByID} from "@/app/api/orchard/blogs";
 import {BlogItem} from "@/app/types/blog";
@@ -17,7 +17,7 @@ export default async function AboutUsPage() {
         notFound();
     }
     
-    const {headerMain,subtitle, mainInformation, pageBanner, relatedBlogIDs, additionalinformation} = aboutUsData;
+    const {headerMain,subtitle, mainInformation, pageBanner, relatedBlogIDs, additionalinformation} = await aboutUsData;
     const rawUrl = pageBanner[0]?.url;
     const pageBannerUrl = rawUrl?.startsWith('//') ? `https:${rawUrl}` : rawUrl;
     
@@ -28,7 +28,12 @@ export default async function AboutUsPage() {
 
     const contactInfoHtml = await getChurchContactInfo();
     
-    const {city, country, postalZIPcode,stateRegion, streetAddress }=getChurchAdderss();
+    const churchAddress=await getChurchAdderss();
+    if(churchAddress){
+        const {city, country, postalZIPCode,stateRegion, streetAddress }= churchAddress;
+    }
+    
+    
     
    //related blog
     const relatedBlog =await getBlogByID(relatedBlogIDs[0]);
@@ -39,20 +44,18 @@ export default async function AboutUsPage() {
             <h2
                 dangerouslySetInnerHTML={{ __html: subtitleCleanHtml }}
             />
-            <p>{mainInformation} </p>
+            <p>{mainInformation.info} </p>
             <PageBanner
                 src={pageBannerUrl}
-                alt={pageBanner?.imageDescription || "Banner"}
+                imageDescription={pageBanner?.[0]?.fileName || "Banner"}
             />
             
-            <p>{mainInformation.info}</p>
-         
             <p className="contact-info-block"
-               dangerouslySetInnerHTML={{ __html: contactInfoHtml }}
+               dangerouslySetInnerHTML={{ __html: contactInfoHtml || '' }}
             />
             
             <p className="additional-info"
-                dangerouslySetInnerHTML={{__html:additionalinformation}} 
+                dangerouslySetInnerHTML={{__html:additionalinformation || ''}} 
                 >
             </p>
 

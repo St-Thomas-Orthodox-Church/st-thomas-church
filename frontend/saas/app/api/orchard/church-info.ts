@@ -2,6 +2,8 @@ import { cache } from 'react';
 import {orchardFetch} from '@/app/api/orchard/orchard-client';
 import {getSanitizedHtml} from "@/app/utils/sanitize";
 import {Address} from "@/app/types/church-info";
+import ts from "typescript";
+import ThrowProjectDoesNotContainDocument = ts.server.Errors.ThrowProjectDoesNotContainDocument;
 
 /*
 Instead of fetching media directly from Orcharch media folders, we are using media that is stored in the media content items
@@ -33,23 +35,23 @@ query {
 
 
 interface OrchardDataPayload {
-    data?: {
+   
         contactinfo: {
             markdownBody:{
                 html: string
             };
-        };
+        }[];
 
-    churchAddress: {
-        address:{
-            city:string;
-            country:string;
-            postalZIPCode: string;
-            stateRegion: string;
-            streetAddress: string;
-            };
-        };
-    };
+        churchAddress: {
+            address:{
+                city:string;
+                country:string;
+                postalZIPCode: string;
+                stateRegion: string;
+                streetAddress: string;
+                };
+            }[];
+        
     errors?: Array<{
         message: string;
         locations?: Array<{ line: number; column: number }>;
@@ -76,17 +78,17 @@ async function fetchChurchInfoRaw():Promise<OrchardDataPayload> {
 // 3. Extract and return the smallLogo property specifically
 export async function getChurchContactInfo(): Promise<string | null> {
     try {
-        const response = await fetchChurchInfoRaw();
+        const response :OrchardDataPayload = await fetchChurchInfoRaw();
         
         // 1. Check for missing response or GraphQL errors
         if (!response || response.errors ) {
             console.warn('⚠️ Request failed or returned errors:', response?.errors);
             return null;
         }
-       
+        
         // 2. Correct path to access html string based on your interface
-        const rawHtml = response.contactinfo[0]?.markdownBody?.html;
-
+        const rawHtml = response?.contactinfo?.[0]?.markdownBody.html;
+        
         if (!rawHtml) {
             console.warn('⚠️ contactinfo markdownBody HTML is missing:', response);
             return null;
@@ -113,24 +115,24 @@ export async function getChurchAdderss(): Promise<Address | null> {
             console.warn('⚠️ Request failed or returned errors:', response?.errors);
             return null;
         }
-
-        // 2. Correct path to access html string based on your interface
-        const rawHtml = response.churchAddress[0];
         
-        if (!rawHtml) {
-            console.warn('⚠️ contactinfo markdownBody HTML is missing:', response);
+        // 2. Correct path to access html string based on your interface
+        const church_address :Address | null= response?.churchAddress[0]?.address ?? null;
+        
+        
+        if (!church_address) {
+            console.warn('⚠️ response?.data?.churchAddress; is missing:', response);
             return null;
         }
-        
     
         const address:Address = {
-            city:rawHtml.address.city,
-            country:rawHtml.address.country,
-            postalZIPCode: rawHtml.address.postalZIPCode,
-            stateRegion: rawHtml.address.stateRegion,
-            streetAddress:rawHtml.address.streetAddress
+            city:church_address?.city,
+            country:church_address.country,
+            postalZIPCode: church_address.postalZIPCode,
+            stateRegion: church_address.stateRegion,
+            streetAddress:church_address.streetAddress
         }
-        
+    
     return  address;
 
     } catch (error) {
