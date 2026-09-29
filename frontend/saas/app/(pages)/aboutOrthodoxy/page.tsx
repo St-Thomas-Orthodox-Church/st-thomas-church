@@ -5,9 +5,9 @@ import {BlogPost} from '@/components/ui/blogPost';
 
 export default async function BlogsPage() {
 
-        const blogs: BlogItem[] | null= await getBlogs();
+        const blogs: BlogItem[] | null= await getBlogs().catch(()=>null);
        
-        if (blogs && blogs.length === 0) {
+        if (blogs === null) {
             return (
                 <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
                     <h1>Blogs</h1>
@@ -15,10 +15,17 @@ export default async function BlogsPage() {
                 </div>
             );
         }
+    if (blogs.length === 0) {
+        return (
+            <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+                <h1>Blogs</h1>
+                <p>No blog posts found. Make sure you have created and published posts in Orchard Core.</p>
+            </div>
+        );
+    }
 
-    // 1. Sort the blog posts by date: latest (newest) first
-
-    if(blogs===null) {return ;}
+    // 1. Sort the blog posts by date: oldest  first
+    
     const sortedAndFilteredBlogs = [...blogs]
         .filter(b => b.blogType === 'aboutFaith')
         .sort((a, b) =>
