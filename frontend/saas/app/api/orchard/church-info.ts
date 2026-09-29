@@ -35,7 +35,6 @@ query {
 
 
 interface OrchardDataPayload {
-   
         contactinfo: {
             markdownBody:{
                 html: string

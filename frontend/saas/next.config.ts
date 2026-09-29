@@ -4,8 +4,6 @@ const nextConfig: NextConfig = {
   experimental: {
     ppr: true,
     clientSegmentCache: true,
-    // @ts-ignore
-    devTools: false,
   },
   images: {
     remotePatterns: [

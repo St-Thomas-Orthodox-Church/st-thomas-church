@@ -4,9 +4,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
-    h1{
-        margin-bottom: 1rem;
-    }
 }
 
+.service-times-page h1 {
+    margin-bottom: 1rem;
+}
