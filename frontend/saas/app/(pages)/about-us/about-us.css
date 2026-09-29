@@ -47,16 +47,13 @@
     /*margin-block: 3.5rem; !* Forces balanced breathing room above and below the banner image *!*/
     display: flex;
     flex-direction: row;
-    justify-content: center;
     justify-content: flex-end;
 }
 
 /* --- Contact Info Section Block --- */
 /* Target the final paragraph containing raw HTML contact strings */
-.about-page-container p[dangerouslySetInnerHTML],
 .about-page-container .contact-info-block {
     background-color: var(--muted);
-    border-radius: var(--radius, 0.5rem);
     border-radius: 0 var(--radius, 0.5rem) var(--radius, 0.5rem) 0;
     border-left: 4px solid var(--highlight-solid);
     font-size: 1.05rem;
