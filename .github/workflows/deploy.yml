@@ -32,6 +32,8 @@ jobs:
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 1
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          # 1. ADDED SECURE ORCHARD CMS URL HERE FOR BUILDING
+          NEXT_PUBLIC_ORCHARD_URL: ${{ secrets.NEXT_PUBLIC_ORCHARD_URL }}
 
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -39,8 +41,9 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_SERVER }}
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: frontend/saas/.next/
-          server-dir: /domains/siouxcityorthodox.com
+          # 2. FIXED PATHS TO UPLOAD ENTIRE BUILD STRUCTURE TO THE CORRECT ROOT
+          local-dir: frontend/saas/
+          server-dir: domains/://siouxcityorthodox.com
 
       - name: Deployment Failed
         if: failure()
