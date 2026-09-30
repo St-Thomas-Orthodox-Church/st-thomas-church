@@ -28,9 +28,7 @@ jobs:
       - name: Build Next.js App
         run: |
           cd frontend/saas
-          npm run build
-          cp -r .next/static .next/standalone/.next/static
-          cp -r public .next/standalone/public
+          npm run github-build
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 1
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
