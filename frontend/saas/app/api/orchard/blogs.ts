@@ -67,6 +67,7 @@ export async function getBlogs(): Promise<BlogItem[] | null> {
      //   const rawData: OrchardDataPayload[] = await response;
 
         const blogList: ContentItem[] = response?.blogPost;
+        const baseUrl = process.env.NEXT_PUBLIC_CMS_MEDIA_URL || '';
         
         const blogs: BlogItem[] = blogList?.map((raw: ContentItem) => ({
             id: raw.contentItemId,
@@ -77,7 +78,7 @@ export async function getBlogs(): Promise<BlogItem[] | null> {
                 // Map over the files array to inject the missing 'id' property
                 files: raw.image.files.map((file) => ({
                     id: file.fileName, // Using fileName as the required id fallback
-                    url: file.url,
+                    url: `${baseUrl}${file.url}`.replace(/([^:]\/)\/+/g, "\$1"),
                     fileName: file.fileName,
                 })),
             },

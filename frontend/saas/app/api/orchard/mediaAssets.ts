@@ -10,6 +10,7 @@ Instead of fetching media directly from Orcharch media folders, we are using med
 
  */
 
+const BASE_URL = process.env.NEXT_PUBLIC_CMS_MEDIA_URL || '';
 
 const GET_MEDIA_QUERY = `
 query {
@@ -69,6 +70,7 @@ async function fetchMediaRaw():Promise<OrchardDataPayload> {
     return response;
 }
 
+
 // 3. Extract and return the smallLogo property specifically
 export async function getLogo() {
     try {
@@ -83,7 +85,7 @@ export async function getLogo() {
             id: response?.smallLogo?.contentItemId ?? '',
             lastModifiedUtc: new Date(),
             name: 'Church Logo',
-            url: response?.smallLogo?.image?.files[0]?.url ?? ''
+            url: `${BASE_URL}${response?.smallLogo?.image?.files[0]?.url ?? ''}` 
         });
        
        
