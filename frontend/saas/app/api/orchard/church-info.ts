@@ -16,12 +16,12 @@ Instead of fetching media directly from Orcharch media folders, we are using med
 
 const GET_INFO_QUERY = `
 query {
-     contactinfo(first: 10) {
+     contactinfo(first: 1) {
     markdownBody {
       html
     }
   }
-  churchAddress(first: 1, orderBy: {published: DESC}) {
+  churchAddress(first: 1) {
     address {
       city
       country
@@ -114,16 +114,16 @@ export async function getChurchAdderss(): Promise<Address | null> {
             console.warn('⚠️ Request failed or returned errors:', response?.errors);
             return null;
         }
-        
+
         // 2. Correct path to access html string based on your interface
         const church_address :Address | null= response?.churchAddress[0]?.address ?? null;
-        
-        
+
+
         if (!church_address) {
             console.warn('⚠️ response?.data?.churchAddress; is missing:', response);
             return null;
         }
-    
+
         const address:Address = {
             city:church_address?.city,
             country:church_address.country,
@@ -131,11 +131,12 @@ export async function getChurchAdderss(): Promise<Address | null> {
             stateRegion: church_address.stateRegion,
             streetAddress:church_address.streetAddress
         }
-    
+
     return  address;
 
     } catch (error) {
         console.error('🚨 Error inside getChurchContactInfo:', error);
         return null;
     }
+   
 }

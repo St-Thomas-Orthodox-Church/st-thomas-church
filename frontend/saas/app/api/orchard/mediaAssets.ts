@@ -36,7 +36,6 @@ query {
   }
 `;
 interface File{
-    
         mediaText: string;
         fileName: string;
         url: string;
