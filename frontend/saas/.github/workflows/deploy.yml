@@ -1,0 +1,46 @@
+name: Deploy Next.js to Hostinger
+
+on:
+  push:
+    branches:
+      - main # Triggers the build every time you push to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: frontend/saas/package-lock.json
+
+      - name: Install Dependencies
+        run: |
+          cd frontend/saas
+          npm ci
+
+      - name: Build Next.js App
+        run: |
+          cd frontend/saas
+          npm run build
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: 1
+          # If your app requires secret API keys during the build phase, 
+          # you can inject them securely from GitHub secrets here:
+          # NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
+          password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          # This uploads the pre-built files straight into your domain folder
+          local-dir: frontend/saas/
+          server-dir: domains/://siouxcityorthodox.com 
