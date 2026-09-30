@@ -29,6 +29,8 @@ jobs:
         run: |
           cd frontend/saas
           npm run build
+          cp -r .next/static .next/standalone/.next/static
+          cp -r public .next/standalone/public
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 1
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
@@ -41,9 +43,8 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_SERVER }}
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          # 2. FIXED PATHS TO UPLOAD ENTIRE BUILD STRUCTURE TO THE CORRECT ROOT
-          local-dir: frontend/saas/
-          server-dir: domains/://siouxcityorthodox.com
+          local-dir: frontend/saas/.next/standalone/
+          server-dir: domains/siouxcityorthodox.com/public_html/
 
       - name: Deployment Failed
         if: failure()
