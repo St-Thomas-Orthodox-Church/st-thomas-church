@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend_Orchard", "backend_Orchard\backend_Orchard.csproj", "{BFEE9B59-A621-4D75-B8C2-49ED3B7317BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{A62DDA32-CAE2-4EE2-BEEC-BC207F9AF292}"
+	ProjectSection(SolutionItems) = preProject
+		frontend\.github\workflows\deploy.yml = frontend\.github\workflows\deploy.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
