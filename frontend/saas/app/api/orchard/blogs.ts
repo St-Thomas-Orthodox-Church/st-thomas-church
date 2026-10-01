@@ -78,7 +78,7 @@ export async function getBlogs(): Promise<BlogItem[] | null> {
                 // Map over the files array to inject the missing 'id' property
                 files: raw.image.files.map((file) => ({
                     id: file.fileName, // Using fileName as the required id fallback
-                    url: `${baseUrl}${file.url}`.replace(/([^:]\/)\/+/g, "\$1"),
+                    url: file.url ? `${baseUrl}${file.url}`.replace(/([^:]\/)\/+/g, "\$1"): null,
                     fileName: file.fileName,
                 })),
             },

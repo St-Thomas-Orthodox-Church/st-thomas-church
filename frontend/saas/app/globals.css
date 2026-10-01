@@ -361,3 +361,9 @@ h4{
 
 }
 
+.section-center, .section-center section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+}

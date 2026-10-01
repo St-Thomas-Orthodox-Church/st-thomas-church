@@ -74,8 +74,11 @@ async function fetchChurchInfoRaw():Promise<OrchardDataPayload> {
     return response;
 }
 
-// 3. Extract and return the smallLogo property specifically
-export async function getChurchContactInfo(): Promise<string | null> {
+/**
+ * Gets and sanitizes the church contact info HTML.
+ *
+ */
+export const getChurchContactInfo=cache(async (): Promise<string | null> => {
     try {
         const response :OrchardDataPayload = await fetchChurchInfoRaw();
         
@@ -102,10 +105,12 @@ export async function getChurchContactInfo(): Promise<string | null> {
         console.error('🚨 Error inside getChurchContactInfo:', error);
         return null;
     }
-}
+});
 
-export async function getChurchAdderss(): Promise<Address | null> {
- 
+/**
+ * Gets and formats the church address.
+ */
+export const getChurchAdderss=cache(async (): Promise<Address | null> =>{
     try {
         const response = await fetchChurchInfoRaw();
 
@@ -139,4 +144,4 @@ export async function getChurchAdderss(): Promise<Address | null> {
         return null;
     }
    
-}
+});

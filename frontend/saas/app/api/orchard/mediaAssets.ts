@@ -39,7 +39,7 @@ query {
 interface File{
         mediaText: string;
         fileName: string;
-        url: string;
+        url: string | null;
     
 };
 interface  Image {
@@ -79,13 +79,18 @@ export async function getLogo() {
        if (!response){
            return null;
        }
+       
+       let logoUrl: string | null= null;
+        if(response?.smallLogo?.image?.files[0]?.url){
+            logoUrl= `${response?.smallLogo}${response?.smallLogo?.image?.files[0]?.url}`
+        }
         
         // Directly access smallLogo from response
         const smallLogo: MediaItem= ({
             id: response?.smallLogo?.contentItemId ?? '',
             lastModifiedUtc: new Date(),
             name: 'Church Logo',
-            url: `${BASE_URL}${response?.smallLogo?.image?.files[0]?.url ?? ''}` 
+            url: logoUrl
         });
        
        

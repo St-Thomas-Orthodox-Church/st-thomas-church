@@ -2,7 +2,7 @@ import {AboutUsData} from '@/app/types/church-info';
 import {ImageFile} from "@/app/types/media";
 import {getSanitizedHtml} from "@/app/utils/sanitize";
 
-
+const BASE_URL = process.env.NEXT_PUBLIC_CMS_MEDIA_URL || '';
 
 const GET_ABOUT_US_QUERY = `
 query {
@@ -95,7 +95,7 @@ export default async function getAboutUs(): Promise<AboutUsData> {
 
             // Safely drill down to the files array, default to empty array if missing
             pageBanner: (rawItem?.pageBanner?.image?.files || []).map((file: any) => ({
-                url: file?.url || "",
+                url: `${BASE_URL}/${file?.url || ""}`,
                 id: file?.id || "",          // Fallback if id is missing in raw data
                 fileName: file?.fileName || "" // Fallback if fileName is missing in raw data
             })),

@@ -23,6 +23,7 @@ export default async function AboutUsPage() {
     
     const {headerMain,subtitle, mainInformation, pageBanner, relatedBlogIDs, additionalinformation} = aboutUsData;
     const rawUrl = pageBanner?.[0]?.url;
+    
     const pageBannerUrl = rawUrl?.startsWith('//') ? `https:${rawUrl}` : rawUrl;
     
     //subtitle

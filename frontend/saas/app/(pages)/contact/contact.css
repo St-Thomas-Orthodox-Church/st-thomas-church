@@ -1,0 +1,12 @@
+.section-center > section {
+    margin-bottom: 2rem;
+}
+
+.section-contact > p{
+    padding-top: 1rem;
+    font-style: italic;
+}
+
+.church-address h1 {
+    padding: 1rem;
+}
