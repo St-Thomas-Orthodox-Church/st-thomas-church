@@ -36,32 +36,18 @@ jobs:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
           NEXT_PUBLIC_ORCHARD_URL: ${{ secrets.NEXT_PUBLIC_ORCHARD_URL }}
 
-      - name: Deploy to Hostinger via SSH
-        env:
-          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
-          HOSTINGER_HOST: ${{ secrets.HOSTINGER_SSH_HOST }}
-          HOSTINGER_USER: ${{ secrets.HOSTINGER_SSH_USER }}
-          HOSTINGER_PATH: ${{ secrets.HOSTINGER_DEPLOY_PATH }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$HOSTINGER_SSH_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H "$HOSTINGER_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-
-          ssh -i ~/.ssh/id_ed25519 "$HOSTINGER_USER@$HOSTINGER_HOST" "mkdir -p \"$HOSTINGER_PATH\""
-
-          rsync -avz --delete \
-            --exclude '.git' \
-            --exclude 'node_modules' \
-            --exclude '.next/cache' \
-            frontend/saas/ "$HOSTINGER_USER@$HOSTINGER_HOST:$HOSTINGER_PATH/"
-
-          ssh -i ~/.ssh/id_ed25519 "$HOSTINGER_USER@$HOSTINGER_HOST" "
-            cd \"$HOSTINGER_PATH\" &&
-            npm ci --omit=dev &&
-            if ! command -v pm2 >/dev/null 2>&1; then npm install -g pm2; fi &&
-            pm2 restart st-thomas-church || pm2 start \"npx next start -H 0.0.0.0 -p 3000\" --name st-thomas-church
-          "
+      - name: Deploy to Hostinger
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOSTINGER_SSH_HOST }}
+          username: ${{ secrets.HOSTINGER_SSH_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          script: |
+            cd ${{ secrets.HOSTINGER_DEPLOY_PATH }}
+            git pull origin main
+            npm ci --omit=dev
+            npm run build
+            # Hostinger automatically restarts the Node.js app
 
       - name: Deployment Failed
         if: failure()
