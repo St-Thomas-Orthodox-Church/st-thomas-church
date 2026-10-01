@@ -41,7 +41,7 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_SERVER }}
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: frontend/saas/.next/standalone/
+          local-dir: frontend/saas/out/
           server-dir: domains/siouxcityorthodox.com/public_html/
 
       - name: Deployment Failed
