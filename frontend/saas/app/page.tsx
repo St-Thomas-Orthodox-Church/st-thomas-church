@@ -24,7 +24,7 @@ export default async function HomePage() {
                         at {address?.streetAddress },  {address?.city}, {address?.stateRegion}, {address?.postalZIPCode}
                     </section>
                     <section className={'contact-info'}>
-                        <h2> Contract US</h2>
+                        <h2> Contact US</h2>
                         <p dangerouslySetInnerHTML={{ __html: contactInfo || ''}}/>
                     </section>
                 </section>
