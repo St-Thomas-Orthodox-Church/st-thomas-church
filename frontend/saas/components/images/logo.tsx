@@ -44,11 +44,13 @@ export default  function Logo({ className }: {className:string} ) {
     logoUrl=transparentUrl;
     
     return (
-        <div style={{ backgroundColor: 'transparent' }}>
-        <img
+        <div style={{backgroundColor: 'transparent'}}>
+            <Image
                 src={logoUrl}
                 alt="☦ Orthodox Church Logo"
-                style={{ display: 'block', maxWidth: 'auto', height: '50px' }}
+                height={50}
+                width={0} // Setting to 0 allows dynamic width scaling
+                style={{display: 'block', width: 'auto'}}
             />
         </div>
     );

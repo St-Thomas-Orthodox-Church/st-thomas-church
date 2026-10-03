@@ -16,13 +16,13 @@ const nextConfig = {
         protocol: 'https', // Change to 'https' if your Orchard is running on HTTPS
         hostname: 'localhost',
         port: '7199', // Match your Orchard port
-        pathname: '/media/**',
+        pathname: '/**',
       },
       {
         // 4. Allow Next.js to safely render images served from your live DotNest environment
         protocol: 'https',
-        hostname: '**.dotnest.com',
-        pathname: '/media/**',
+        hostname: 'stthomasorthodoxchurch.dotnest.net',
+        pathname: '/**',
       },
     ],
   },

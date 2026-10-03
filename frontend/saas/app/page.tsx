@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import { ArrowRight, CreditCard, Database } from 'lucide-react';
 import {getChurchContactInfo, getChurchAdderss} from '@/app/api/orchard/church-info';
 import {Address} from '@/app/types/church-info';
@@ -30,9 +30,13 @@ export default async function HomePage() {
                 </section>
 
                 <section className={'right'}>
-                    <img
+                    <Image
                         className={'img-main'}
                         src={'/church_Home_Image.png'}
+                        alt={'photo of the church'}
+                        width={800}  // maximum estimated width it will ever be on screen
+                        height={600} // e matching estimated height
+                        sizes="(max-width: 768px) 100vw, 50vw" // Tells Next.js how to optimize for screen sizes
                     />
                 </section>
             </section>

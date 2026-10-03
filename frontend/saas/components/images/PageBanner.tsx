@@ -1,11 +1,12 @@
 import React from 'react';
 import './PageBanner.css';
+import Image from "next/image";
 
 export default function PageBanner({ src, imageDescription, width = null, height = null, className = "" }:{
     src: string , 
     imageDescription?: string,
-    width?: string | null,
-    height?: string | null,
+    width?: number | null,
+    height?: number | null,
     className?: string})   // Guard against missing image sources
 { if (!src) return null;
     
@@ -14,11 +15,11 @@ export default function PageBanner({ src, imageDescription, width = null, height
 
     return (
         <div className={`page-banner   ${className}`}>
-                <img className="img-blured"
+                <Image className="img-blured"
                     src={formattedSrc}
                     alt={imageDescription || "Page banner image"}
-                    width={width || undefined}
-                    height={height || undefined}
+                    width={width || 1200}
+                    height={height || 400}
                     loading="lazy"
                     decoding="async"
                 />

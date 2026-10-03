@@ -23,7 +23,6 @@
 /*
 LAYOUT OF THE FIRST ROW
 */
- 
 /* Base Mobile Styles (Stuck on top of each other, full width) */
 .first-row{
     display: grid;
@@ -90,8 +89,7 @@ LAYOUT OF THE FIRST ROW
 }
 
 
-/*RIGHT COLUMN  */
-
+/* RIGHT COLUMN CONTAINER */
 .first-row .right  {
     display: flex;
     justify-content: flex-end;
