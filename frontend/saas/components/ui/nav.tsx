@@ -20,7 +20,7 @@ export function PublicNav() {
        
     ];
 
-    return (
+    return ( 
         <nav className="main-navbar">
             <section className={'content'}>
                 <div className="navbar-container">
