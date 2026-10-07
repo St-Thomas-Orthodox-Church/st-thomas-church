@@ -16,6 +16,7 @@ export default  function Logo({ className }: {className:string} ) {
         async function fetchLogoData() {
             try {
                 const logoData = await getLogo();
+                console.log({'logoData in fetchLogoData':logoData});
                 if(!logoData){
                     return null;
                 }
@@ -40,8 +41,7 @@ export default  function Logo({ className }: {className:string} ) {
         logoUrl='/logo.png'; // Fallback text if logo is missing
     }
     //to keep transparancy of the logo, we must replace jpg format with png
-    const transparentUrl=logoUrl.replace('jpg','png');
-    logoUrl=transparentUrl;
+     logoUrl=logoUrl.replace('jpg','png');;
     
     return (
         <div style={{backgroundColor: 'transparent'}}>

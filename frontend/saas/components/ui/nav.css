@@ -66,9 +66,9 @@
     object-fit: cover;
     padding-bottom: 0.3rem;
 }
+
 .icon-logo {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 3rem;
     color: var(--highlight-solid);
 }
 

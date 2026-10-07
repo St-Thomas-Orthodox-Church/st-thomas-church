@@ -1,3 +1,5 @@
+'use server';
+
 import { cache } from 'react';
 import  {type MediaItem } from '@/app/types/media';
 import {orchardFetch} from '@/app/api/orchard/orchard-client';
@@ -14,52 +16,59 @@ const BASE_URL = process.env.NEXT_PUBLIC_CMS_MEDIA_URL || '';
 
 const GET_MEDIA_QUERY = `
 query {
-      smallLogo {
-        image {
-          files(first: 1) {
-            url
-          }
-        }
-        contentType
-        contentItemId
-      }
-      
-      gallery(orderBy: { modifiedUtc: DESC, contentItemId: ASC }, first: 200) {
-        contentItemId
-        image {
+  smallLogo {
+    contentItemId
+    contentType
+    image {
           files {
-            mediaText
-            fileName
             url
+            fileName
+            mediaText
           }
         }
-      }
   }
+  gallery {
+    contentItemId
+    contentType
+     image {
+          files {
+            url
+            fileName
+            mediaText
+          }
+        }
+  }
+}
 `;
-interface File{
+
+interface OrchardFile{
         mediaText: string;
         fileName: string;
         url: string | null;
     
-};
-interface  Image {
-    files: File[]
-};
+}
+
 
 interface OrchardDataPayload {
-    smallLogo?: {
-        image: Image;
+    smallLogo?: Array<{
         contentType: string;
         contentItemId: string;
-    };
-    gallery?: {
+        image: {
+            files: {
+                url: string;
+                fileName: string;
+                mediaText: string
+            }[]
+        };
+    }>;
+    gallery?: Array<{
         contentItemId: string;
-        image: Array<{
-            mediaText: string;
-            fileName: string;
-            url: string;
-        }>;
-    };
+        image: { files: {
+                url: string;
+                fileName: string;
+                mediaText: string
+            }[] };
+    }>;
 }
 
 async function fetchMediaRaw():Promise<OrchardDataPayload> {
@@ -75,29 +84,28 @@ async function fetchMediaRaw():Promise<OrchardDataPayload> {
 export async function getLogo() {
     try {
         const response = await fetchMediaRaw();
+        //console.log({'get Logo response ':response}); //uncomment to debug
+        if (!response || !response.smallLogo || response.smallLogo.length === 0) {
+            console.warn('⚠️ smallLogo is missing or empty in response:', response);
+            return null;
+        }
+        // Target the first item in the returned content array
+        const firstLogoItem = response.smallLogo[0];
+        const firstFile = firstLogoItem?.image?.files?.[0];
         
-       if (!response){
-           return null;
-       }
-       
        let logoUrl: string | null= null;
-        if(response?.smallLogo?.image?.files[0]?.url){
-            logoUrl= `${response?.smallLogo}${response?.smallLogo?.image?.files[0]?.url}`
+        if (firstFile?.url) {
+            // Ensure base URL cleanly joins with the file path
+            logoUrl = `${BASE_URL}/${firstFile.url}`;
         }
         
         // Directly access smallLogo from response
-        const smallLogo: MediaItem= ({
-            id: response?.smallLogo?.contentItemId ?? '',
+        const smallLogo: MediaItem = {
+            id: firstLogoItem?.contentItemId ?? '',
             lastModifiedUtc: new Date(),
-            name: 'Church Logo',
+            name: firstFile?.fileName || 'Church Logo',
             url: logoUrl
-        });
-       
-       
-        if (!smallLogo) {
-            console.warn('⚠️ smallLogo is missing from response:', response);
-            return null;
-        }
+        };
         
         return smallLogo;
         
@@ -107,4 +115,4 @@ export async function getLogo() {
     }
 }
 
-//TODO: Write get gallery photos
+// TODO: Write get gallery photos
