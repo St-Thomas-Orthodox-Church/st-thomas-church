@@ -65,9 +65,14 @@ async function fetchChurchInfoRaw():Promise<OrchardDataPayload> {
     if (cachedPayload) {
         return cachedPayload;
     }
-    
+    const content_types=['Contactinfo','ChurchAddress']; //Content type MUST match orchard content type. 
+    /* This is important because on content update, orchard triggers workflow sends post request with conetn type that has been modified
+    the function in teh revalidate/route.js captures this request and refreshes fetch with content type tag
+    */
+
     const response = await orchardFetch<OrchardDataPayload>({
         query: GET_INFO_QUERY,
+        tags:content_types,
     });
 
     cachedPayload = response;

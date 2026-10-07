@@ -6,6 +6,8 @@ import { Menu, X, Church, Calendar, BookOpen, Clock, Heart, Users, House } from 
 import  './nav.css';
 import  Logo from '@/components/images/logo';
 
+
+
 export function PublicNav() {
     const [isOpen, setIsOpen] = useState(false);
 

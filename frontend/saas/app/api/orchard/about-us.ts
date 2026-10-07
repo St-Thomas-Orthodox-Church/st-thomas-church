@@ -1,6 +1,7 @@
 import {AboutUsData} from '@/app/types/church-info';
-import {ImageFile} from "@/app/types/media";
 import {getSanitizedHtml} from "@/app/utils/sanitize";
+import {orchardFetch} from "@/app/api/orchard/orchard-client";
+
 
 const BASE_URL = process.env.NEXT_PUBLIC_CMS_MEDIA_URL || '';
 
@@ -69,26 +70,23 @@ export interface AboutUsQueryResponse {
     };
 }
 
+async function fetchBlogsRaw(): Promise<AboutUsQueryResponse> {
+    const content_type = 'AboutUs'; //Content type MUST match orchard content type. 
+    /* This is important because on content update, orchard triggers workflow sends post request with conetn type that has been modified
+    the function in teh revalidate/route.js captures this request and refreshes fetch with content type tag
+    */
+    return orchardFetch<AboutUsQueryResponse>({
+        query: GET_ABOUT_US_QUERY,
+        tags: [content_type],
+    });
+}
+
 export default async function getAboutUs(): Promise<AboutUsData> {
-
-    const queryParam: string = encodeURIComponent(GET_ABOUT_US_QUERY);
-    const endpoint = `${process.env.NEXT_PUBLIC_ORCHARD_URL}/api/graphql/?query=${queryParam}`;
-
     try {
-         
-        const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                query:  GET_ABOUT_US_QUERY ,
-            }),
-            next: {revalidate: 60},
-        });
-        
-         const raw:AboutUsQueryResponse = await res.json(); //delete YAC 
+        const raw: AboutUsQueryResponse = await fetchBlogsRaw();
         const rawItem = raw?.data?.aboutUs?.[0];
-        
-        const aboutUsData: AboutUsData = {
+
+        return {
             headerMain: rawItem?.headerMain?.header || "",
             subtitle: rawItem?.subtitle?.html || "",
             mainInformation: {info: rawItem?.mainInformation?.info || ""},
@@ -104,9 +102,6 @@ export default async function getAboutUs(): Promise<AboutUsData> {
             relatedBlogIDs: rawItem?.relatedBlog?.contentItemIds || [],
             additionalinformation: getSanitizedHtml(rawItem?.additionalinformation?.html)
         };
-        
-        return aboutUsData;
-        
     } catch (networkError: any) {
         // This catches low-level network issues (DNS failure, CORS, connection refused)
         console.log("🚨 Low-Level Fetch Network Failure:", networkError.message || networkError);

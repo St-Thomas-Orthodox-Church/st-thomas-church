@@ -44,7 +44,7 @@ export default  function Logo({ className }: {className:string} ) {
      logoUrl=logoUrl.replace('jpg','png');;
     
     return (
-        <div style={{backgroundColor: 'transparent'}}>
+        <div style={{backgroundColor: 'transparent'}} className={className}>
             <Image
                 src={logoUrl}
                 alt="☦ Orthodox Church Logo"

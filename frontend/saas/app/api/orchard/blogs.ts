@@ -2,6 +2,9 @@ import  {type BlogItem } from '@/app/types/blog';
 import {orchardFetch} from '@/app/api/orchard/orchard-client';
 import {getSanitizedHtml} from "@/app/utils/sanitize";
 
+
+
+
 const GET_ALL_BLOGS_QUERY = `
   query {
       blogPost(orderBy: {modifiedUtc: DESC}) {
@@ -46,17 +49,22 @@ export type ContentItem = {
     blogType:string;
 };
 
-async function fetcBlogsRaw():Promise<OrchardDataPayload> {
-    const response : OrchardDataPayload  = await orchardFetch<OrchardDataPayload>({
+async function fetchBlogsRaw():Promise<OrchardDataPayload> {
+    const content_type='BlogPost'; //Content type MUST match orchard content type. 
+    /* This is important because on content update, orchard triggers workflow sends post request with conetn type that has been modified
+    the function in teh revalidate/route.js captures this request and refreshes fetch with content type tag
+    */
+    
+   return   orchardFetch<OrchardDataPayload>({
         query: GET_ALL_BLOGS_QUERY,
+        tags:[content_type],
     });
-  
-    return response;
+   
 }
 
 export async function getBlogs(): Promise<BlogItem[] | null> {
     try {
-        const response: OrchardDataPayload = await fetcBlogsRaw();
+        const response: OrchardDataPayload = await fetchBlogsRaw();
 
         if (!response) {
             console.error('No response from getBlogs() found');
