@@ -16,7 +16,7 @@ export default  function Logo({ className }: {className:string} ) {
         async function fetchLogoData() {
             try {
                 const logoData = await getLogo();
-                console.log({'logoData in fetchLogoData':logoData});
+                
                 if(!logoData){
                     return null;
                 }
