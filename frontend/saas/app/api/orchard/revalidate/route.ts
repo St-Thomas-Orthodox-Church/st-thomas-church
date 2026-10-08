@@ -15,13 +15,22 @@ const GET_ITEM_BY_ID = `
 export async function POST(request: Request) {
     // 1. Extract the Authorization header from the incoming request
     const authHeader = request.headers.get('authorization');
+    console.log("I'm in the post method in route file "); //delete YAC
 
+    // 2. Check if the header exists and starts with "Bearer "
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ error: 'Unauthorized: Missing or invalid token format YAC' });
+    }
+
+    // 3. Extract the token
+    const token = authHeader.split(' ')[1];
+    
     // 2. Define your secret token (In production, use process.env.MY_SECRET_TOKEN)
     const SECRET_TOKEN = process.env.ORCHARD_AUTH_TOKEN;
 
     // 3. Validate the token
-    if (!authHeader || authHeader !== SECRET_TOKEN) {
-        return NextResponse.json({ message: 'Unauthorized Access Denied' }, { status: 401 });
+    if (token!== SECRET_TOKEN) {
+        return NextResponse.json({ message: 'Unauthorized Access Denied YAC ' }, { status: 401 });
     }    
     
     try {
