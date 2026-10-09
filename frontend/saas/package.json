@@ -33,6 +33,7 @@
     "zod": "^3.24.4"
   },
   "overrides": {
+    "jsdom": "25.0.1",
     "html-encoding-sniffer": "3.0.0"
   }
 }
