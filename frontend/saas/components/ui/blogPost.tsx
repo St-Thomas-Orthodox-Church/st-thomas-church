@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './blogPost.css';
 import  {BlogItem} from "@/app/types/blog";
 import Image from 'next/image';
+import PageBanner from "@/components/images/PageBanner";
 
 export const BlogPost=({blog} : {blog:BlogItem} )=>{
     // 🚀 State to track if the post is expanded or collapsed
@@ -20,12 +21,11 @@ export const BlogPost=({blog} : {blog:BlogItem} )=>{
 
         {blog.image?.files[0] &&
             <section>
-                <Image
+                <PageBanner
                     src={blog.image?.files[0]?.url??''}
-                    alt={blog.image?.files[0]?.fileName || "Blog image"}
+                    imageDescription={blog.image?.files[0]?.fileName || "Blog image"}
                     width={800}  // maximum estimated width it will ever be on screen
                     height={600} // e matching estimated height
-                    sizes="(max-width: 800px) 100vw, 50vw" // Tells Next.js how to optimize for screen sizes
                 />
             </section>
         }

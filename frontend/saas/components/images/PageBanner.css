@@ -23,23 +23,5 @@
     /* Cleaned up your golden drop glow to make it look smooth and modern */
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3),
     0 0 20px 2px var(--light-golden);
-
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-
-/* --- Desktop and Tablet Enhancements (Screen widths 768px+) --- */
-@media (min-width: 768px) {
-    .page-banner {
-        /*padding-inline: 2rem;*/
-        width: 100%;
-        min-height: max-content; 
-        width: auto;
-    }
-
-    .page-banner img {
-        height: 400px; /* Deep cinematic height expansion for desktop monitors */
-        border-radius: 1.5rem; /* Balanced radius looks cleaner than full 2rem on cards */
-        min-height: 35rem;
-    }
 }

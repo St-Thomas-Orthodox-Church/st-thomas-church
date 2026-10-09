@@ -102,12 +102,8 @@ export async function getBlogs(): Promise<BlogItem[] | null> {
 }
 
 export async function getBlogByID(blogID: string) {
-    console.log('passsed blogID', blogID);
     const allBlogs = await getBlogs();
-   
     // Assuming allBlogs is an array, use .find() to get a single item by ID
-    const blog = allBlogs?.find(b => b.id === blogID.trim());
-    console.log('blog', blog);
-    return blog;
+    return  allBlogs?.find(b => b.id === blogID.trim());
 }
 
