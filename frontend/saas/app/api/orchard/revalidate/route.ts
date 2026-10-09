@@ -1,16 +1,5 @@
-import {NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import {revalidateTag} from 'next/cache';
-
-
-// Define a simple GraphQL query to look up an item by its ID
-const GET_ITEM_BY_ID = `
-  query GetItemById($contentItemId: String!) {
-    contentItem(contentItemId: $contentItemId) {
-      contentType
-      displayText
-    }
-  }
-`;
 
 export async function POST(request: Request) {
     // 1. Extract the Authorization header from the incoming request
@@ -19,7 +8,7 @@ export async function POST(request: Request) {
 
     // 2. Check if the header exists and starts with "Bearer "
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({ error: 'Unauthorized: Missing or invalid token format YAC' }, { status: 401 });
+        return NextResponse.json({ error: 'Unauthorized: Missing or invalid token format YAC' }, { status: 401 });
     }
 
     // 3. Extract the token
