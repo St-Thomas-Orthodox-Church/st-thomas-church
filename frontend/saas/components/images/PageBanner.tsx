@@ -20,8 +20,6 @@ export default function PageBanner({ src, imageDescription, width = null, height
                     alt={imageDescription || "Page banner image"}
                     width={width || 1200}
                     height={height || 400}
-                    loading="lazy"
-                    decoding="async"
                 />
         </div>
     );
