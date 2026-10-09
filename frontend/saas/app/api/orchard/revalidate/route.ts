@@ -3,11 +3,17 @@ import {revalidateTag} from 'next/cache';
 
 export async function POST(request: Request) {
     // 1. Extract the Authorization header from the incoming request
-    const authHeader = request.headers.get('authorization');
+    console.log("I'm in the post method in route file. at the very top "); //delete YAC
+    const authHeader = request.headers.get('Authorization');
     console.log("I'm in the post method in route file "); //delete YAC
 
     // 2. Check if the header exists and starts with "Bearer "
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    if (!authHeader ) {
+        return NextResponse.json({ error: "Unauthorized: auth Header doesn't exist" }, { status: 401 });
+    }
+
+    // 2. Check if the header exists and starts with "Bearer "
+    if (!authHeader || !authHeader.startsWith('Bearer')) {
         return NextResponse.json({ error: 'Unauthorized: Missing or invalid token format YAC' }, { status: 401 });
     }
 
