@@ -4,6 +4,7 @@ import './blogPost.css';
 import  {BlogItem} from "@/app/types/blog";
 import Image from 'next/image';
 import PageBanner from "@/components/images/PageBanner";
+import ZoomableText from "@/components/wrappers/ZoomableText";
 
 export const BlogPost=({blog} : {blog:BlogItem} )=>{
     // 🚀 State to track if the post is expanded or collapsed
@@ -31,6 +32,7 @@ export const BlogPost=({blog} : {blog:BlogItem} )=>{
         }
      
         {/* Body Content with Smart CSS Clamping */}
+        <ZoomableText>
         <div className="post-body"
             /* 🪄 The magic truncate recipe when collapsed */
              style={{
@@ -46,6 +48,7 @@ export const BlogPost=({blog} : {blog:BlogItem} )=>{
                 <p>No content available for this post.</p>
             )}
         </div>
+        </ZoomableText>
         {/* "...more" / "show less" Action Toggle Link */}
         {blog.markdownBody && (
             <button

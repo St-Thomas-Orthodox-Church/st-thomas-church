@@ -7,6 +7,7 @@ import {AboutUsData} from '@/app/types/church-info';
 import './about-us.css';
 import {getBlogByID} from "@/app/api/orchard/blogs";
 import {BlogItem} from "@/app/types/blog";
+import ZoomableText from "@/components/wrappers/ZoomableText";
 
 
 export default async function AboutUsPage() {
@@ -61,11 +62,11 @@ export default async function AboutUsPage() {
             <div className="contact-info-block"
                dangerouslySetInnerHTML={{ __html: contactInfoHtml || '' }}
             />
-
-            <div className="additional-info"
-               dangerouslySetInnerHTML={{__html: additionalinformation || ''}}
-            />
-            
+            <ZoomableText>
+                <div className="additional-info"
+                     dangerouslySetInnerHTML={{__html: additionalinformation || ''}}
+                />
+            </ZoomableText>
             {relatedBlog &&  <BlogPost blog={relatedBlog}/> }
        </div>
     )
