@@ -40,7 +40,7 @@ query {
 
 
 export interface AboutUsQueryResponse {
-    data?: {
+
         aboutUs?: {
             mainInformation?: {
                 info?: string;
@@ -75,17 +75,17 @@ async function fetchBlogsRaw(): Promise<AboutUsQueryResponse> {
     /* This is important because on content update, orchard triggers workflow sends post request with conetn type that has been modified
     the function in teh revalidate/route.js captures this request and refreshes fetch with content type tag
     */
-    return orchardFetch<AboutUsQueryResponse>({
+    return await orchardFetch<AboutUsQueryResponse>({
         query: GET_ABOUT_US_QUERY,
         tags: [content_type],
     });
 }
 
 export default async function getAboutUs(): Promise<AboutUsData> {
-    try {
+     try {
         const raw: AboutUsQueryResponse = await fetchBlogsRaw();
-        const rawItem = raw?.data?.aboutUs?.[0];
-
+        const rawItem   = raw?.aboutUs?.[0];
+        
         return {
             headerMain: rawItem?.headerMain?.header || "",
             subtitle: rawItem?.subtitle?.html || "",
