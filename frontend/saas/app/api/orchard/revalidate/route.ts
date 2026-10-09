@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     // 2. Check if the header exists and starts with "Bearer "
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({ error: 'Unauthorized: Missing or invalid token format YAC' });
+        return res.status(401).json({ error: 'Unauthorized: Missing or invalid token format YAC' }, { status: 401 });
     }
 
     // 3. Extract the token

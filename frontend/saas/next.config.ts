@@ -1,9 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig = {
-  turbopack: {
-    root: process.cwd(),
-  },
+  // 1. Force the compiler to exclude jsdom from server-side bundling
+ 
+  transpilePackages: ['@exodus/bytes','jsdom', 'html-encoding-sniffer'],  // Allowing Next.js to bundle jsdom fixes the native require() crash on ESM modules.
   typescript: {
     ignoreBuildErrors: true, // Speeds up the build and ignores type warnings
   },
