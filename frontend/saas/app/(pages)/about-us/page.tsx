@@ -12,6 +12,7 @@ import {BlogItem} from "@/app/types/blog";
 export default async function AboutUsPage() {
     
     const aboutUsData:AboutUsData | null= await getAboutUs().catch(()=>null);
+   
     if (!aboutUsData) {
         return (
             <div style={{ padding: '2rem', textAlign: 'center' }}>
@@ -46,7 +47,7 @@ export default async function AboutUsPage() {
     return (
         <div className="about-page-container">
             <h1>{headerMain}</h1>
-            <h2
+            <div
                 dangerouslySetInnerHTML={{ __html: subtitleCleanHtml }}
             />
             <p>{mainInformation?.info} </p>
@@ -57,11 +58,11 @@ export default async function AboutUsPage() {
                 />
             )}
             
-            <p className="contact-info-block"
+            <div className="contact-info-block"
                dangerouslySetInnerHTML={{ __html: contactInfoHtml || '' }}
             />
 
-            <p className="additional-info"
+            <div className="additional-info"
                dangerouslySetInnerHTML={{__html: additionalinformation || ''}}
             />
             

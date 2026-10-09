@@ -67,7 +67,7 @@ export interface AboutUsQueryResponse {
             };
             displayText?: string;
         }[]; // Array because Orchard returns list queries as arrays
-    };
+    
 }
 
 async function fetchBlogsRaw(): Promise<AboutUsQueryResponse> {

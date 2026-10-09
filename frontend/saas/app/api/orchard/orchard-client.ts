@@ -35,8 +35,7 @@ export async function orchardFetch<T>({
             body: JSON.stringify({query, variables}),
             next: {revalidate, tags},
         });
-        console.log({'res from  orchardFetch<T> ': res});
-
+        
         // console.log({'res from Orchard Fetch':res}); //uncomment for debugging
 
         if (!res?.ok) {
