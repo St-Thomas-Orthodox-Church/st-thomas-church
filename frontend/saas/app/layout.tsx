@@ -10,9 +10,7 @@ export const metadata: Metadata = {
   description: 'St Thomas Orthodox Church.'
 };
 
-export const viewport: Viewport = {
-  maximumScale: 1
-};
+
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -26,7 +24,7 @@ export default function RootLayout({
             lang="en"
             className={`bg-white dark:bg-gray-950 text-black dark:text-white ${manrope.className}`}
         >
-        <body className="min-h-[100dvh] bg-gray-50">
+        <body className="min-h-screen bg-gray-50">
         <PublicNav/>
         <main>
             <section className={'content'}>

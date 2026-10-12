@@ -288,9 +288,6 @@
 --common styles
  */
 html{
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  min-height: 100vh; /* Takes up 100% of the viewport height */
   margin: 0;
   background-color:var(--background);
   background: var(--base-background);
