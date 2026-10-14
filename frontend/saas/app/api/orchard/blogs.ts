@@ -70,10 +70,9 @@ export async function getBlogs(): Promise<BlogItem[] | null> {
             console.error('No response from getBlogs() found');
             return null;
         }
-        console.log({'response from getBlogs()' : response});
+        // console.log({'response from getBlogs()' : response});//uncomment for debugging
         // 2. Extract the JSON body array from the response
-     //   const rawData: OrchardDataPayload[] = await response;
-
+        
         const blogList: ContentItem[] = response?.blogPost;
         const baseUrl = process.env.NEXT_PUBLIC_CMS_MEDIA_URL || '';
         

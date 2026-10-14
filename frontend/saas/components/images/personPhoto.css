@@ -1,0 +1,13 @@
+/* ---  Image Base Styles (Mobile First) --- */
+.person-photo img {
+    min-height: 23rem;
+    max-height: 33rem; /* Fixed cinematic height standard on mobile *!*/
+    width: auto;
+    object-fit: cover; /* 🚀 Crucial: crops the image dynamically instead of stretching it */
+    object-position: right; /* Keeps the core focus of the image dead-center */
+    border-radius: var(--radius, 0.75rem);
+    /* Cleaned up your golden drop glow to make it look smooth and modern */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3),
+    0 0 20px 2px var(--light-golden);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
