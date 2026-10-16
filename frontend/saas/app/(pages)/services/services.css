@@ -1,3 +1,5 @@
+
+
 .service-times-page{
     display: flex;
     flex-direction: column;
@@ -8,4 +10,45 @@
 
 .service-times-page h1 {
     margin-bottom: 1rem;
+}
+
+
+
+/* 1. PERSONAL EVENTS: Warm, rich terracotta/soft amber gold */
+.event-local{
+background: brown;
+}
+
+.event-local:hover{
+    background: darkred;
+}
+
+.event-local * {
+    color: whitesmoke;
+}
+
+/* 2. GENERAL/PARISH EVENTS: Majestic dark-bronze to rich-gold gradient */
+
+.event-general {
+    background: transparent;
+    color: black !important;
+}
+.event-general:hover {
+    background-color: var(--fc-monarch-muted);
+}
+
+
+.event-general * {
+    color: var(--dark-golden);
+    /*color: black;*/
+}
+
+/*
+Event modal
+*/
+
+.calendar-modal-content header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
 }
