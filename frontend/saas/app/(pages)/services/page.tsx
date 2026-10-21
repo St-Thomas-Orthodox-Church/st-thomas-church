@@ -2,7 +2,7 @@
 
 import React, {useState, useRef, useEffect, use} from 'react';
 import FullCalendar, {Calendar, EventInput} from "@fullcalendar/react";
-import { EventSourceInput } from '@fullcalendar/core';
+import {EventSourceInput} from '@fullcalendar/react';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
 import themePlugin from "@fullcalendar/react/themes/monarch"; // YOUR THEME
@@ -19,23 +19,21 @@ import './services.css';
 
 import {notFound} from "next/navigation";
 import {fetchGeneralEvents, fetchLocalEvents} from "@/app/api/google/calendar";
-export default  function Services() {
+import Loader from "@/components/ui/loader";
+
+export default function Services() {
 
     // States to handle modal data and toggle status
     const [selectedEvent, setSelectedEvent] = useState<any>(null);
     const dialogRef = useRef<HTMLDialogElement>(null);
-  
-
-    //google calendar 
- 
-
 
     // 1. Initialize state to hold the fully processed event sources safely
     const [calendarSources, setCalendarSources] = useState<EventSourceInput[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
+    /// SET EVENTS 
     useEffect(() => {
-         let isMounted = true; // Prevents state updates if component unmounts mid-fetch
+        let isMounted = true; // Prevents state updates if component unmounts mid-fetch
 
         const loadAllCalendarEvents = async () => {
             try {
@@ -45,7 +43,7 @@ export default  function Services() {
                     fetchLocalEvents()
                 ]);
 
-                 if (!isMounted) return;
+                if (!isMounted) return;
 
                 // 3. Map  custom objects cleanly to native FullCalendar options
                 const formattedGeneralEvents: EventInput[] = generalDays.map((day: any) => ({
@@ -54,7 +52,7 @@ export default  function Services() {
                     start: day.start?.dateTime || day.start?.date || day.start || day.date,
                     end: day.end?.dateTime || day.end?.date || day.end || day.date,
                     className: 'event-general',
-                    extendedProps: { description: day.description || '' }
+                    extendedProps: {description: day.description || ''}
                 }));
 
                 const formattedLocalEvents: EventInput[] = localDays.map((day: any) => ({
@@ -63,13 +61,13 @@ export default  function Services() {
                     start: day.start?.dateTime || day.start?.date || day.start || day.date,
                     end: day.end?.dateTime || day.end?.date || day.end || day.date,
                     className: 'event-local',
-                    extendedProps: { description: day.description || '' }
+                    extendedProps: {description: day.description || ''}
                 }));
 
                 // 4. Update the state once everything is compiled and mounted
                 setCalendarSources([
-                    { events: formattedGeneralEvents },
-                    { events: formattedLocalEvents }
+                    {events: formattedGeneralEvents},
+                    {events: formattedLocalEvents}
                 ]);
                 setIsLoading(false);
             } catch (error) {
@@ -85,7 +83,8 @@ export default  function Services() {
             isMounted = false;
         };
     }, []); // Runs once on safe component mount
-    
+
+    /// CALENDAR OPTIONS 
     const calendarOptions: any = {
         plugins: [themePlugin,
             dayGridPlugin,
@@ -115,16 +114,16 @@ export default  function Services() {
             dialogRef.current?.showModal();
         }
     }
-    
-    
+
+
     // Close the pop-up box cleanly
     const closeModal = () => {
         dialogRef.current?.close();
         setSelectedEvent(null);
     };
-    
-   
-    return(
+
+
+    return (
         <>
             <section className={'service-times-page'}>
                 <h1 className={'gradient-dark-header-large'}>SCHEDULE OF SERVICES</h1>
@@ -132,16 +131,12 @@ export default  function Services() {
                 <p><i> Please contact us for seasonal service schedules.</i></p>
             </section>
 
-            {isLoading ? (
-                <div className="fc-event-spinner-container">
-                    <div className="fc-event-spinner"></div>
-                    <span>Loading...</span>
-                </div>
-            ) : (
+            <Loader isLoading={isLoading}>
                 <div>
                     <FullCalendar {...calendarOptions} />
                 </div>
-            )}
+            </Loader>
+
             {/* 👇 THE LIGHTBOX STYLE POP-UP WINDOW */}
             <dialog ref={dialogRef} className="calendar-modal" onClick={closeModal}>
                 {selectedEvent && (
@@ -163,13 +158,11 @@ export default  function Services() {
                     </section>
                 )}
             </dialog>
-            
-         
-</>)
+        </>)
 }
 
 //this code determines how each even will appear in the calendar
-const renderEventContent= ( eventInfo: any)=> {
+const renderEventContent = (eventInfo: any) => {
     return (
         <div>
             <b>{eventInfo?.timeText} </b>
