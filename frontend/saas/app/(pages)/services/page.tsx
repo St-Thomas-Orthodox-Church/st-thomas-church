@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import FullCalendar, { Calendar }  from "@fullcalendar/react";
+import React, {useState, useRef, useEffect, use} from 'react';
+import FullCalendar, {Calendar, EventInput} from "@fullcalendar/react";
 import { EventSourceInput } from '@fullcalendar/core';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
@@ -18,6 +18,7 @@ import '@fullcalendar/react/themes/monarch/palettes/red.css'; // THEME'S PALETTE
 import './services.css';
 
 import {notFound} from "next/navigation";
+import {fetchGeneralEvents, fetchLocalEvents} from "@/app/api/google/calendar";
 export default  function Services() {
 
     // States to handle modal data and toggle status
@@ -26,21 +27,65 @@ export default  function Services() {
   
 
     //google calendar 
-    const calendarId='signapp46@gmail.com';
-    const orthoCalendarId='ha9t75ni2au0610ef2o258i9bcltqhg1@import.calendar.google.com';
-    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY;
+ 
 
-    const eventSource: EventSourceInput[] = [
-        {
-            googleCalendarId: orthoCalendarId,
-            className: 'event-general'
-        },
-        {
-            googleCalendarId: calendarId,
-            className: 'event-local'
-        }
-    ];
 
+    // 1. Initialize state to hold the fully processed event sources safely
+    const [calendarSources, setCalendarSources] = useState<EventSourceInput[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+         let isMounted = true; // Prevents state updates if component unmounts mid-fetch
+
+        const loadAllCalendarEvents = async () => {
+            try {
+                // 2. Perform the async fetching inside the side-effect hook safely
+                const [generalDays, localDays] = await Promise.all([
+                    fetchGeneralEvents(),
+                    fetchLocalEvents()
+                ]);
+
+                 if (!isMounted) return;
+
+                // 3. Map  custom objects cleanly to native FullCalendar options
+                const formattedGeneralEvents: EventInput[] = generalDays.map((day: any) => ({
+                    id: day.id || `gen-${Math.random()}`,
+                    title: day.title || day.summary || 'No Title',
+                    start: day.start?.dateTime || day.start?.date || day.start || day.date,
+                    end: day.end?.dateTime || day.end?.date || day.end || day.date,
+                    className: 'event-general',
+                    extendedProps: { description: day.description || '' }
+                }));
+
+                const formattedLocalEvents: EventInput[] = localDays.map((day: any) => ({
+                    id: day.id || `loc-${Math.random()}`,
+                    title: day.title || day.summary || 'No Title',
+                    start: day.start?.dateTime || day.start?.date || day.start || day.date,
+                    end: day.end?.dateTime || day.end?.date || day.end || day.date,
+                    className: 'event-local',
+                    extendedProps: { description: day.description || '' }
+                }));
+
+                // 4. Update the state once everything is compiled and mounted
+                setCalendarSources([
+                    { events: formattedGeneralEvents },
+                    { events: formattedLocalEvents }
+                ]);
+                setIsLoading(false);
+            } catch (error) {
+                console.error("Failed to populate calendar views:", error);
+                if (isMounted) setIsLoading(false);
+            }
+        };
+
+        loadAllCalendarEvents();
+
+        // Cleanup tracking flag
+        return () => {
+            isMounted = false;
+        };
+    }, []); // Runs once on safe component mount
+    
     const calendarOptions: any = {
         plugins: [themePlugin,
             dayGridPlugin,
@@ -50,9 +95,8 @@ export default  function Services() {
             googleCalendarPlugin
         ],
         initialView: "dayGridMonth",
-        googleCalendarApiKey: apiKey,
-        eventSources: eventSource,
-
+        eventSources: calendarSources,
+        eventContent: renderEventContent,
         headerToolbar: {
             start: 'today prev,next title',
             end: 'dayGridMonth,dayGridWeek,timeGridDay,multiMonthYear,listWeek',
@@ -88,10 +132,16 @@ export default  function Services() {
                 <p><i> Please contact us for seasonal service schedules.</i></p>
             </section>
 
-            <div>
-                <FullCalendar {...calendarOptions} />
-            </div>
-
+            {isLoading ? (
+                <div className="fc-event-spinner-container">
+                    <div className="fc-event-spinner"></div>
+                    <span>Loading...</span>
+                </div>
+            ) : (
+                <div>
+                    <FullCalendar {...calendarOptions} />
+                </div>
+            )}
             {/* 👇 THE LIGHTBOX STYLE POP-UP WINDOW */}
             <dialog ref={dialogRef} className="calendar-modal" onClick={closeModal}>
                 {selectedEvent && (
@@ -102,7 +152,7 @@ export default  function Services() {
                             <button className="close-btn" onClick={closeModal}>&times;</button>
                         </header>
                         <section className="modal-body">
-                            <p className="modal-date"> <strong>Date:</strong> {selectedEvent.start}</p>
+                            <p className="modal-date"><strong>Date:</strong> {selectedEvent.start}</p>
                             {selectedEvent.time && selectedEvent.time !== "12:00 AM" && (
                                 <p className="modal-time">⏰ <strong>Time:</strong> {selectedEvent.time}</p>
                             )}
@@ -113,17 +163,18 @@ export default  function Services() {
                     </section>
                 )}
             </dialog>
-        </>
-    )
+            
+         
+</>)
 }
 
 //this code determines how each even will appear in the calendar
-function renderEventContent(eventInfo: any) {
-        console.log('eventInfo', eventInfo);
+const renderEventContent= ( eventInfo: any)=> {
     return (
         <div>
-            <b>{eventInfo.timeText}</b>
-            <i>{eventInfo.event.title}</i>
+            <b>{eventInfo?.timeText} </b>
+            {eventInfo?.timeText && ' '}
+            <i>{eventInfo?.event.title}</i>
         </div>
     );
 }
