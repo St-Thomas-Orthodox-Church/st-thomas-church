@@ -2,7 +2,7 @@ export interface LiturgicalDay{
     id: string
     title: string;
     start: string;
-    end:string;
+    end?:string;
     fast:boolean;
     epistle: string;
     gospel : string;
