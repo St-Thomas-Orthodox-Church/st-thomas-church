@@ -14,19 +14,15 @@ async function fetchGoogleCalendarEvents(calendarId: string): Promise<EventInput
 
     const url=`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime`;
     try {
-        console.log('fetchGoogleCalendarEvents before response. url',url);
         // Next.js caches this fetch request natively. Revalidates every hour (3600 seconds)
         const response = await fetch(url, {
             next: {revalidate: 3600}
         });
-        
         const data = await response.json();
 
         if (!data.items) return [];
-        console.log('fetchGoogleCalendarEvents after response. data.itesm',data.items);
         return data.items;
-
-    
+        
     } catch (error) {
         console.error(`Error fetching calendar ${calendarId}:`, error);
         return [];
@@ -72,7 +68,7 @@ export  const fetchGeneralEvents = async (): Promise<LiturgicalDay[]> =>{
                 throw error;
             });
     }
-    console.log('generalEventsCache from fetchGeneralEvents',generalEventsCache);
+
     return generalEventsCache;
 }
 
@@ -80,7 +76,7 @@ export  const fetchGeneralEvents = async (): Promise<LiturgicalDay[]> =>{
 // local events are not cached to make sure updates appear immediately
 export  const fetchLocalEvents=async ():Promise<EventInput[]>=>{
   const localEvents= await fetchGoogleCalendarEvents(CALENDAR_ID);
-  console.log('local events from  fetchLocalEvents',localEvents);
+  
   return  localEvents;
  
 }
