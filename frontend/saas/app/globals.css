@@ -171,26 +171,40 @@
 */
 
 :root {
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(240 10% 3.9%);
-    --card: hsl(0 0% 100%);
-    --card-foreground: hsl(240 10% 3.9%);
-    --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(240 10% 3.9%);
-    --primary: hsl(240 5.9% 10%);
-    --primary-foreground: hsl(0 0% 98%);
-    --secondary: hsl(240 4.8% 95.9%);
-    --secondary-foreground: hsl(240 5.9% 10%);
-    --muted: hsl(240 4.8% 95.9%);
-    --muted-foreground: hsl(240 3.8% 46.1%);
+    /*--background: hsl(0 0% 100%);*/
+    /*--foreground: hsl(240 10% 3.9%);*/
+    /*!*--card: hsl(0 0% 100%);*!*/
+    /*--card-foreground: hsl(240 10% 3.9%);*/
+    /*--popover: hsl(0 0% 100%);*/
+    /*--popover-foreground: hsl(240 10% 3.9%);*/
+    /*--primary: hsl(240 5.9% 10%);*/
+    /*--primary-foreground: hsl(0 0% 98%);*/
+    /*--secondary: hsl(240 4.8% 95.9%);*/
+    /*--secondary-foreground: hsl(240 5.9% 10%);*/
+    /*--muted: hsl(240 4.8% 95.9%);*/
+    /*--muted-foreground: hsl(240 3.8% 46.1%);*/
     --accent: hsl(240 4.8% 95.9%);
     --accent-foreground: hsl(240 5.9% 10%);
     --highlight-solid: hsl(28, 34%, 57%); /* fallback flat color */
     --dark-golden: hsl(28, 34%, 15%); /*main font color */
     --dark-golen-gradient: linear-gradient(135deg, hsl(28, 34%, 15%) 0%, hsl(28, 34%, 5%) 100%);
+    --darker-golen-gradient: linear-gradient(180deg, #44372C 0%, #AD892E 5%, #44372C 70%);
     --light-golden: #b7906e50;
+    --warm-cream: #CAC0AD;
+    
+    --ivory-mist: #FFFFEB;
+    --ivory-mist-background: hsl(60deg 100% 98.24%) ;
+    --accent-rust:  hsl(14, 48%, 38%);
     --highlight-gradient: linear-gradient(0deg, rgba(183, 144, 110, 1) 42%, rgba(139, 106, 77, 1) 100%);
     --header-gradient-dark: linear-gradient(180deg, #44372C 0%, #AD892E 100%);
+    --gradient-dark-border: linear-gradient(
+            180deg,
+            #AD892E 0%,
+            #735A2B 30%,  /* Blended midtone: avoids a harsh drop to dark */
+            #44372C 50%,  /* Deepest point of the gradient */
+            #795F2E 70%,  /* Blended midtone: climbing back out smoothly */
+            #AD892E 100%
+    );
     --destructive: hsl(0 84.2% 60.2%);
     --destructive-foreground: hsl(0 0% 98%);
     --border: hsl(240 5.9% 90%);
@@ -363,6 +377,27 @@ h4 {
     text-transform: uppercase;
 }
 
+
+.gradient-dark-header-small {
+    font-size: 1.25rem;
+    /*
+        Greating has gradient text color
+    */
+    /* 1. Define your gradient background */
+    background: var(--darker-golen-gradient);
+
+    /* 2. Clip the background strictly to the text shapes */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+
+    /* 3. Make the actual text transparent so the background shows through */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for older browsers */
+    text-transform: uppercase;
+}
+
+
 .gradient-dark-golden-header-lage {
 
     font-size: 2.5rem;
@@ -387,4 +422,14 @@ h4 {
     flex-flow: column;
     justify-content: center; /* Centers horizontally */
     align-items: center;
+}
+
+
+/*buttons */
+
+.btn-close {
+    font-family: 'Druk Wide', sans-serif;
+    font-weight:900;
+    padding: 0;
+    margin: 0;
 }

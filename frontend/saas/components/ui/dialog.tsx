@@ -2,7 +2,7 @@
 import { useSearchParams} from 'next/navigation';
 import React, {ReactElement, useRef, useEffect, use, JSX} from "react";
 
-import  './dialog.css';
+import  styles from '@/components/ui/dialog.module.css';
 
 interface Props {
     title: string;
@@ -27,21 +27,21 @@ export default function Dialog({title, onClose,children ,onOK=null}: Props) {
     }
     
   return(
-      <dialog open className="dialog-overlay">
-          <div className="dialog-container">
-              <div className="dialog-header">
-                  <h1 className="dialog-title">{title}</h1>
-                  <button onClick={closeDialog} className="dialog-close-btn">
-                      &times;
+      <dialog open className={styles.dialogOverlay}>
+          <div className={styles.dialogContainer}>
+              <div className={styles.dialogHeader}>
+                  <h1 className={`${styles.dialogTitle} gradient-dark-header-small `} >{title}</h1>
+                  <button onClick={closeDialog} className='btn-close gradient-dark-header-small'>
+                       X
                   </button>
               </div>
 
-              <div className="dialog-body">
+              <div className={styles.dialogBody}>
                   {children}
 
                   {onOK && (
-                      <div className="dialog-footer">
-                          <button onClick={clickOK} className="dialog-ok-btn">
+                      <div className={styles.dialogFooter}>
+                          <button onClick={clickOK} className={styles.btnOk}>
                               OK
                           </button>
                       </div>

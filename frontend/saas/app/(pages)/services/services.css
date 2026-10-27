@@ -16,7 +16,7 @@
 
 /* 1. PERSONAL EVENTS: Warm, rich terracotta/soft amber gold */
 .event-local{
-background: brown;
+    background: var(--accent-rust);
 }
 
 .event-local:hover{
@@ -24,7 +24,8 @@ background: brown;
 }
 
 .event-local * {
-    color: whitesmoke;
+    color:#FFFDF9; /*Liturgical Winter White */
+
 }
 
 /* 2. GENERAL/PARISH EVENTS: Majestic dark-bronze to rich-gold gradient */

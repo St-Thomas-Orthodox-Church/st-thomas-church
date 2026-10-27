@@ -9,7 +9,7 @@ import postgres from "postgres";
 import from = postgres.toPascal.column.from;
 import Link from "next/link";
 
-import './EventDialog.css';
+import  styles from '@/components/ui/dialog.module.css';
 
 interface Props{
     eventsLocal: EventInput[] | null;
@@ -18,8 +18,8 @@ interface Props{
 }
 export default function EventDialog({eventsLocal, eventGeneral, setIsModalOpen}: Props) {
 
-
-
+    const [isExpanded, setIsExpanded] = useState(false);
+    
     // Close the pop-up box cleanly
     const closeModal = () => {
         setIsModalOpen(false);
@@ -28,13 +28,17 @@ export default function EventDialog({eventsLocal, eventGeneral, setIsModalOpen}:
 
     return (
         <Dialog title={eventGeneral?.title ?? ''} onClose={closeModal}>
-            <div className="modal-content-wrapper">
-
+            <div className={styles.sectionWrapper}>
+                {eventGeneral && (
+                        <p className={`${styles.right}   ${styles.accent}  ${eventGeneral.fast ? styles.amber : styles.green}`}>
+                            {eventGeneral.fast ? '● Fasting Day' : '○ No Fasting'}
+                        </p>
+                    )}
                 {/* 2. RENDER LOCAL PARISH EVENTS IF PRESENT */}
                 {eventsLocal && eventsLocal.length > 0 && (
                     eventsLocal.map((event, index) => (
-                        <section className="local-events-body">
-                            <h3 className="local-events-heading">
+                        <section className={`${styles.sectionBody} ${styles.sectionAccented}`} key={index}>
+                            <h3 className={styles.sectionHeader}>
                                 {event.start?.dateTime
                                     ? new Date(event.start.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
                                     : 'All Day'} &nbsp;
@@ -42,12 +46,20 @@ export default function EventDialog({eventsLocal, eventGeneral, setIsModalOpen}:
                             <div key={event.id || index} className="local-event-item">
                                 <h4 className="local-event-title">{event.title}</h4>
                                 {event.description && (
-                                    <div
-                                        className="local-event-description"
-                                        dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(event.description)}}
-                                    />
+                                    <div className={styles.modalDescription}>
+                                        <div className={`${styles.modalExpandable}
+                                            ${isExpanded ? styles.expanded : styles.collapsed}`}
+                                             dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(event.description)}}
+                                        />
+                                        <button
+                                            onClick={() => setIsExpanded(!isExpanded)}
+                                            className={styles.btnToggle}
+                                            aria-expanded={isExpanded}
+                                        >
+                                            {isExpanded ? "Read less" : " ...Read more"}
+                                        </button>
+                                    </div>
                                 )}
-                            
                             </div>
                         </section>
                     ))
@@ -57,16 +69,7 @@ export default function EventDialog({eventsLocal, eventGeneral, setIsModalOpen}:
                 
                 {/* 1. RENDER GENERAL LITURGICAL DATA IF PRESENT */}
                 {eventGeneral && (
-                    <section className="modal-body">
-                        <p className="modal-date"><strong>Date:</strong> {eventGeneral.start}</p>
-                        {eventGeneral.start && eventGeneral.start !== "12:00 AM" && (
-                            <p className="modal-time">⏰ <strong>Time:</strong> {eventGeneral.start}
-                                {eventGeneral.end && ` - ${eventGeneral.end}`}
-                            </p>
-                        )}
-                        <p className={`fast ${eventGeneral.fast ? 'fasting-day' : 'no-fasting'}`}>
-                            {eventGeneral.fast ? 'Fasting Day' : 'No Fasting'}
-                        </p>
+                    <section className={styles.sectionBody}>
                         <p className="modal-commemorations">{eventGeneral.commemorations}</p>
                         <div className="modal-description">
                             {eventGeneral.epistle && <p><strong>Epistle:</strong> {eventGeneral.epistle}</p>}

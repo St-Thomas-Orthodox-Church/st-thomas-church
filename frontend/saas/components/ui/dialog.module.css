@@ -1,0 +1,247 @@
+:root {
+    /* Surface & Container Colors */
+    --bg-app-calendar: #f8fafc;        /* Soft slate background for the calendar grid */
+    --bg-modal-card: #ffffff;         /* Crisp pure white for the event popup container */
+    --bg-modal-header: #1a2b4c;       /* Deep professional navy for the primary header banner */
+
+/* Muted charcoal for descriptions, metadata, and dates */
+
+    /* Interactive Elements (Action Buttons) */
+    --btn-primary-bg: #3b82f6;        /* Clean steel blue for the primary action button */
+    --btn-primary-text: #ffffff;      /* White text for clear button readability */
+    --btn-primary-hover: #2563eb;    /* Darker royal blue shade on cursor hover */
+
+    /* Layout and Depth Accents */
+    --border-subtle: #e2e8f0;         /* Fine slate gray divider lines instead of heavy borders */
+    --shadow-premium: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -4px rgba(0, 0, 0, 0.05); /* Soft premium drop-shadow for elevation */
+
+    /* Structural Utilities */
+    --radius-card: 12px;              /* Clean modern rounding for the popup edges */
+    --radius-button: 6px;             /* Structured, slightly rounded corners for buttons */
+}
+
+
+/* --- Body Section --- */
+.dialogBody {
+    padding: 1.5rem; /* 24px */
+}
+
+/* Replicates space-y-4 for direct children inside the body */
+.dialogBody > * + * {
+    margin-top: 1rem; /* 16px */
+}
+
+
+/* --- Header Section --- */
+.dialogHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8); /* border-gray-200/80 */
+    border-bottom: 1px solid  var(--light-golden);
+    background-color: rgba(255, 255, 255, 0.8); /* bg-white/80 */
+    backdrop-filter: blur(12px); /* backdrop-blur-md */
+ 
+    border-radius: 5px;
+    padding: 1rem;
+  
+}
+
+/* --- Footer Section --- */
+.dialogFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.5rem; /* 8px */
+    border-top: 1px solid #f3f4f6; /* border-gray-100 */
+}
+
+
+/* --- Dialog Overlay --- */
+.dialogOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* bg-black/50 */
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    border: none; /* Clears default HTML browser dialog borders */
+}
+
+/* --- Modal Content Container --- */
+.dialogContainer {
+    /*background-color: #ffffff;*/
+    /*background: var(--ivory-mist-background);*/
+    /*border-radius: 0.5rem; !* 8px *!*/
+    /*box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); !* shadow-xl *!*/
+    margin: auto;
+    max-width: 70rem; /* 448px */
+    width: 100%;
+    overflow: hidden;
+    /*border: 1px solid #e5e7eb; !* border-gray-200 *!*/
+
+    background-color: var(--bg-modal-card);       /* Pure White (#ffffff) */
+    border-radius: var(--radius-card);             /* Modern 12px rounding */
+    box-shadow: var(--shadow-premium);             /* Soft drop-shadow instead of muddy border */
+    overflow: hidden;                              /* Keeps header flush with corners */
+    border: 1px solid var(--border-subtle);
+}
+
+
+
+/* Modal */
+.sectionWrapper {
+    display: flex;
+    flex-flow: column;
+}
+.sectionHeader {
+    color: var(--dark-golden);
+}
+
+.sectionBody {
+    color: var(--dark-golden);
+    
+}
+.sectionAccented{
+    border-left: 0.5rem solid; 
+    border-image: var(--gradient-dark-border);
+    border-image-slice: 1;
+    padding: 1rem;
+}
+.sectionAccented .sectionHeader {
+    color: var(--accent-rust);
+}
+
+
+/*Small Parts*/
+.accent {
+    font-weight: 900; /* font-semibold */
+    text-transform: uppercase;
+    font-size: 1.25rem;
+}
+.right{
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.amber{
+    color: var(--accent-rust)
+}
+
+.green {
+    color: hsl(89, 41%, 23%) ; /* text-green-600 */
+}
+
+/*.modalCommemorations {*/
+/*    font-size: 0.875rem; !* text-sm *!*/
+/*    font-style: italic; !* italic *!*/
+/*}*/
+
+
+.modalExpandable {
+    font-size: 0.875rem; /* text-sm */
+    background-color: hsl(40, 20%, 97.5%);
+    /*padding: 0.5rem; !* p-2 *!*/
+    /*border-radius: 0.25rem; !* rounded *!*/
+    display: inline;
+}
+.modalDescription{
+    display: inline;
+}
+/*!* Emulates space-y-1 inside description details *!*/
+/*.modalDescription > * + * {*/
+/*    margin-top: 0.25rem;*/
+/*    display: inline;*/
+/*}*/
+
+
+
+/* Clamp to exactly 5 lines when collapsed */
+.collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.expanded {
+    display: block;
+}
+
+.dialogTitle {
+    /*font-size: 1.25rem; !* 20px *!*/
+    line-height: 1.75rem;
+    /*font-weight: 600;*/
+    /*color: var(--dark-golden);*/
+    
+    margin: 0; /* Reset default heading margins */
+}
+
+/*small elements*/
+
+.modalLink {
+    color: #2563eb; /* text-blue-600 */
+    text-decoration: underline; /* underline */
+    display: block; /* block */
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+
+.modalMetadata {
+    color: brown;            /* Muted Charcoal (#475569) */
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* Buttons */
+
+
+.Close:hover {
+    color: #dc2626; /* hover:text-red-600 */
+}
+
+
+.btnOk {
+    background-color: #2563eb; /* bg-blue-600 */
+    color: #ffffff;
+    font-weight: 500;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.25rem; /* 4px */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btnOk:hover {
+    background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+.btnToggle {
+    /*background: var(--highlight-gradient);*/
+    /*border: var(--accent-rust);*/
+    /*border-radius: 20px;*/
+    color: var(--dark-golden);
+    /*padding: 0.5rem 1rem;*/
+    /*margin-top: 0.5rem;*/
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline;
+}
+
+.btnToggle:hover {
+    text-decoration: underline;
+}
