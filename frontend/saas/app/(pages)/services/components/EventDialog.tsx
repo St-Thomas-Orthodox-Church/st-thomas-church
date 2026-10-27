@@ -12,13 +12,25 @@ import Link from "next/link";
 import  styles from '@/components/ui/dialog.module.css';
 
 interface Props{
+    date:string,
     eventsLocal: EventInput[] | null;
     eventGeneral: LiturgicalDay | null;
     setIsModalOpen: (isOpen: boolean)=>void
 }
-export default function EventDialog({eventsLocal, eventGeneral, setIsModalOpen}: Props) {
+export default function EventDialog({date, eventsLocal, eventGeneral, setIsModalOpen}: Props) {
 
     const [isExpanded, setIsExpanded] = useState(false);
+//format date
+    const dateDate = new Date(date.replace(/-/g, '/'));
+    console.log('date',date);
+// 2. Format to "Month Day, YYYY"
+    const formattedDate = new Intl.DateTimeFormat('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+    }).format(dateDate);
+    
+    
     
     // Close the pop-up box cleanly
     const closeModal = () => {
@@ -27,7 +39,7 @@ export default function EventDialog({eventsLocal, eventGeneral, setIsModalOpen}:
 
 
     return (
-        <Dialog title={eventGeneral?.title ?? ''} onClose={closeModal}>
+        <Dialog header={formattedDate} title={ eventGeneral?.title ?? ''} onClose={closeModal}>
             <div className={styles.sectionWrapper}>
                 {eventGeneral && (
                         <p className={`${styles.right}   ${styles.accent}  ${eventGeneral.fast ? styles.amber : styles.green}`}>
@@ -64,24 +76,31 @@ export default function EventDialog({eventsLocal, eventGeneral, setIsModalOpen}:
                         </section>
                     ))
                 )}
-                
-                
-                
+
                 {/* 1. RENDER GENERAL LITURGICAL DATA IF PRESENT */}
                 {eventGeneral && (
                     <section className={styles.sectionBody}>
-                        <p className="modal-commemorations">{eventGeneral.commemorations}</p>
-                        <div className="modal-description">
+                        {eventGeneral.commemorations && (
+                            <section className={styles.sectionGeneral}>
+                                <b>Commemorations:</b> {eventGeneral.commemorations}
+                            </section>
+                        )}
+                        <section className={styles.sectionGeneral}>
                             {eventGeneral.epistle && <p><strong>Epistle:</strong> {eventGeneral.epistle}</p>}
                             {eventGeneral.gospel && <p><strong>Gospel:</strong> {eventGeneral.gospel}</p>}
-                        </div>
+                        </section>
                         {eventGeneral.link && (
-                            <Link href={eventGeneral.link} className="modal-info-link">
-                                More Liturgical Info
-                            </Link>
+                            <section className={styles.sectionGeneral}>
+                                Follow this link to the &nbsp;
+                                <Link href={eventGeneral.link} >
+                                     Orthodox Calendar
+                                </Link>
+                                &nbsp;for full readings. 
+                            </section>
                         )}
                     </section>
                 )}
+
 
 
             

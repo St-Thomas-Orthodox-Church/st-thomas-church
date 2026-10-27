@@ -8,7 +8,7 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
         end: event.end, 
         class: event.class,
         fast: false,
-        commemorations: [],
+        commemorations: '',
         epistle: [],
         gospel: [],
         link: ''
@@ -21,6 +21,7 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
     
     //  Split lines and isolate the URL link
     const lines: string[] = text.split('\n').map((line: string)  => line.trim()).filter(Boolean);
+    console.log('lines',lines);
     
     lines.forEach((line: string )=>{
        const trimmedLine = line.trim();
@@ -30,6 +31,9 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
         const urlRegex = /(https?:\/\/[^\s]+)/g;
 
         switch (true) {
+            //remove 'Follow this link for full readings" text
+                case lowerLine.startsWith('follow'):
+                    break;
             //fasting
             case lowerLine.includes('fast'):
                 if (lowerLine.includes('no')) {
@@ -52,10 +56,12 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
                 day.gospel.push(line);
                 break;
             default:
-                day.commemorations.push(trimmedLine);
+               // day.commemorations.push(trimmedLine);
                 break;
         }
         
     })
+    
+    day.commemorations= lines[1]; //commemorations alwsays returned on line 1; 
     return day;
 }

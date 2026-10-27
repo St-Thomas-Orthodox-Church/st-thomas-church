@@ -38,6 +38,7 @@ export default function Services() {
     const [localEvents,setLocalEvents] =useState<EventInput []>([]);
     const [selectedLocalEvents, setSelectedLocalEvents] = useState<EventInput[] | null>(null);
     const [selectedGeneralEvent, setSelectedGeneralEvent] = useState<LiturgicalDay | null>(null);
+    const [selectedDate, setSelectedDate] = useState<string | null>(null);
     
     const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -59,8 +60,7 @@ export default function Services() {
                 ]);
                 
                 if (!isMounted) return;
-
-              
+                
                 setGeneralEvents(generalDays);
                 setLocalEvents(localDays);
                 
@@ -127,15 +127,11 @@ export default function Services() {
         },
         eventClick: (info: any) => {
             info.jsEvent.preventDefault(); //prevent opening google calendar on click
-
-            console.log('event Clicked, inofo: ', info)
-            console.log('generalEvents',  generalEvents)
-            console.log(' localEvents',  localEvents)
-
             //  Normalize the dates to standard ISO strings (YYYY-MM-DD) for a 100% reliable match
             const clickedDate: string=info.event.start
                 ? new Date(info.event.start).toISOString().split('T')[0]
                 : '';
+            setSelectedDate(clickedDate);
             console.log('clickedDate',clickedDate);
 
 
@@ -166,8 +162,6 @@ export default function Services() {
                 return le.start === clickedDate;
             })[0];
             
-            console.log('localEventsSelected', localEventsSelected);
-            console.log('generalEventSelected', generalEventSelected);
             // Extract the event properties you want to show
             setSelectedLocalEvents(localEventsSelected);
             setSelectedGeneralEvent(generalEventSelected);
@@ -195,6 +189,7 @@ export default function Services() {
             {/* 👇 THE LIGHTBOX STYLE POP-UP WINDOW */}
             {isModalOpen && (
                 <EventDialog 
+                    date={selectedDate}
                     eventsLocal={selectedLocalEvents} 
                     eventGeneral={selectedGeneralEvent}
                     setIsModalOpen={setIsModalOpen}

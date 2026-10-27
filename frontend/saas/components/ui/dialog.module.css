@@ -35,9 +35,11 @@
 
 /* --- Header Section --- */
 .dialogHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2rem;
+    /*justify-content: space-between;*/
+    justify-items: start;
+    align-items: start;
 
     border-bottom: 1px solid rgba(229, 231, 235, 0.8); /* border-gray-200/80 */
     border-bottom: 1px solid  var(--light-golden);
@@ -47,6 +49,11 @@
     border-radius: 5px;
     padding: 1rem;
   
+}
+
+.headerText{
+    display: flex;
+    flex-flow: column;
 }
 
 /* --- Footer Section --- */
@@ -118,6 +125,10 @@
 }
 .sectionAccented .sectionHeader {
     color: var(--accent-rust);
+}
+
+.sectionGeneral{
+    margin-bottom: 0.5rem;
 }
 
 
