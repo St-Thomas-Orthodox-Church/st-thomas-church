@@ -4,9 +4,9 @@ export interface LiturgicalDay{
     start: string;
     end?:string;
     fast:boolean;
-    epistle: string;
-    gospel : string;
+    epistle: string[];
+    gospel : string[];
     link : string;
-    commemorations: string;
+    commemorations: string[];
     class: string;
 }

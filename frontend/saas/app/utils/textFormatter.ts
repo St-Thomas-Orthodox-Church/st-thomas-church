@@ -8,42 +8,54 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
         end: event.end, 
         class: event.class,
         fast: false,
-        commemorations: '',
-        epistle: '',
-        gospel: '',
+        commemorations: [],
+        epistle: [],
+        gospel: [],
         link: ''
     };
-    const text= event.description; 
+    const text= event.extendedProps.description;
+   
     if (!text) return day;
 
     
     
     //  Split lines and isolate the URL link
     const lines: string[] = text.split('\n').map((line: string)  => line.trim()).filter(Boolean);
-   
-    // Extracts the first URL found anywhere inside the description string
-    const urlRegex = /(https?:\/\/[^\s]+)/g;
-    const foundLink = text.match(urlRegex);
-    day.link = foundLink ? foundLink[0] : '';
     
-    //Is fast . If line includes 'no fast' then it's not a fasting day 
-    day.fast=!lines.find((line: string)  => line.includes('fast') && line.includes('no'));
-    
-    // Identify readings (lines containing "Epistle" or "Gospel")
-    day.epistle = lines.find(line => line.includes('Epistle')) ?? '';
-    day.gospel = lines.find(line => line.includes('Gospel')) ?? '';
+    lines.forEach((line: string )=>{
+       const trimmedLine = line.trim();
+       if (!trimmedLine)  return;  //skip empty line
+        
+        const lowerLine=trimmedLine.toLowerCase();
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
 
-    // Separate everything else as Commemorations/Feasts
-    const commemorations = lines.filter(line =>
-        !line.startsWith('https://') &&
-        !line.startsWith('Follow this link') &&
-        !line.includes('(Epistle)') &&
-        !line.includes('(Gospel)') &&
-        !line.toLowerCase().includes('no fast') &&
-        !line.toLowerCase().includes('fast day')
-    );
-    
-    day.commemorations =commemorations?.join('\n') ?? '';
-
+        switch (true) {
+            //fasting
+            case lowerLine.includes('fast'):
+                if (lowerLine.includes('no')) {
+                    day.fast = false;
+                } else {
+                    day.fast = true;
+                }
+                break;
+            //link
+            case urlRegex.test(line):
+                const foundLink = line.match(urlRegex);
+                day.link = foundLink ? foundLink[0] : '';
+                break;
+            //epistle
+            case lowerLine.includes('epistle'):
+                day.epistle.push(line);
+                break;
+            //gospel
+            case lowerLine.includes('gospel'):
+                day.gospel.push(line);
+                break;
+            default:
+                day.commemorations.push(trimmedLine);
+                break;
+        }
+        
+    })
     return day;
 }
