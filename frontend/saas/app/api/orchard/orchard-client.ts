@@ -35,9 +35,6 @@ export async function orchardFetch<T>({
             body: JSON.stringify({query, variables}),
             next: {revalidate, tags},
         });
-        
-        // console.log({'res from Orchard Fetch':res}); //uncomment for debugging
-
         if (!res?.ok) {
             let errorDetails = "";
             try {
@@ -55,7 +52,6 @@ export async function orchardFetch<T>({
             const message = json.errors.map((e: { message: string }) => e.message).join(', ');
             throw new Error(`Orchard GraphQL Error: ${message}`);
         }
-        //  console.log({'json from Orchard Fetch': json.data}); //uncomment for debugging
         return json.data;
     } catch (error) {
         console.error("🚨 Fetch network failure:", error);

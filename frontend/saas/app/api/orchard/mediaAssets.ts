@@ -90,7 +90,6 @@ async function fetchMediaRaw():Promise<OrchardDataPayload> {
 export async function getLogo() {
     try {
         const response = await fetchMediaRaw();
-        //console.log({'get Logo response ':response}); //uncomment to debug
         if (!response || !response.smallLogo || response.smallLogo.length === 0) {
             console.warn('⚠️ smallLogo is missing or empty in response:', response);
             return null;

@@ -12,7 +12,7 @@ import Link from "next/link";
 import  styles from '@/components/ui/dialog.module.css';
 
 interface Props{
-    date:string,
+    date:string | null,
     eventsLocal: EventInput[] | null;
     eventGeneral: LiturgicalDay | null;
     setIsModalOpen: (isOpen: boolean)=>void
@@ -22,14 +22,12 @@ export default function EventDialog({date, eventsLocal, eventGeneral, setIsModal
     const [isExpanded, setIsExpanded] = useState(false);
 //format date
     const dateDate = new Date(date.replace(/-/g, '/'));
-    console.log('date',date);
 // 2. Format to "Month Day, YYYY"
     const formattedDate = new Intl.DateTimeFormat('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric'
     }).format(dateDate);
-    
     
     
     // Close the pop-up box cleanly
@@ -100,10 +98,6 @@ export default function EventDialog({date, eventsLocal, eventGeneral, setIsModal
                         )}
                     </section>
                 )}
-
-
-
-            
             </div>
         </Dialog>
 

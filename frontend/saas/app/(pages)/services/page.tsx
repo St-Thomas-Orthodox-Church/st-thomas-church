@@ -122,9 +122,6 @@ export default function Services() {
             start: 'today prev,next title',
             end: 'dayGridMonth,dayGridWeek,timeGridDay,multiMonthYear,listWeek',
         },
-        dateClick:(info: any) =>{
-            console.log('dated Clicked')
-        },
         eventClick: (info: any) => {
             info.jsEvent.preventDefault(); //prevent opening google calendar on click
             //  Normalize the dates to standard ISO strings (YYYY-MM-DD) for a 100% reliable match
@@ -132,12 +129,9 @@ export default function Services() {
                 ? new Date(info.event.start).toISOString().split('T')[0]
                 : '';
             setSelectedDate(clickedDate);
-            console.log('clickedDate',clickedDate);
-
 
             const localEventsSelected: EventInput[] = localEvents?.filter(le => {
                 if (!le.start) return false;
-                    console.log(typeof le.start );
                 const eventDateStr = (() => {
                     if (!le.start) return '';
 
@@ -189,7 +183,7 @@ export default function Services() {
             {/* 👇 THE LIGHTBOX STYLE POP-UP WINDOW */}
             {isModalOpen && (
                 <EventDialog 
-                    date={selectedDate}
+                    date={selectedDate ?? null }
                     eventsLocal={selectedLocalEvents} 
                     eventGeneral={selectedGeneralEvent}
                     setIsModalOpen={setIsModalOpen}

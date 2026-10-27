@@ -21,7 +21,6 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
     
     //  Split lines and isolate the URL link
     const lines: string[] = text.split('\n').map((line: string)  => line.trim()).filter(Boolean);
-    console.log('lines',lines);
     
     lines.forEach((line: string )=>{
        const trimmedLine = line.trim();
@@ -62,6 +61,6 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
         
     })
     
-    day.commemorations= lines[1]; //commemorations alwsays returned on line 1; 
+    day.commemorations= lines[1]; //commemorations always returned on line 1; 
     return day;
 }

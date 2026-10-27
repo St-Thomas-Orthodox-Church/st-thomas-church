@@ -8,7 +8,6 @@ import "./clergy.css";
 export default async function ClergyPage() {
 
     let clergyList: ClergyItem[] | null = await getClergy();
-    //console.log('clergyList from clergy page ',clergyList);   // uncomment for debugging
     if (clergyList === null) {
         return notFound();
     }
@@ -25,11 +24,7 @@ export default async function ClergyPage() {
             stThomasClergyList.push(clergy);
         }
     }
-    // uncomment for debugging
-    // console.log('stThomasClergyList ',stThomasClergyList); 
-    // console.log('leadershipList',leadershipList);
-
-
+    
     return (
         <>
             <section className={'clergy-block'}>

@@ -29,8 +29,7 @@ export async function POST(request: Request) {
         // 1. Parse the incoming JSON from Orchard Workflow
         const body = await request.json();
         const { contentType } = body;
-        console.log(contentType);
-
+       
         if ( !contentType) {
             return NextResponse.json({ message: 'Missing fields' }, { status: 400 });
         }
