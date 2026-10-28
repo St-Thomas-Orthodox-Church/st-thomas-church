@@ -51,8 +51,11 @@ export default function EventDialog({date, eventsLocal, eventGeneral, setIsModal
                             <h3 className={styles.sectionHeader}>
                                 {event.start?.dateTime
                                     ? new Date(event.start.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-                                    : 'All Day'} &nbsp;
-                                {event.summary}</h3>
+                                    : 'All Day'}
+                                {event.end?.dateTime
+                                    ? '-'+ new Date(event.end.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                                    : 'All Day'}&nbsp;
+                                <span style={{whiteSpace: 'nowrap;',display: 'inline-block'}}> {event.summary}</span></h3>
                             <div key={event.id || index} className="local-event-item">
                                 <h4 className="local-event-title">{event.title}</h4>
                                 {event.description && (

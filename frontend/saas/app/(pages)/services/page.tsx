@@ -22,11 +22,49 @@ import {LiturgicalDay} from "@/app/types/calendar";
 
 //this code determines how each even will appear in the calendar
 const renderEventContent = (eventInfo: any) => {
+
+    const isMobile = window.innerWidth < 768;
+    const originalTitle = eventInfo.event.title;
+
+    let displayTitle='';
+    const originalTitleLower=originalTitle.toLowerCase();
+    //on mobile view we need to display the most important information about services
+    if (isMobile) {
+        switch (true) {
+            case originalTitleLower.includes('liturgy'):
+                displayTitle = 'Liturgy';
+                break;
+            case originalTitleLower.includes('typica'):
+                displayTitle = 'Typica';
+                break;
+            case originalTitleLower.includes('vespers'):
+                displayTitle = 'Vespers';
+                break;
+            case originalTitleLower.includes('hour'):
+                displayTitle = 'Hours';
+                break;
+            case originalTitleLower.includes('matins'):
+                displayTitle = 'Matins';
+                break;
+            case originalTitle.length > 8: // Cut off text at 8 characters on mobile,
+                displayTitle = `${originalTitle.substring(0, 8)}...`;
+                break;
+            default:
+                displayTitle = eventInfo.event.title;
+                break;
+        }
+        
+    } else {
+        displayTitle = originalTitle; // if not mobile  show full title
+    }
+    
+
+    
     return (
         <div>
             <b>{eventInfo?.timeText} </b>
             {eventInfo?.timeText && ' '}
-            <i>{eventInfo?.event.title}</i>
+            <i>{displayTitle}</i>
         </div>
     );
 }
@@ -115,6 +153,7 @@ export default function Services() {
             multiMonthPlugin,
             googleCalendarPlugin
         ],
+        className: 'church-calendar',
         initialView: "dayGridMonth",
         eventSources: calendarSources,
         eventContent: renderEventContent,
@@ -175,9 +214,7 @@ export default function Services() {
                 <p><i> Please contact us if you have any questions.</i></p>
             </section>
             <Loader isLoading={isLoading}>
-                <div>
-                    <FullCalendar {...calendarOptions} />
-                </div>
+                <FullCalendar {...calendarOptions} />
             </Loader>
 
             {/* 👇 THE LIGHTBOX STYLE POP-UP WINDOW */}
