@@ -1,3 +1,4 @@
+'use server';
 import {LiturgicalDay} from '@/app/types/calendar';
 
 // app/services/page.tsx (or wherever your route sits)
@@ -5,12 +6,15 @@ import {parseCalendarDescription} from "@/app/utils/textFormatter";
 import {EventInput} from "@fullcalendar/react";
 
 
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY; // Kept secure on server!
+const API_KEY = process.env.GOOGLE_CALENDAR_API_KEY; // Kept secure on server!
 const CALENDAR_ID = 'signapp46@gmail.com';
 const ORTHO_CALENDAR_ID = 'ha9t75ni2au0610ef2o258i9bcltqhg1@import.calendar.google.com';
 
 async function fetchGoogleCalendarEvents(calendarId: string): Promise<EventInput[]> {
-    if (!API_KEY) return [];
+    if (!API_KEY) {
+        console.error('⛔ No API key found.');
+        return [];
+    }
 
     const url=`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime`;
     try {
@@ -20,7 +24,11 @@ async function fetchGoogleCalendarEvents(calendarId: string): Promise<EventInput
         });
         const data = await response.json();
 
-        if (!data.items) return [];
+        if (!data.items) {
+            console.info('🫙 to items found');
+            return [];
+        }
+        
         return data.items;
         
     } catch (error) {
