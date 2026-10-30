@@ -9,4 +9,5 @@ export interface LiturgicalDay{
     link : string;
     commemorations: string;
     class: string;
+    isMultiDay?:boolean;
 }

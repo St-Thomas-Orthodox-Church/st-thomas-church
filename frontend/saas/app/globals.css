@@ -182,7 +182,8 @@
     /*--secondary: hsl(240 4.8% 95.9%);*/
     /*--secondary-foreground: hsl(240 5.9% 10%);*/
     /*--muted: hsl(240 4.8% 95.9%);*/
-    /*--muted-foreground: hsl(240 3.8% 46.1%);*/
+    /*--muted-foreground: hsl(240 3.8% 46.1%);*/ 
+    --gray-brown-background: hsl(40, 20%, 97.5%);
     --accent: hsl(240 4.8% 95.9%);
     --accent-foreground: hsl(240 5.9% 10%);
     --highlight-solid: hsl(28, 34%, 57%); /* fallback flat color */

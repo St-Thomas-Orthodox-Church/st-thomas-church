@@ -52,20 +52,29 @@ export  const fetchGeneralEvents = async (): Promise<LiturgicalDay[]> =>{
                 if (!events || !events.length) return [];
                 // Map Google Event Object properties to native FullCalendar options
                 return events.map((event: any) => {
+                    const multiDays: boolean=isMultiDays(event);
 
                     let eventMapped = {
                         id: event.id,
                         title: event.summary || 'No Title',
                         start: event.start?.dateTime || event.start?.date,
                         end: event.end?.dateTime || event.end?.date,
-                        className: 'event-general',
+                        className: `event-general ${multiDays ?' multi-day': ''}`,
                         // Pass description cleanly down to the client modal hook
                         extendedProps: {
-                            description: event.description || "No additional description available."
+                            description: event.description || "No additional description available.",
+                            isMultiDay: multiDays,
                         }
                     };
+                    const parsedEvent = parseCalendarDescription(eventMapped);
+
+                    if (!parsedEvent.extendedProps) {
+                        parsedEvent.extendedProps = {};
+                    }
+                    parsedEvent.extendedProps.isMultiDay = multiDays;
                     
-                    return parseCalendarDescription(eventMapped);
+                    return parsedEvent;
+                   
                 });
                 
             } )
@@ -88,3 +97,32 @@ export  const fetchLocalEvents=async ():Promise<EventInput[]>=>{
   return  localEvents;
  
 }
+
+
+function isMultiDays (event: any): boolean  {
+    // 1. Handle All-Day Events (uses event.start.date formatted as "YYYY-MM-DD")
+    if (event.start?.date && event.end?.date) {
+        const startDate = new Date(event.start.date);
+        const endDate = new Date(event.end.date);
+
+        // Google Calendar API all-day events end at midnight of the following day.
+        // A single all-day event (e.g., Nov 1) has start="2026-11-01" and end="2026-11-02".
+        // Therefore, it's only multi-day if the difference is greater than 1 day (86400000 ms).
+        const diffTime = endDate.getTime() - startDate.getTime();
+        return diffTime > 86400000;
+    }
+
+    // 2. Handle Timed Events (uses event.start.dateTime formatted as ISO strings)
+    if (event.start?.dateTime && event.end?.dateTime) {
+        const startDate = new Date(event.start.dateTime);
+        const endDate = new Date(event.end.dateTime);
+
+        return (
+            startDate.getFullYear() !== endDate.getFullYear() ||
+            startDate.getMonth() !== endDate.getMonth() ||
+            startDate.getDate() !== endDate.getDate()
+        );
+    }
+
+    return false;
+};

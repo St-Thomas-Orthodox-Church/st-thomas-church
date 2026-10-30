@@ -8,8 +8,10 @@ import {LiturgicalDay} from "@/app/types/calendar";
 import postgres from "postgres";
 import from = postgres.toPascal.column.from;
 import Link from "next/link";
+import SectionAccented from "@/app/(pages)/services/components/sectionAccented";
 
 import  styles from '@/components/ui/dialog.module.css';
+import sectionAccented from "@/app/(pages)/services/components/sectionAccented";
 
 interface Props{
     date:string | null,
@@ -19,7 +21,7 @@ interface Props{
 }
 export default function EventDialog({date, eventsLocal, eventGeneral, setIsModalOpen}: Props) {
 
-    const [isExpanded, setIsExpanded] = useState(false);
+   
 //format date
     const dateDate = new Date(date.replace(/-/g, '/'));
 // 2. Format to "Month Day, YYYY"
@@ -47,34 +49,7 @@ export default function EventDialog({date, eventsLocal, eventGeneral, setIsModal
                 {/* 2. RENDER LOCAL PARISH EVENTS IF PRESENT */}
                 {eventsLocal && eventsLocal.length > 0 && (
                     eventsLocal.map((event, index) => (
-                        <section className={`${styles.sectionBody} ${styles.sectionAccented}`} key={index}>
-                            <h3 className={styles.sectionHeader}>
-                                {event.start?.dateTime
-                                    ? new Date(event.start.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-                                    : 'All Day'}
-                                {event.end?.dateTime
-                                    ? '-'+ new Date(event.end.dateTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-                                    : 'All Day'}&nbsp;
-                                <span style={{whiteSpace: 'nowrap;',display: 'inline-block'}}> {event.summary}</span></h3>
-                            <div key={event.id || index} className="local-event-item">
-                                <h4 className="local-event-title">{event.title}</h4>
-                                {event.description && (
-                                    <div className={styles.modalDescription}>
-                                        <div className={`${styles.modalExpandable}
-                                            ${isExpanded ? styles.expanded : styles.collapsed}`}
-                                             dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(event.description)}}
-                                        />
-                                        <button
-                                            onClick={() => setIsExpanded(!isExpanded)}
-                                            className={styles.btnToggle}
-                                            aria-expanded={isExpanded}
-                                        >
-                                            {isExpanded ? "Read less" : " ...Read more"}
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                        </section>
+                        <SectionAccented event={event} key={index} />
                     ))
                 )}
 

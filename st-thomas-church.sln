@@ -5,6 +5,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{A62DDA32-CAE2-4EE2-BEEC-BC207F9AF292}"
 	ProjectSection(SolutionItems) = preProject
 		frontend\.github\workflows\deploy.yml = frontend\.github\workflows\deploy.yml
+		frontend\saas\app\(pages)\services\components\EventDialog.tsx = frontend\saas\app\(pages)\services\components\EventDialog.tsx
 	EndProjectSection
 EndProject
 Global

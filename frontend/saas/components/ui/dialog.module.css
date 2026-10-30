@@ -118,6 +118,7 @@
     
 }
 .sectionAccented{
+    display: block;
     border-left: 0.5rem solid; 
     border-image: var(--gradient-dark-border);
     border-image-slice: 1;
@@ -152,29 +153,15 @@
     color: hsl(89, 41%, 23%) ; /* text-green-600 */
 }
 
-/*.modalCommemorations {*/
-/*    font-size: 0.875rem; !* text-sm *!*/
-/*    font-style: italic; !* italic *!*/
-/*}*/
-
 
 .modalExpandable {
     font-size: 0.875rem; /* text-sm */
-    background-color: hsl(40, 20%, 97.5%);
-    /*padding: 0.5rem; !* p-2 *!*/
-    /*border-radius: 0.25rem; !* rounded *!*/
-    display: inline;
+    background-color: var(--gray-brown-background);
+    display: block;
 }
 .modalDescription{
     display: inline;
 }
-/*!* Emulates space-y-1 inside description details *!*/
-/*.modalDescription > * + * {*/
-/*    margin-top: 0.25rem;*/
-/*    display: inline;*/
-/*}*/
-
-
 
 /* Clamp to exactly 5 lines when collapsed */
 .collapsed {
@@ -189,18 +176,14 @@
 }
 
 .dialogTitle {
-    /*font-size: 1.25rem; !* 20px *!*/
     line-height: 1.75rem;
-    /*font-weight: 600;*/
-    /*color: var(--dark-golden);*/
-    
     margin: 0; /* Reset default heading margins */
 }
 
 /*small elements*/
 
 .modalLink {
-    color: #2563eb; /* text-blue-600 */
+    color: #2563eb; 
     text-decoration: underline; /* underline */
     display: block; /* block */
     margin-top: 0.5rem; /* mt-2 */
@@ -208,15 +191,14 @@
 
 
 .modalMetadata {
-    color: brown;            /* Muted Charcoal (#475569) */
+    color: brown; /* Muted Charcoal (#475569) */
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
-
-/* Buttons */
-
-
+ /** 
+     Buttons 
+*/
 .Close:hover {
     color: #dc2626; /* hover:text-red-600 */
 }
@@ -241,12 +223,7 @@
 }
 
 .btnToggle {
-    /*background: var(--highlight-gradient);*/
-    /*border: var(--accent-rust);*/
-    /*border-radius: 20px;*/
     color: var(--dark-golden);
-    /*padding: 0.5rem 1rem;*/
-    /*margin-top: 0.5rem;*/
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;

@@ -19,17 +19,24 @@ import {fetchGeneralEvents, fetchLocalEvents} from "@/app/api/google/calendar";
 import Loader from "@/components/ui/loader";
 import EventDialog from "@/app/(pages)/services/components/EventDialog";
 import {LiturgicalDay} from "@/app/types/calendar";
+import Fa from "zod/v4/locales/fa";
 
 //this code determines how each even will appear in the calendar
 const renderEventContent = (eventInfo: any) => {
-
+        
     const isMobile = window.innerWidth < 768;
     const originalTitle = eventInfo.event.title;
+    const isMultiday:boolean=eventInfo.event.extendedProps.isMultiDay;
+    // console.log({eventInfo});
+   if(isMultiday){
+        console.log('isMultiday', {isMultiday} );      
+    }
+   
 
     let displayTitle='';
     const originalTitleLower=originalTitle.toLowerCase();
     //on mobile view we need to display the most important information about services
-    if (isMobile) {
+    if (isMobile && !isMultiday ) {
         switch (true) {
             case originalTitleLower.includes('liturgy'):
                 displayTitle = 'Liturgy';
@@ -96,20 +103,23 @@ export default function Services() {
                     fetchGeneralEvents(),
                     fetchLocalEvents()
                 ]);
-                
+
                 if (!isMounted) return;
-                
+
                 setGeneralEvents(generalDays);
                 setLocalEvents(localDays);
-                
+
                 //  Map  custom objects cleanly to native FullCalendar options
-                    const formattedGeneralEvents: EventInput[] = generalDays?.map((day: any) => ({
+                const formattedGeneralEvents: EventInput[] = generalDays?.map((day: any) => ({
                     id: day.id || `loc-${Math.random()}`,
                     title: day.title || day.summary || '',
                     start: day.start?.dateTime || day.start?.date || day.start || day.date,
                     end: day.end?.dateTime || day.end?.date || day.end || day.date,
-                    className: 'event-general',
-                    extendedProps: {description: day.description || ''}
+                    className: day.class,
+                    extendedProps: {
+                        description: day.description || '',
+                        isMultiDay: day.extendedProps?.isMultiDay ?? false
+                    }
                 })) || [];
 
                 const formattedLocalEvents: EventInput[] = localDays?.map((day: any) => ({
@@ -120,10 +130,11 @@ export default function Services() {
                     end: day.end?.dateTime || day.end?.date || day.end || day.date,
                     className: 'event-local',
                     extendedProps: {
-                        description: day.description || ''
+                        description: day.description || '',
+                        isMultiDay: day.extendedProps?.isMultiDay
                     }
                 })) || [];
-                
+                console.log({formattedGeneralEvents});
                 // 4. Update the state once everything is compiled and mounted
                 setCalendarSources([
                     {events: formattedGeneralEvents },

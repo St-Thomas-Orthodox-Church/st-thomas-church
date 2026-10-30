@@ -6,7 +6,7 @@ export function parseCalendarDescription(event: any): LiturgicalDay {
         title: event.title,
         start: event.start, 
         end: event.end, 
-        class: event.class,
+        class: event.className,
         fast: false,
         commemorations: '',
         epistle: [],

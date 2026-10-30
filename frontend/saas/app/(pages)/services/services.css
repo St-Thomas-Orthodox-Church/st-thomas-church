@@ -40,6 +40,21 @@
     color: var(--dark-golden);
 }
 
+.multi-day{
+    background: var(--gray-brown-background);
+    border:none ;
+    color: var(--dark-golden);
+    font-weight: bold;
+}
+
+.multi-day * {
+    justify-content: center;
+}
+
+.multi-day .fc-TL svg polygon{
+    color: var(--gray-brown-background);
+}
+
 @media (max-width: 768px) {
     main{
         padding:0; /*allows calendar to fit on the page*/
