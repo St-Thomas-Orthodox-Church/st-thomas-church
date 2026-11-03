@@ -7,8 +7,8 @@ import {EventInput} from "@fullcalendar/react";
 
 
 const API_KEY = process.env.GOOGLE_CALENDAR_API_KEY; // Kept secure on server!
-const CALENDAR_ID = 'signapp46@gmail.com';
-const ORTHO_CALENDAR_ID = 'ha9t75ni2au0610ef2o258i9bcltqhg1@import.calendar.google.com';
+const CALENDAR_ID = process.env.GOOGLE_PRIVATE_CALENDAR_ID;
+const ORTHO_CALENDAR_ID = process.env.GOOGLE_ORTHO_CALENDAR_ID;
 
 async function fetchGoogleCalendarEvents(calendarId: string): Promise<EventInput[]> {
     if (!API_KEY) {

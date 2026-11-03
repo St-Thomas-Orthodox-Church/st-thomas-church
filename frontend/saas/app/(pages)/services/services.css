@@ -1,4 +1,4 @@
-.service-times-page{
+.service-times-page {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -12,16 +12,16 @@
 
 
 /* 1. PERSONAL EVENTS: Warm, rich terracotta/soft amber gold */
-.event-local{
+.event-local {
     background: var(--accent-rust);
 }
 
-.event-local:hover{
+.event-local:hover {
     background: darkred;
 }
 
 .event-local * {
-    color:#FFFDF9; /*Liturgical Winter White */
+    color: #FFFDF9; /*Liturgical Winter White */
 
 }
 
@@ -31,6 +31,7 @@
     background: transparent;
     color: black !important;
 }
+
 .event-general:hover {
     background-color: var(--fc-monarch-muted);
 }
@@ -40,9 +41,9 @@
     color: var(--dark-golden);
 }
 
-.multi-day{
+.multi-day {
     background: var(--gray-brown-background);
-    border:none ;
+    border: none;
     color: var(--dark-golden);
     font-weight: bold;
 }
@@ -51,18 +52,32 @@
     justify-content: center;
 }
 
-.multi-day .fc-TL svg polygon{
+.multi-day .fc-TL svg polygon {
     color: var(--gray-brown-background);
 }
 
+
 @media (max-width: 768px) {
-    main{
-        padding:0; /*allows calendar to fit on the page*/
+    main {
+        padding: 0; /*allows calendar to fit on the page*/
     }
-    .church-calendar{
-        max-width:100%;
-        
+
+    .church-calendar {
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+
     }
+
+    .church-calendar [aria-label="Previous Month"],
+    .church-calendar [aria-label="Next Month"] {
+        padding: 0;
+    }
+
+    .church-calendar [aria-label="Change view"] > button {
+        padding: 1rem;
+    }
+
 }
 
 

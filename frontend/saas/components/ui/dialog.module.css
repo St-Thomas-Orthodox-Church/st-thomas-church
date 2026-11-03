@@ -25,6 +25,7 @@
 /* --- Body Section --- */
 .dialogBody {
     padding: 1.5rem; /* 24px */
+    max-width: 95%;
 }
 
 /* Replicates space-y-4 for direct children inside the body */
@@ -90,7 +91,7 @@
     /*border-radius: 0.5rem; !* 8px *!*/
     /*box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); !* shadow-xl *!*/
     margin: auto;
-    max-width: 70rem; /* 448px */
+    max-width: min(70rem, 95%); 
     width: 100%;
     overflow: hidden;
     /*border: 1px solid #e5e7eb; !* border-gray-200 *!*/

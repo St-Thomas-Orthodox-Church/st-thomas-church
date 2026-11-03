@@ -17,6 +17,7 @@ frontend/saas-starter/node_modules/
 # Local Env Files (Do NOT commit these to GitHub)
 .env
 .env.local
+.evn.stg
 .env.development.local
 .env.test.local
 .env.production.local
