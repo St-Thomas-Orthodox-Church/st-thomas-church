@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 
-
 const manrope = Manrope({ subsets: ['latin'] });
 
 export default function RootLayout({

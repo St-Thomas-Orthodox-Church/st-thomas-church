@@ -3,6 +3,7 @@ import { ArrowRight, CreditCard, Database } from 'lucide-react';
 import {getChurchContactInfo, getChurchAdderss} from '@/app/api/orchard/church-info';
 import {Address} from '@/app/types/church-info';
 import './home.css';
+import Link from "next/link";
 
 export default async function HomePage() {
     
@@ -15,16 +16,16 @@ export default async function HomePage() {
             <section className="first-row">
                 <section className={'left'}>
                     <section className={'service-times'}>
-                        <h2>SCHEDULE OF SERVICES</h2>
+                        <h2><Link href={'/services'}>SCHEDULE OF SERVICES</Link></h2>
                             <p> Hours and Divine Liturgy: <time> Sunday, 10:00am </time></p>
-                            <p> Please contact us for seasonal service schedules.</p>
+                            <p> Please see our <Link href={'/services'}>calendar</Link> for seasonal service schedules.</p>
                     </section>
                     <section className={'address'}>
-                        <h2> Visit Us</h2>
+                        <h2> <Link href={'/contact'}>Visit Us</Link></h2>
                         at {address?.streetAddress },  {address?.city}, {address?.stateRegion}, {address?.postalZIPCode}
                     </section>
                     <section className={'contact-info'}>
-                        <h2> Contact US</h2>
+                        <h2> <Link href={'/contact'}>Contact US </Link></h2>
                         <p dangerouslySetInnerHTML={{ __html: contactInfo || ''}}/>
                     </section>
                 </section>

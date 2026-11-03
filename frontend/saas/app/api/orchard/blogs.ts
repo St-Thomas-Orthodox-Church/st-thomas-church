@@ -70,7 +70,6 @@ export async function getBlogs(): Promise<BlogItem[] | null> {
             console.error('No response from getBlogs() found');
             return null;
         }
-        // console.log({'response from getBlogs()' : response});//uncomment for debugging
         // 2. Extract the JSON body array from the response
         
         const blogList: ContentItem[] = response?.blogPost;
@@ -92,7 +91,6 @@ export async function getBlogs(): Promise<BlogItem[] | null> {
             markdownBody: {html:getSanitizedHtml(raw.markdownBody.html)} ,
             blogType: raw.blogType,
         }));
-      //  console.log({'blogs from getBlogs()': blogs}); //dele YAC
         return blogs;
     } catch (e) {
         console.error(e);

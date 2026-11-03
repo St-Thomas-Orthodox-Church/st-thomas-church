@@ -58,8 +58,6 @@ export const getClergy = cache(async (): Promise<ClergyItem[] | null> => {
             console.error('No response from getClergy() found');
             return null;
         }
-        //  console.log({'response from getClergy()' : response}); //uncomment for debugging
-
         const baseUrl = process.env.NEXT_PUBLIC_CMS_MEDIA_URL || '';
 
         const clergy: ClergyItem[] = (response?.clergy?.[0].contentItems || []).map((item) => ({
@@ -77,8 +75,6 @@ export const getClergy = cache(async (): Promise<ClergyItem[] | null> => {
                 })),
             }
         }));
-        //   console.log({'clergy from getClergy()': clergy}); // /uncomment for debugging
-
         return clergy;
 
     } catch (error) {
