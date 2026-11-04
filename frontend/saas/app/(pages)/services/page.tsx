@@ -1,14 +1,13 @@
 'use client';
 
-import React, {useState, useRef, useEffect, use} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import FullCalendar, {Calendar, EventInput} from "@fullcalendar/react";
 import {EventSourceInput} from '@fullcalendar/react';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import themePlugin from "@fullcalendar/react/themes/monarch"; // YOUR THEME
-import dayGridPlugin from "@fullcalendar/react/daygrid";
 import listPlugin from '@fullcalendar/react/list';
 import timeGridPlugin from '@fullcalendar/react/timegrid'
-import multiMonthPlugin from '@fullcalendar/react/multimonth'
+
 // stylesheets
 import '@fullcalendar/react/skeleton.css';
 import '@fullcalendar/react/themes/monarch/theme.css'; // THEME
@@ -27,16 +26,16 @@ const renderEventContent = (eventInfo: any) => {
     const isMobile = window.innerWidth < 768;
     const originalTitle = eventInfo.event.title;
     const isMultiday:boolean=eventInfo.event.extendedProps.isMultiDay;
-    // console.log({eventInfo});
-   if(isMultiday){
-        console.log('isMultiday', {isMultiday} );      
-    }
-   
-
+    
+    // 2. Check if the current view name contains 'list'
+    // const viewType = calendarRef.current?.getApi().view.type;
+    // const isListView = viewType && viewType.includes('list');
+    const isListView=document.querySelector('[aria-label="List view"]')?.getAttribute('aria-selected')=='true';
+    
     let displayTitle='';
     const originalTitleLower=originalTitle.toLowerCase();
     //on mobile view we need to display the most important information about services
-    if (isMobile && !isMultiday ) {
+    if (isMobile && !isMultiday  &!isListView ) {
         switch (true) {
             case originalTitleLower.includes('liturgy'):
                 displayTitle = 'Liturgy';
@@ -79,6 +78,7 @@ const renderEventContent = (eventInfo: any) => {
 export default function Services() {
 
     // States to handle modal data and toggle status
+ 
     const [generalEvents,setGeneralEvents] =useState<LiturgicalDay[]>([]);
     const [localEvents,setLocalEvents] =useState<EventInput []>([]);
     const [selectedLocalEvents, setSelectedLocalEvents] = useState<EventInput[] | null>(null);
@@ -158,10 +158,8 @@ export default function Services() {
     /// CALENDAR OPTIONS 
     const calendarOptions: any = {
         plugins: [themePlugin,
-            dayGridPlugin,
             listPlugin,
             timeGridPlugin,
-            multiMonthPlugin,
             googleCalendarPlugin
         ],
         className: 'church-calendar',
@@ -170,7 +168,7 @@ export default function Services() {
         eventContent: renderEventContent,
         headerToolbar: {
             start: 'today prev,next title',
-            end: 'dayGridMonth,dayGridWeek,timeGridDay,multiMonthYear,listWeek',
+            end: 'dayGridMonth,dayGridWeek,listWeek',
         },
         eventClick: (info: any) => {
             info.jsEvent.preventDefault(); //prevent opening google calendar on click
