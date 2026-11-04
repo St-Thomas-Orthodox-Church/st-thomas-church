@@ -68,14 +68,41 @@
         margin-right: auto;
 
     }
-
+    
+    /* make gap between 'Today', '< >', and 'Month YYYY' smaller */
+    .church-calendar .fc-monarch-wwb {
+        gap: 3px;
+    }
+    
+    /*make "Today' botton smaller */
+    .church-calendar  [aria-label="This Month"] {
+        padding-block: 10px ;
+        padding-inline: 12px ;
+    }
+    
+    /* remove paddign from < > symbols for view navigation */
     .church-calendar [aria-label="Previous Month"],
-    .church-calendar [aria-label="Next Month"] {
+    .church-calendar [aria-label="Next Month"],
+    .church-calendar [aria-label="Previous Week"],
+    .church-calendar [aria-label="Next Week"],
+    .church-calendar [aria-label="Previous Day"],
+    .church-calendar [aria-label="Next Day"],
+    .church-calendar [aria-label="Previous Year"],
+    .church-calendar [aria-label="Next Year"]
+    {
         padding: 0;
     }
 
     .church-calendar [aria-label="Change view"] > button {
         padding: 1rem;
+    }
+    
+    /*Make sure that name of the month and dates are moved to the next row when overflowing*/
+    .church-calendar  *:has(> [role="heading"]){
+        /*border: 2px solid red !important;*/
+        max-width: 100%;
+        display: flex;
+        flex-flow: row wrap;
     }
 
 }
